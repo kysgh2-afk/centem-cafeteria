@@ -41,12 +41,12 @@ jobs:
           git push
 
       - name: Deploy to Cloudways (SFTP)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
           server: ${{ secrets.CW_SFTP_HOST }}
           username: ${{ secrets.CW_SFTP_USER }}
           password: ${{ secrets.CW_SFTP_PASSWORD }}
-          protocol: sftp
           port: 22
-          local-dir: ./dist/
-          server-dir: ${{ secrets.CW_SFTP_REMOTE_DIR }}
+          local_path: './dist/*'
+          remote_path: ${{ secrets.CW_SFTP_REMOTE_DIR }}
+          sftp_only: true

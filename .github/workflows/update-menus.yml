@@ -10,9 +10,6 @@ concurrency:
   group: weekly-menu-update
   cancel-in-progress: true
 
-permissions:
-  contents: write
-
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
@@ -20,10 +17,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -43,21 +36,6 @@ jobs:
       - name: List build output
         run: find dist -type f | sort
 
-      - name: Commit updated menu data
-        continue-on-error: true
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
-          git add public/data/weeks/
-          if git diff --staged --quiet; then
-            echo "No menu data changes to commit"
-          else
-            git commit -m "chore: update weekly cafeteria menus"
-            git pull --rebase origin main
-            git push origin main
-          fi
-
       - name: Deploy to Cloudways (SFTP)
         env:
           SFTP_HOST: ${{ secrets.CW_SFTP_HOST }}
@@ -65,26 +43,32 @@ jobs:
           SFTP_PASS: ${{ secrets.CW_SFTP_PASSWORD }}
           SFTP_DIR: ${{ secrets.CW_SFTP_REMOTE_DIR }}
         run: |
-          set -euo pipefail
+          set -euxo pipefail
 
-          if [ -z "$SFTP_HOST" ] || [ -z "$SFTP_USER" ] || [ -z "$SFTP_PASS" ] || [ -z "$SFTP_DIR" ]; then
-            echo "ERROR: SFTP Secrets 4개(CW_SFTP_HOST, CW_SFTP_USER, CW_SFTP_PASSWORD, CW_SFTP_REMOTE_DIR)를 모두 등록했는지 확인하세요."
+          if [ -z "${SFTP_HOST:-}" ] || [ -z "${SFTP_USER:-}" ] || [ -z "${SFTP_PASS:-}" ]; then
+            echo "::error::Secrets 확인: CW_SFTP_HOST, CW_SFTP_USER, CW_SFTP_PASSWORD 가 필요합니다."
             exit 1
           fi
+
+          REMOTE_DIR="${SFTP_DIR:-public_html}"
+          REMOTE_DIR="${REMOTE_DIR#/}"
+          REMOTE_DIR="${REMOTE_DIR%/}"
 
           sudo apt-get update -qq
           sudo apt-get install -y -qq lftp
 
-          REMOTE_DIR="${SFTP_DIR%/}"
+          echo "Connecting to ${SFTP_HOST} as ${SFTP_USER} ..."
+          echo "Remote folder: ${REMOTE_DIR}"
 
-          echo "Deploying dist/ -> ${REMOTE_DIR}/ on ${SFTP_HOST}"
-
-          lftp -u "${SFTP_USER},${SFTP_PASS}" "sftp://${SFTP_HOST}:22" <<EOF
-          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-          lcd dist
+          LFTP_PASSWORD="${SFTP_PASS}" lftp -u "${SFTP_USER}" "sftp://${SFTP_HOST}:22" <<SCRIPT
+          set cmd:fail-exit yes
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 22"
+          pwd
           cd ${REMOTE_DIR}
-          mirror -R --delete --verbose --exclude-glob .git* --exclude-glob .DS_Store
-          bye
-          EOF
+          pwd
+          lcd dist
+          mirror -R -v --exclude-glob .git* --exclude-glob .DS_Store
+          quit
+          SCRIPT
 
           echo "Deploy complete"

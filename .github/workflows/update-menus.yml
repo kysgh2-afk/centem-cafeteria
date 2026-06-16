@@ -32,21 +32,29 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: List build output
+        run: find dist -type f
+
       - name: Commit updated menu data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/data/weeks/
-          git diff --staged --quiet || git commit -m "chore: update weekly cafeteria menus"
-          git push
+          if git diff --staged --quiet; then
+            echo "No menu data changes to commit"
+          else
+            git commit -m "chore: update weekly cafeteria menus"
+            git push
+          fi
 
-      - name: Deploy to Cloudways (SFTP)
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+      - name: Deploy to Cloudways
+        uses: appleboy/scp-action@v1.0.0
         with:
-          server: ${{ secrets.CW_SFTP_HOST }}
+          host: ${{ secrets.CW_SFTP_HOST }}
           username: ${{ secrets.CW_SFTP_USER }}
           password: ${{ secrets.CW_SFTP_PASSWORD }}
           port: 22
-          local_path: './dist/*'
-          remote_path: ${{ secrets.CW_SFTP_REMOTE_DIR }}
-          sftp_only: true
+          source: dist/*
+          target: ${{ secrets.CW_SFTP_REMOTE_DIR }}
+          strip_components: 1
+          overwrite: true

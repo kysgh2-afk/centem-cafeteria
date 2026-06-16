@@ -60,7 +60,9 @@ jobs:
           echo "Connecting to ${SFTP_HOST} as ${SFTP_USER} ..."
           echo "Remote folder: ${REMOTE_DIR}"
 
-          LFTP_PASSWORD="${SFTP_PASS}" lftp -u "${SFTP_USER}" "sftp://${SFTP_HOST}:22" <<SCRIPT
+          # LFTP_PASSWORD does not work for SFTP; pass credentials via -u user,pass
+          set +x
+          lftp -u "${SFTP_USER},${SFTP_PASS}" "sftp://${SFTP_HOST}:22" <<SCRIPT
           set cmd:fail-exit yes
           set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 22"
           pwd
@@ -70,5 +72,6 @@ jobs:
           mirror -R -v --exclude-glob .git* --exclude-glob .DS_Store
           quit
           SCRIPT
+          set -x
 
           echo "Deploy complete"

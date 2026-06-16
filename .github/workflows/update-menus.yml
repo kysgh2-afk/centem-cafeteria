@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -33,9 +35,10 @@ jobs:
         run: npm run build
 
       - name: List build output
-        run: find dist -type f
+        run: find dist -type f | sort
 
       - name: Commit updated menu data
+        continue-on-error: true
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -44,17 +47,36 @@ jobs:
             echo "No menu data changes to commit"
           else
             git commit -m "chore: update weekly cafeteria menus"
-            git push
+            git push origin HEAD:main
           fi
 
-      - name: Deploy to Cloudways
-        uses: appleboy/scp-action@v1.0.0
-        with:
-          host: ${{ secrets.CW_SFTP_HOST }}
-          username: ${{ secrets.CW_SFTP_USER }}
-          password: ${{ secrets.CW_SFTP_PASSWORD }}
-          port: 22
-          source: dist/*
-          target: ${{ secrets.CW_SFTP_REMOTE_DIR }}
-          strip_components: 1
-          overwrite: true
+      - name: Deploy to Cloudways (SFTP)
+        env:
+          SFTP_HOST: ${{ secrets.CW_SFTP_HOST }}
+          SFTP_USER: ${{ secrets.CW_SFTP_USER }}
+          SFTP_PASS: ${{ secrets.CW_SFTP_PASSWORD }}
+          SFTP_DIR: ${{ secrets.CW_SFTP_REMOTE_DIR }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$SFTP_HOST" ] || [ -z "$SFTP_USER" ] || [ -z "$SFTP_PASS" ] || [ -z "$SFTP_DIR" ]; then
+            echo "ERROR: SFTP Secrets 4개(CW_SFTP_HOST, CW_SFTP_USER, CW_SFTP_PASSWORD, CW_SFTP_REMOTE_DIR)를 모두 등록했는지 확인하세요."
+            exit 1
+          fi
+
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+
+          REMOTE_DIR="${SFTP_DIR%/}"
+
+          echo "Deploying dist/ -> ${REMOTE_DIR}/ on ${SFTP_HOST}"
+
+          lftp -u "${SFTP_USER},${SFTP_PASS}" "sftp://${SFTP_HOST}:22" <<EOF
+          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
+          lcd dist
+          cd ${REMOTE_DIR}
+          mirror -R --delete --verbose --exclude-glob .git* --exclude-glob .DS_Store
+          bye
+          EOF
+
+          echo "Deploy complete"

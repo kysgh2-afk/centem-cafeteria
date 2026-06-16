@@ -6,7 +6,7 @@ export const siteMeta = {
   keywords:
     '센텀시티 구내식당, 센텀시티 식단표, 파티박스, 다와푸드 센텀, 만나한식뷔페, 영상산업센터 구내식당, STX F&C, 해운대 점심, 센텀 점심',
   locale: 'ko_KR',
-  contactEmail: 'contact@example.com',
+  contactEmail: 'kysgh2@naver.com',
 } as const
 
 export const aboutContent = {

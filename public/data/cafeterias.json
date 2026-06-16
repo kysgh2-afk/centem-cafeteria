@@ -1,0 +1,74 @@
+{
+  "cafeterias": [
+    {
+      "id": "stx",
+      "name": "영상산업센터 구내식당",
+      "shortName": "STX F&C",
+      "building": "부산 영상산업센터",
+      "address": "부산 해운대구 수영로 480",
+      "landmark": "영화의 전당 옆",
+      "floor": "4층",
+      "prices": { "lunch": 6500, "dinner": 5000 },
+      "hours": {
+        "lunch": "11:30 – 13:30",
+        "dinner": "17:00 – 19:00",
+        "breakTime": "13:30 – 17:00 휴식"
+      },
+      "notes": "식당 입구 자동판매기에서 식권을 구입하세요",
+      "perks": ["샐러드바", "라면", "계란", "음료", "식빵"],
+      "mapQuery": "영상산업센터",
+      "color": "#2563eb"
+    },
+    {
+      "id": "partibox",
+      "name": "파티박스",
+      "shortName": "파티박스",
+      "building": "동서대학교 센텀캠퍼스",
+      "address": "부산 해운대구 센텀동로 55",
+      "landmark": "동서대 센텀캠퍼스",
+      "floor": "지하 1층",
+      "prices": { "lunch": 7000 },
+      "hours": {
+        "lunch": "11:10 – 14:00"
+      },
+      "notes": "외부인도 이용 가능, 토요일 영업",
+      "perks": ["반찬 20여 가지", "1인 1계란프라이", "어묵", "국"],
+      "mapQuery": "동서대학교 센텀캠퍼스 파티박스",
+      "color": "#ea580c"
+    },
+    {
+      "id": "dawa",
+      "name": "다와푸드 센텀점",
+      "shortName": "다와푸드",
+      "building": "에이스하이테크21",
+      "address": "부산 해운대구 센텀중앙로 48",
+      "landmark": "KNN타워 맞은편",
+      "floor": "지하 1층",
+      "prices": { "lunch": 6500 },
+      "hours": {
+        "lunch": "11:00 – 14:20"
+      },
+      "perks": ["한식 뷔페", "국·찌개", "반찬"],
+      "mapQuery": "다와푸드 센텀점",
+      "color": "#16a34a"
+    },
+    {
+      "id": "manna",
+      "name": "만나한식뷔페",
+      "shortName": "만나",
+      "building": "벽산이센텀클래스원",
+      "address": "부산 해운대구 센텀중앙로 78",
+      "landmark": "벽산e센텀클래스원",
+      "floor": "지하 1층",
+      "prices": { "lunch": 7000, "dinner": 7000 },
+      "hours": {
+        "lunch": "11:00 – 14:00",
+        "dinner": "17:00 – 19:00",
+        "breakTime": "14:00 – 17:00 휴식"
+      },
+      "perks": ["한식 뷔페", "저녁 운영"],
+      "mapQuery": "벽산e센텀클래스원",
+      "color": "#9333ea"
+    }
+  ]
+}

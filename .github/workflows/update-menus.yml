@@ -1,0 +1,52 @@
+name: Weekly menu update
+
+on:
+  # 매주 월요일 10:00 (KST) = UTC 01:00
+  schedule:
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch latest weekly menus
+        run: npm run update-menus
+
+      - name: Build site
+        run: npm run build
+
+      - name: Commit updated menu data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/weeks/
+          git diff --staged --quiet || git commit -m "chore: update weekly cafeteria menus"
+          git push
+
+      - name: Deploy to Cloudways (SFTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ${{ secrets.CW_SFTP_HOST }}
+          username: ${{ secrets.CW_SFTP_USER }}
+          password: ${{ secrets.CW_SFTP_PASSWORD }}
+          protocol: sftp
+          port: 22
+          local-dir: ./dist/
+          server-dir: ${{ secrets.CW_SFTP_REMOTE_DIR }}

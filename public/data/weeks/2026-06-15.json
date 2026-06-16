@@ -1,0 +1,43 @@
+{
+  "weekStart": "2026-06-15",
+  "weekEnd": "2026-06-19",
+  "title": "6월 15일 – 6월 19일",
+  "sourceUrl": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
+  "updatedAt": "2026-06-16",
+  "menus": {
+    "stx": {
+      "mon": { "lunch": { "main": "제육볶음", "sides": ["된장찌개", "시금치나물", "깍두기"] }, "dinner": { "main": "닭갈비", "sides": ["미역국", "콩나물무침"] } },
+      "tue": { "lunch": { "main": "돈까스", "sides": ["우동국물", "양배추샐러드", "단무지"] }, "dinner": { "main": "불고기", "sides": ["계란찜", "배추김치"] } },
+      "wed": { "lunch": { "main": "김치찌개", "sides": ["제육볶음", "멸치볶음", "깍두기"] }, "dinner": { "main": "오징어볶음", "sides": ["미소국", "숙주나물"] } },
+      "thu": { "lunch": { "main": "치킨가라아게", "sides": ["크림스프", "양배추샐러드", "피클"] }, "dinner": { "main": "제육김치볶음", "sides": ["된장국", "콩나물"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["미역국", "동그랑땡", "나물 3종"], "special": "금요 특선" }, "dinner": { "main": "순두부찌개", "sides": ["제육볶음", "김치"] } }
+    },
+    "partibox": {
+      "mon": { "lunch": { "main": "소불고기", "sides": ["콩나물국", "멸치볶음", "나물 4종", "김치"] } },
+      "tue": { "lunch": { "main": "닭갈비", "sides": ["된장찌개", "계란말이", "나물 4종"] } },
+      "wed": { "lunch": { "main": "돼지김치찌개", "sides": ["고등어구이", "콩나물무침", "나물 4종"] } },
+      "thu": { "lunch": { "main": "치킨까스", "sides": ["우동국물", "야채튀김", "샐러드"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["떡갈비", "미역국", "나물 5종"], "special": "금요 특선" } }
+    },
+    "dawa": {
+      "mon": { "lunch": { "main": "제육볶음", "sides": ["순두부찌개", "멸치볶음", "깍두기"] } },
+      "tue": { "lunch": { "main": "돈까스", "sides": ["된장국", "양배추샐러드", "단무지"] } },
+      "wed": { "lunch": { "main": "김치찌개", "sides": ["불고기", "콩나물무침", "배추김치"] } },
+      "thu": { "lunch": { "main": "닭볶음탕", "sides": ["미역국", "시금치나물", "깍두기"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["어묵국", "동그랑땡", "나물 3종"] } }
+    },
+    "manna": {
+      "mon": { "lunch": { "main": "불고기", "sides": ["된장찌개", "나물 5종", "김치"] }, "dinner": { "main": "제육볶음", "sides": ["미역국", "콩나물"] } },
+      "tue": { "lunch": { "main": "돈까스", "sides": ["우동국물", "샐러드", "단무지"] }, "dinner": { "main": "닭갈비", "sides": ["계란찜", "배추김치"] } },
+      "wed": { "lunch": { "main": "김치찌개", "sides": ["제육볶음", "멸치볶음", "깍두기"] }, "dinner": { "main": "오징어볶음", "sides": ["된장국", "숙주나물"] } },
+      "thu": { "lunch": { "main": "치킨가라아게", "sides": ["크림스프", "양배추", "피클"] }, "dinner": { "main": "순두부찌개", "sides": ["제육볶음", "김치"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["떡갈비", "미역국", "나물 4종"], "special": "금요 특선" }, "dinner": { "main": "부대찌개", "sides": ["계란후라이", "깍두기"] } }
+    }
+  },
+  "menuImages": {
+    "stx": "https://blog.kakaocdn.net/dna/bo6ZDs/dJMcahLxxmO/AAAAAAAAAAAAAAAAAAAAAEwkvYqgB4JB96fVLrbhFEz6xqjvlX05hM1gAOioUW2j/tfile.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=qV6ueoTCU88zTag%2FD4XA%2FYorI9Q%3D",
+    "partibox": "https://blog.kakaocdn.net/dna/bDS9xt/dJMcahLxxmP/AAAAAAAAAAAAAAAAAAAAAFDXN5SeDpGv3KmMiMJuU1IVLdaHmSomeVqlCE4B88yd/tfile.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=IIXk9qlAPriH23U3DP57Y1R4xLw%3D",
+    "dawa": "https://blog.kakaocdn.net/dna/bFB43n/dJMcahkwQtD/AAAAAAAAAAAAAAAAAAAAAHGMO0psbBKPagee-aQZh32vsKkICBzVbWr4X0WRpTHv/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=3LqavVh9ZwzMroBdbZzx0oCiUSU%3D",
+    "manna": "https://blog.kakaocdn.net/dna/FdHx4/dJMcac4vZ2C/AAAAAAAAAAAAAAAAAAAAAJ1QlsfkmofT7JnEd3hKgNh3Qm3ojPitmTChNH9cVy_v/tfile.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=aUkRiUVVR%2BiMxJUP0xiVmD%2F9VGg%3D"
+  }
+}

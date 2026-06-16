@@ -1,0 +1,8 @@
+# Cloudways / Apache: index.html을 기본 페이지로
+DirectoryIndex index.html index.php
+
+# 기본 PHP 환영 페이지가 남아 있을 때 index.html로 이동
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^index\.php$ /index.html [L,R=301]
+</IfModule>

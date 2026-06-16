@@ -1,0 +1,37 @@
+{
+  "weekStart": "2026-06-08",
+  "weekEnd": "2026-06-12",
+  "title": "6월 8일 – 6월 12일",
+  "sourceUrl": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-8%EC%9D%BC-6%EC%9B%94-12%EC%9D%BC-%EC%A3%BC%EA%B0%84",
+  "updatedAt": "2026-06-08",
+  "menus": {
+    "stx": {
+      "mon": { "lunch": { "main": "불고기", "sides": ["된장찌개", "콩나물무침"] }, "dinner": { "main": "제육볶음", "sides": ["미역국"] } },
+      "tue": { "lunch": { "main": "치킨까스", "sides": ["우동국물", "샐러드"] }, "dinner": { "main": "닭갈비", "sides": ["계란찜"] } },
+      "wed": { "lunch": { "main": "돼지김치찌개", "sides": ["제육볶음", "깍두기"] }, "dinner": { "main": "불고기", "sides": ["된장국"] } },
+      "thu": { "lunch": { "main": "닭볶음탕", "sides": ["미역국", "나물"] }, "dinner": { "main": "오징어볶음", "sides": ["콩나물"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["떡갈비", "미역국"] }, "dinner": { "main": "순두부찌개", "sides": ["제육볶음"] } }
+    },
+    "partibox": {
+      "mon": { "lunch": { "main": "제육볶음", "sides": ["된장찌개", "나물 4종"] } },
+      "tue": { "lunch": { "main": "돈까스", "sides": ["우동국물", "샐러드"] } },
+      "wed": { "lunch": { "main": "김치찌개", "sides": ["불고기", "나물 4종"] } },
+      "thu": { "lunch": { "main": "닭갈비", "sides": ["미역국", "나물 4종"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["동그랑땡", "미역국"] } }
+    },
+    "dawa": {
+      "mon": { "lunch": { "main": "불고기", "sides": ["된장찌개", "깍두기"] } },
+      "tue": { "lunch": { "main": "치킨까스", "sides": ["크림스프", "샐러드"] } },
+      "wed": { "lunch": { "main": "김치찌개", "sides": ["제육볶음", "배추김치"] } },
+      "thu": { "lunch": { "main": "돈까스", "sides": ["된장국", "단무지"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["어묵국", "나물 3종"] } }
+    },
+    "manna": {
+      "mon": { "lunch": { "main": "제육볶음", "sides": ["순두부찌개", "나물 5종"] }, "dinner": { "main": "불고기", "sides": ["미역국"] } },
+      "tue": { "lunch": { "main": "돈까스", "sides": ["우동국물", "샐러드"] }, "dinner": { "main": "닭갈비", "sides": ["계란찜"] } },
+      "wed": { "lunch": { "main": "김치찌개", "sides": ["제육볶음", "깍두기"] }, "dinner": { "main": "오징어볶음", "sides": ["된장국"] } },
+      "thu": { "lunch": { "main": "닭볶음탕", "sides": ["미역국", "나물"] }, "dinner": { "main": "순두부찌개", "sides": ["제육볶음"] } },
+      "fri": { "lunch": { "main": "비빔밥", "sides": ["떡갈비", "미역국"] }, "dinner": { "main": "부대찌개", "sides": ["계란후라이"] } }
+    }
+  }
+}

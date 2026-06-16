@@ -1,0 +1,118 @@
+import { fetchAppData } from './services/menuService'
+import {
+  renderAboutSection,
+  renderFeaturesSection,
+  renderFooter,
+  renderHeader,
+  updateJsonLd,
+} from './render/layout'
+import { renderMenuCards, renderWeekNav } from './render/menuSection'
+import { renderRestaurantInfoCards } from './render/restaurantInfo'
+import type { AppData } from './types'
+
+interface AppState {
+  data: AppData | null
+  selectedWeekId: string
+  loading: boolean
+  error: string | null
+}
+
+export function createApp(root: HTMLElement) {
+  const state: AppState = {
+    data: null,
+    selectedWeekId: '',
+    loading: true,
+    error: null,
+  }
+
+  function render() {
+    updateJsonLd(state.data)
+
+    root.innerHTML = `
+      <div class="min-h-screen">
+        ${renderHeader(state.data)}
+
+        <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+          ${
+            state.loading
+              ? `
+            <div class="flex flex-col items-center justify-center py-24 text-slate-500" role="status">
+              <div class="h-10 w-10 rounded-full border-4 border-emerald-200 border-t-emerald-600 animate-spin mb-4"></div>
+              <p>식단표를 불러오는 중...</p>
+            </div>
+          `
+              : state.error
+                ? `<div class="rounded-xl bg-red-50 border border-red-200 p-6 text-red-700" role="alert">${state.error}</div>`
+                : `
+            <section id="menus" class="scroll-mt-8" aria-labelledby="menus-heading">
+              <h2 id="menus-heading" class="text-2xl font-bold text-slate-900 mb-2">이번 주 식단표</h2>
+              <p class="text-sm text-slate-500 mb-6">센텀시티 구내식당 4곳의 주간 식단표입니다. 식당별로 이번 주 메뉴를 확인하세요.</p>
+              ${renderWeekNav(state.data!, state.selectedWeekId)}
+              ${renderMenuCards(state.data!)}
+            </section>
+
+            <section id="restaurants" class="scroll-mt-8 mt-12" aria-labelledby="restaurants-heading">
+              <h2 id="restaurants-heading" class="text-2xl font-bold text-slate-900 mb-2">식당 정보</h2>
+              <p class="text-sm text-slate-500 mb-6">위치, 가격, 영업 시간을 비교해 보세요.</p>
+              ${renderRestaurantInfoCards(state.data!.cafeterias)}
+            </section>
+
+            ${renderAboutSection()}
+            ${renderFeaturesSection()}
+          `
+          }
+        </main>
+
+        ${renderFooter()}
+      </div>
+    `
+
+    if (!state.loading && !state.error) bindEvents()
+  }
+
+  function bindEvents() {
+    document.querySelectorAll<HTMLButtonElement>('[data-week-nav]').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        if (!state.data || btn.disabled) return
+
+        const { weeks } = state.data.weekIndex
+        const currentIndex = weeks.findIndex((w) => w.id === state.selectedWeekId)
+        const direction = btn.dataset.weekNav
+        const newIndex = direction === 'prev' ? currentIndex + 1 : currentIndex - 1
+
+        if (newIndex < 0 || newIndex >= weeks.length) return
+
+        state.loading = true
+        render()
+
+        try {
+          const weekId = weeks[newIndex].id
+          state.data = await fetchAppData(weekId)
+          state.selectedWeekId = weekId
+        } catch {
+          state.error = '해당 주간 식단표를 불러오지 못했습니다.'
+        } finally {
+          state.loading = false
+          render()
+        }
+      })
+    })
+  }
+
+  async function init() {
+    render()
+
+    try {
+      const data = await fetchAppData()
+      state.data = data
+      state.selectedWeekId = data.weekIndex.currentWeekId
+    } catch {
+      state.error = '식단표를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.'
+    } finally {
+      state.loading = false
+      render()
+    }
+  }
+
+  init()
+}

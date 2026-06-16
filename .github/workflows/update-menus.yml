@@ -37,39 +37,60 @@ jobs:
         run: find dist -type f | sort
 
       - name: Deploy to Cloudways (SFTP)
+        timeout-minutes: 15
         env:
           SFTP_HOST: ${{ secrets.CW_SFTP_HOST }}
           SFTP_USER: ${{ secrets.CW_SFTP_USER }}
           SFTP_PASS: ${{ secrets.CW_SFTP_PASSWORD }}
           SFTP_DIR: ${{ secrets.CW_SFTP_REMOTE_DIR }}
         run: |
-          set -euxo pipefail
+          set -euo pipefail
 
           if [ -z "${SFTP_HOST:-}" ] || [ -z "${SFTP_USER:-}" ] || [ -z "${SFTP_PASS:-}" ]; then
             echo "::error::Secrets 확인: CW_SFTP_HOST, CW_SFTP_USER, CW_SFTP_PASSWORD 가 필요합니다."
             exit 1
           fi
 
+          # Secret에 sftp://, :22, 경로가 포함돼도 동작하도록 정규화
+          SFTP_HOST="${SFTP_HOST#sftp://}"
+          SFTP_HOST="${SFTP_HOST#ftp://}"
+          SFTP_HOST="${SFTP_HOST%%/*}"
+          SFTP_PORT="${SFTP_HOST##*:}"
+          if [[ "${SFTP_PORT}" == "${SFTP_HOST}" ]]; then
+            SFTP_PORT=22
+          else
+            SFTP_HOST="${SFTP_HOST%:*}"
+          fi
+
           REMOTE_DIR="${SFTP_DIR:-public_html}"
           REMOTE_DIR="${REMOTE_DIR#/}"
           REMOTE_DIR="${REMOTE_DIR%/}"
 
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq lftp
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq lftp
 
-          echo "Connecting to ${SFTP_HOST} as ${SFTP_USER} ..."
+          echo "Connecting to ${SFTP_HOST}:${SFTP_PORT} as ${SFTP_USER} ..."
           echo "Remote folder: ${REMOTE_DIR}"
 
-          # LFTP_PASSWORD does not work for SFTP; pass credentials via -u user,pass
+          echo "Testing TCP port ${SFTP_PORT} ..."
+          timeout 20 bash -c "until echo >/dev/tcp/${SFTP_HOST}/${SFTP_PORT}; do sleep 1; done"
+          echo "Port ${SFTP_PORT} is reachable."
+
           set +x
-          lftp -u "${SFTP_USER},${SFTP_PASS}" "sftp://${SFTP_HOST}:22" <<SCRIPT
+          timeout 600 lftp -u "${SFTP_USER},${SFTP_PASS}" "sftp://${SFTP_HOST}:${SFTP_PORT}" <<SCRIPT
           set cmd:fail-exit yes
-          set sftp:connect-program "ssh -a -x -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p 22"
+          set net:timeout 30
+          set net:max-retries 2
+          set cmd:verbose true
+          set sftp:connect-program "ssh -a -x -o BatchMode=no -o ConnectTimeout=30 -o ServerAliveInterval=15 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p ${SFTP_PORT}"
+          !echo "SFTP login OK"
           pwd
           cd ${REMOTE_DIR}
+          !echo "Remote target: ${REMOTE_DIR}"
           pwd
           lcd dist
-          mirror -R -v --exclude-glob .git* --exclude-glob .DS_Store
+          !echo "Uploading dist/ ..."
+          mirror -R --parallel=3 --only-newer --exclude-glob .git* --exclude-glob .DS_Store
+          !echo "Upload finished"
           quit
           SCRIPT
           set -x

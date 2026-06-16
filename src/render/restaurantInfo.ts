@@ -1,5 +1,22 @@
 import type { Cafeteria } from '../types'
 import { formatPrice, mapSearchUrl } from '../services/menuService'
+import { getOperatingStatus, operatingStatusBadgeClass } from '../utils/operatingStatus'
+
+function renderStatusBadge(cafeteria: Cafeteria): string {
+  const status = getOperatingStatus(cafeteria)
+  const badgeClass = operatingStatusBadgeClass(status.kind)
+  const dotClass = status.kind === 'open' ? 'bg-green-500 animate-pulse' : 'bg-current opacity-40'
+
+  return `
+    <div class="mb-3">
+      <span class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold ${badgeClass}">
+        <span class="h-1.5 w-1.5 rounded-full ${dotClass}" aria-hidden="true"></span>
+        ${status.label}
+      </span>
+      ${status.detail ? `<p class="text-xs text-slate-500 mt-1">${status.detail}</p>` : ''}
+    </div>
+  `
+}
 
 export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
   const cheapestLunch = Math.min(...cafeterias.map((c) => c.prices.lunch))
@@ -23,6 +40,7 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
             </div>
 
             <p class="text-sm text-slate-600 leading-relaxed mb-3">${c.landmark} · ${c.floor}</p>
+            ${renderStatusBadge(c)}
             <p class="text-sm text-slate-600 mb-1">${c.address}</p>
 
             <div class="space-y-1.5 mb-3">

@@ -1,7 +1,7 @@
-import { privacyContent, subPageNavLinks, siteMeta } from '../content/siteContent'
-import { renderFooter, renderPrivacySection } from '../render/layout'
+import { aboutContent, siteMeta, subPageNavLinks } from '../content/siteContent'
+import { renderAboutSection, renderFooter } from '../render/layout'
 
-export function renderPrivacyHeader(): string {
+export function renderAboutHeader(): string {
   return `
     <header class="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
@@ -19,19 +19,19 @@ export function renderPrivacyHeader(): string {
         <p class="text-emerald-100 text-sm font-medium mb-2">
           <a href="/" class="hover:underline">${siteMeta.name}</a>
         </p>
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">${privacyContent.title}</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">${aboutContent.title}</h1>
       </div>
     </header>
   `
 }
 
-export function createPrivacyApp(root: HTMLElement): void {
+export function createAboutApp(root: HTMLElement): void {
   root.innerHTML = `
     <div class="min-h-screen">
-      ${renderPrivacyHeader()}
+      ${renderAboutHeader()}
 
       <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-        ${renderPrivacySection()}
+        ${renderAboutSection()}
       </main>
 
       ${renderFooter(subPageNavLinks)}

@@ -1,5 +1,6 @@
 import {
   aboutContent,
+  faqContent,
   featuresContent,
   mainNavLinks,
   privacyContent,
@@ -44,10 +45,35 @@ export function renderHeader(data: AppData | null, navLinks: readonly NavLink[] 
 
 export function renderAboutSection(): string {
   return `
-    <section id="${aboutContent.id}" class="scroll-mt-8" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="text-2xl font-bold text-slate-900 mb-4">${aboutContent.title}</h2>
+    <article aria-labelledby="about-heading">
       <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed">
         ${aboutContent.paragraphs.map((p) => `<p>${p}</p>`).join('')}
+      </div>
+    </article>
+  `
+}
+
+export function renderFaqSection(): string {
+  return `
+    <section id="${faqContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="text-2xl font-bold text-slate-900 mb-2">${faqContent.title}</h2>
+      <p class="text-sm text-slate-500 mb-6">센텀시티 구내식당 이용 전 자주 묻는 질문입니다.</p>
+      <div class="space-y-3">
+        ${faqContent.items
+          .map(
+            (item) => `
+          <details class="group rounded-xl bg-white border border-slate-200 shadow-sm">
+            <summary class="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-3">
+              <span>${item.question}</span>
+              <span class="text-slate-400 group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
+            </summary>
+            <div class="px-5 pb-4 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+              ${item.answer}
+            </div>
+          </details>
+        `,
+          )
+          .join('')}
       </div>
     </section>
   `

@@ -1,7 +1,7 @@
 import { fetchAppData } from './services/menuService'
 import {
-  renderAboutSection,
   renderFeaturesSection,
+  renderFaqSection,
   renderFooter,
   renderHeader,
   updateJsonLd,
@@ -53,11 +53,11 @@ export function createApp(root: HTMLElement) {
 
             <section id="restaurants" class="scroll-mt-8 mt-12" aria-labelledby="restaurants-heading">
               <h2 id="restaurants-heading" class="text-2xl font-bold text-slate-900 mb-2">식당 정보</h2>
-              <p class="text-sm text-slate-500 mb-6">위치, 가격, 영업 시간을 비교해 보세요.</p>
+              <p class="text-sm text-slate-500 mb-6">위치, 가격, 영업 시간을 비교해 보세요. 영업 상태는 한국 시간 기준이며 현장과 다를 수 있습니다.</p>
               ${renderRestaurantInfoCards(state.data!.cafeterias)}
             </section>
 
-            ${renderAboutSection()}
+            ${renderFaqSection()}
             ${renderFeaturesSection()}
           `
           }

@@ -19,6 +19,43 @@ export const aboutContent = {
   ],
 } as const
 
+export const faqContent = {
+  title: '자주하는 질문',
+  id: 'faq',
+  items: [
+    {
+      question: '외부인도 이용할 수 있나요?',
+      answer:
+        '파티박스(동서대 센텀캠퍼스)는 외부인도 이용할 수 있다는 안내가 있습니다. 나머지 구내식당도 건물 출입 규정에 따라 다를 수 있으니, 방문 전 해당 건물·식당 안내를 확인하세요.',
+    },
+    {
+      question: '식권은 어디서 구매하나요?',
+      answer:
+        '영상산업센터(STX F&C)는 식당 입구 자동판매기에서 식권을 구입합니다. 다른 식당은 현장 카운터·키오스크 결제 방식일 수 있으니 방문 시 안내를 확인하세요.',
+    },
+    {
+      question: '저녁도 운영하는 곳은 어디인가요?',
+      answer:
+        '영상산업센터(STX F&C)와 만나한식뷔페는 저녁 시간대를 운영합니다. 파티박스·다와푸드 센텀점은 점심 위주로 운영됩니다. 정확한 시간은 식당 정보 카드의 영업 시간을 참고하세요.',
+    },
+    {
+      question: '점심 가격이 가장 저렴한 곳은?',
+      answer:
+        '현재 기준으로 STX F&C와 다와푸드 센텀점 점심이 6,500원, 파티박스·만나한식뷔페는 7,000원입니다. 가격은 변동될 수 있으니 방문 전 현장 안내를 확인하세요.',
+    },
+    {
+      question: '식단표는 언제 업데이트되나요?',
+      answer:
+        '매주 월요일 오전(한국 시간)에 새 주간 식단표를 반영합니다. 이번 주 식단표 섹션에서 최신 주차를 확인할 수 있습니다.',
+    },
+    {
+      question: '이 사이트는 공식 사이트인가요?',
+      answer:
+        '아닙니다. 센텀시티 구내식당 식단표는 직장인·방문객을 위한 비공식 정보 안내 사이트입니다. 식단·가격·영업 시간은 현장 상황에 따라 달라질 수 있습니다.',
+    },
+  ],
+} as const
+
 export const featuresContent = {
   title: '주요 기능',
   id: 'features',
@@ -87,19 +124,22 @@ export const privacyContent = {
 } as const
 
 export const privacyPagePath = '/privacy.html'
+export const aboutPagePath = '/about.html'
 
 export const mainNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
-  { label: '사이트 소개', href: `#${aboutContent.id}` },
+  { label: '자주하는 질문', href: `#${faqContent.id}` },
   { label: '주요 기능', href: `#${featuresContent.id}` },
+  { label: '사이트 소개', href: aboutPagePath },
   { label: '개인정보처리방침', href: privacyPagePath },
 ] as const
 
-export const privacyNavLinks = [
+export const subPageNavLinks = [
   { label: '홈', href: '/' },
   { label: '이번 주 식단', href: '/#menus' },
   { label: '식당 정보', href: '/#restaurants' },
-  { label: '사이트 소개', href: `/#${aboutContent.id}` },
+  { label: '자주하는 질문', href: `/#${faqContent.id}` },
   { label: '주요 기능', href: `/#${featuresContent.id}` },
+  { label: '사이트 소개', href: aboutPagePath },
 ] as const

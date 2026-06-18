@@ -22,7 +22,9 @@ const NAVER_BLOG = {
   'dawa-qubi': {
     rssUrl: 'https://rss.blog.naver.com/dawafood-qubi.xml',
     blogId: 'dawafood-qubi',
+    logNo: '221629132291',
     titleKeyword: '이번주 메뉴',
+    sourceUrl: 'https://blog.naver.com/dawafood-qubi/221629132291',
   },
 }
 
@@ -113,6 +115,33 @@ function extractPortlockroyImages(html) {
   return images
 }
 
+function stripTags(html) {
+  return decodeHtml(html.replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '').trim())
+}
+
+function extractNaverMenuBoard(html) {
+  const tableMatch = html.match(/<table class="se-table[^"]*"[\s\S]*?<\/table>/)
+  if (!tableMatch) return null
+
+  const rows = [...tableMatch[0].matchAll(/<tr class="se-tr">([\s\S]*?)<\/tr>/g)]
+    .map((match) =>
+      [...match[1].matchAll(/<td class="se-cell"[\s\S]*?(<p class="se-text-paragraph[\s\S]*?<\/p>)/g)]
+        .map((cell) => stripTags(cell[1])),
+    )
+    .filter((row) => row.some(Boolean))
+
+  if (!rows.length) return null
+
+  const body = rows
+    .map(
+      (row) =>
+        `<tr>${row.map((cell) => `<td>${cell.replace(/\n/g, '<br>')}</td>`).join('')}</tr>`,
+    )
+    .join('')
+
+  return `<table class="menu-board-table"><tbody>${body}</tbody></table>`
+}
+
 function extractNaverImages(html) {
   const urls = [
     ...html.matchAll(/data-lazy-src="([^"]+)"/gi),
@@ -171,26 +200,26 @@ async function fetchPortlockroyWeek() {
 }
 
 async function fetchNaverBlogMenu(id, config) {
-  const rssXml = await fetchText(config.rssUrl)
-  const items = parseRssItems(rssXml)
-  const menuPost = items.find((item) => item.title.includes(config.titleKeyword))
+  const logNo = config.logNo ?? (await fetchText(config.rssUrl).then((rssXml) => {
+    const items = parseRssItems(rssXml)
+    const menuPost = items.find((item) => item.title.includes(config.titleKeyword))
+    return menuPost?.link.match(/\/(\d+)(?:\?|$)/)?.[1]
+  }))
 
-  if (!menuPost) {
+  if (!logNo) {
     console.warn(`[${id}] 네이버 블로그 메뉴 게시글 없음`)
-    return { sourceUrl: `https://blog.naver.com/${config.blogId}` }
+    return { sourceUrl: config.sourceUrl ?? `https://blog.naver.com/${config.blogId}` }
   }
 
-  const logNo = menuPost.link.match(/\/(\d+)(?:\?|$)/)?.[1]
-  const postUrl = logNo
-    ? `https://blog.naver.com/PostView.naver?blogId=${config.blogId}&logNo=${logNo}&redirect=Dlog&widgetTypeCall=true&directAccess=true`
-    : menuPost.link
-
+  const postUrl = `https://blog.naver.com/PostView.naver?blogId=${config.blogId}&logNo=${logNo}&redirect=Dlog&widgetTypeCall=true&directAccess=true`
   const html = await fetchText(postUrl)
+  const menuBoardHtml = extractNaverMenuBoard(html)
   const imageUrl = extractNaverImages(html)
 
   return {
     imageUrl,
-    sourceUrl: menuPost.link,
+    menuBoardHtml,
+    sourceUrl: config.sourceUrl ?? `https://blog.naver.com/${config.blogId}/${logNo}`,
   }
 }
 
@@ -224,6 +253,7 @@ async function fetchAllMenus() {
   const week = await fetchPortlockroyWeek()
   const menuImages = { ...week.menuImages }
   const menuSourceUrls = {}
+  const menuBoardHtml = {}
 
   for (const id of PORTLOCKROY_IDS) {
     menuSourceUrls[id] = week.sourceUrl
@@ -233,8 +263,11 @@ async function fetchAllMenus() {
     try {
       const result = await fetchNaverBlogMenu(id, config)
       if (result.imageUrl) menuImages[id] = result.imageUrl
+      if (result.menuBoardHtml) menuBoardHtml[id] = result.menuBoardHtml
       menuSourceUrls[id] = result.sourceUrl
-      console.log(`[${id}] ${result.imageUrl ? '이미지 추출' : '출처만 저장 (표 형식 메뉴)'}`)
+      console.log(
+        `[${id}] ${result.menuBoardHtml ? '메뉴판 표 추출' : result.imageUrl ? '이미지 추출' : '출처만 저장'}`,
+      )
     } catch (error) {
       console.warn(`[${id}] 수집 실패: ${error.message}`)
       menuSourceUrls[id] = `https://blog.naver.com/${config.blogId}`
@@ -257,6 +290,7 @@ async function fetchAllMenus() {
     ...week,
     menuImages,
     menuSourceUrls,
+    menuBoardHtml,
     updatedAt: new Date().toISOString().slice(0, 10),
   }
 }
@@ -313,6 +347,7 @@ async function updateWeekFile(weekInfo) {
   weekData.updatedAt = weekInfo.updatedAt
   weekData.menuImages = { ...weekData.menuImages, ...weekInfo.menuImages }
   weekData.menuSourceUrls = { ...weekData.menuSourceUrls, ...weekInfo.menuSourceUrls }
+  weekData.menuBoardHtml = { ...weekData.menuBoardHtml, ...weekInfo.menuBoardHtml }
 
   delete weekData.ocrRaw
   delete weekData.parsedFromOcr

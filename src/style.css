@@ -37,3 +37,32 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.menu-board {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.menu-board-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.menu-board-table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 0.625rem;
+  text-align: center;
+  vertical-align: middle;
+  color: #334155;
+}
+
+.menu-board-table tr:first-child td {
+  background: #f1f5f9;
+  font-weight: 700;
+  color: #0f172a;
+}

@@ -302,9 +302,12 @@
     "partibox": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
     "dawa": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
     "manna": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
-    "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291?fromRss=true&trackingCode=rss",
+    "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291",
     "schmaus": "http://pf.kakao.com/_CiVis/113692268",
     "uncle-bapcha": "http://pf.kakao.com/_FxbaQC/113691704",
     "jeongdam": "http://pf.kakao.com/_vKxgdn/113692394"
+  },
+  "menuBoardHtml": {
+    "dawa-qubi": "<table class=\"menu-board-table\"><tbody><tr><td>6월 15일 (월)</td><td>6월 16일 (화)</td><td>6월 17일 (수)</td><td>6월 18일 (목)</td><td>6월 19일 (금)</td></tr><tr><td>흑미밥 / 백미밥</td><td>흑미밥 / 백미밥</td><td>백미밥</td><td>흑미밥 / 백미밥</td><td>흑미밥 / 백미밥</td></tr><tr><td>얼큰북엇국</td><td>시락국</td><td>미소된장국</td><td>참치김치찌개</td><td>물냉면</td></tr><tr><td>콩나물돈불고기</td><td>닭볶음탕</td><td>치킨까스 / 칠리소스</td><td>팽이버섯돈불고기</td><td>양념치킨</td></tr><tr><td>모듬튀김 (김말이/</td><td>생선까스 / 타르타르소스</td><td>카레라이스</td><td>데리타코야끼</td><td>마파두부</td></tr><tr><td>무말랭이떡볶이</td><td>열무비빔국수</td><td>해물야끼우동</td><td>토마토스파게티</td><td>흑임자실곤약무침</td></tr><tr><td>건파래자반</td><td>콩나물햄맛살겨자채</td><td>도라지채무침</td><td>간장어채조림</td><td>알감자조림</td></tr><tr><td>상추 / 쌈장</td><td>고들빼기무침</td><td>모듬콩조림</td><td>아삭고추무침</td><td>고추지</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>나물</td><td>나물</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>김치</td><td>김치</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td></tr></tbody></table>"
   }
 }

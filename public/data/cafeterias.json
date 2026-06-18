@@ -89,6 +89,7 @@
       },
       "tips": ["탄산음료(콜라·사이다·오렌지·파인애플) 제공", "7~8가지 반찬"],
       "perks": ["한식 뷔페", "탄산음료"],
+      "menuLink": "https://blog.naver.com/dawafood-qubi/221629132291",
       "mapQuery": "다와푸드 큐비e센텀",
       "color": "#0d9488"
     },
@@ -106,6 +107,7 @@
       },
       "tips": ["가격은 조금 높지만 시설이 깔끔한 편"],
       "perks": ["한식 뷔페"],
+      "menuLink": "https://pf.kakao.com/_CiVis",
       "mapQuery": "슈마우스만찬 센텀점",
       "color": "#dc2626"
     },
@@ -121,7 +123,9 @@
       "hours": {
         "lunch": "11:00 – 14:00"
       },
+      "tips": ["매일, 매주 다른 한 가지의 다이닝을 제공하는 국내유일의 펍레스토랑"],
       "perks": ["런치펍", "일일 메뉴"],
+      "menuLink": "https://pf.kakao.com/_FxbaQC",
       "mapQuery": "삼촌밥차런치펍 센텀스카이비즈",
       "color": "#d97706"
     },
@@ -137,7 +141,9 @@
       "hours": {
         "lunch": "11:00 – 14:00"
       },
-      "perks": ["한식 뷔페"],
+      "tips": ["추가요금 없이 셀프 계란후라이·라면 이용 가능"],
+      "perks": ["한식 뷔페", "셀프 계란후라이", "셀프 라면"],
+      "menuLink": "https://pf.kakao.com/_vKxgdn",
       "mapQuery": "정담식당 센텀스카이비즈",
       "color": "#7c3aed"
     }

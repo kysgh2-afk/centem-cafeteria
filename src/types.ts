@@ -35,6 +35,7 @@ export interface Cafeteria {
   parkingInfo?: string
   tips?: string[]
   perks?: string[]
+  menuLink?: string
   mapQuery: string
   color: string
 }
@@ -59,6 +60,7 @@ export interface WeekMenu {
   menus: Record<CafeteriaId, Record<DayKey, DayMenu>>
   menuImages?: Partial<Record<CafeteriaId, string>>
   menuSourceUrls?: Partial<Record<CafeteriaId, string>>
+  menuBoardHtml?: Partial<Record<CafeteriaId, string>>
 }
 
 export interface WeekIndexEntry {

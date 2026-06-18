@@ -3,7 +3,7 @@
   "weekEnd": "2026-06-19",
   "title": "6월 15일 – 6월 19일",
   "sourceUrl": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
-  "updatedAt": "2026-06-16",
+  "updatedAt": "2026-06-18",
   "menus": {
     "stx": {
       "mon": {
@@ -292,6 +292,19 @@
     "stx": "https://blog.kakaocdn.net/dna/bo6ZDs/dJMcahLxxmO/AAAAAAAAAAAAAAAAAAAAAEwkvYqgB4JB96fVLrbhFEz6xqjvlX05hM1gAOioUW2j/tfile.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=qV6ueoTCU88zTag%2FD4XA%2FYorI9Q%3D",
     "partibox": "https://blog.kakaocdn.net/dna/bDS9xt/dJMcahLxxmP/AAAAAAAAAAAAAAAAAAAAAFDXN5SeDpGv3KmMiMJuU1IVLdaHmSomeVqlCE4B88yd/tfile.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=IIXk9qlAPriH23U3DP57Y1R4xLw%3D",
     "dawa": "https://blog.kakaocdn.net/dna/bFB43n/dJMcahkwQtD/AAAAAAAAAAAAAAAAAAAAAHGMO0psbBKPagee-aQZh32vsKkICBzVbWr4X0WRpTHv/img.png?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=3LqavVh9ZwzMroBdbZzx0oCiUSU%3D",
-    "manna": "https://blog.kakaocdn.net/dna/FdHx4/dJMcac4vZ2C/AAAAAAAAAAAAAAAAAAAAAJ1QlsfkmofT7JnEd3hKgNh3Qm3ojPitmTChNH9cVy_v/tfile.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=aUkRiUVVR%2BiMxJUP0xiVmD%2F9VGg%3D"
+    "manna": "https://blog.kakaocdn.net/dna/FdHx4/dJMcac4vZ2C/AAAAAAAAAAAAAAAAAAAAAJ1QlsfkmofT7JnEd3hKgNh3Qm3ojPitmTChNH9cVy_v/tfile.jpg?credential=yqXZFxpELC7KVnFOS48ylbz2pIh7yKj8&expires=1782831599&allow_ip=&allow_referer=&signature=aUkRiUVVR%2BiMxJUP0xiVmD%2F9VGg%3D",
+    "schmaus": "http://k.kakaocdn.net/dn/bc8qr6/dJMcaallNaE/Y838kD175jkK3WLJhnhP3k/img_xl.jpg",
+    "uncle-bapcha": "http://k.kakaocdn.net/dn/4EfQA/dJMcaicIoBM/eRkaFVRMHQ5kMrvSewkIrK/img_xl.jpg",
+    "jeongdam": "http://k.kakaocdn.net/dn/cALErb/dJMcajbtkCw/WNz4GA4HnLKLktIlDPAiEk/img_xl.jpg"
+  },
+  "menuSourceUrls": {
+    "stx": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
+    "partibox": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
+    "dawa": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
+    "manna": "https://portlockroy.me/entry/%EC%84%BC%ED%85%80%EC%8B%9C%ED%8B%B0-%EA%B5%AC%EB%82%B4%EC%8B%9D%EB%8B%B9-%EC%8B%9D%EB%8B%A8%ED%91%9C-2026%EB%85%84-6%EC%9B%94-15%EC%9D%BC-6%EC%9B%94-19%EC%9D%BC-%EC%A3%BC%EA%B0%84",
+    "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291?fromRss=true&trackingCode=rss",
+    "schmaus": "http://pf.kakao.com/_CiVis/113692268",
+    "uncle-bapcha": "http://pf.kakao.com/_FxbaQC/113691704",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/113692394"
   }
 }

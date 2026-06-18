@@ -74,6 +74,72 @@
       "perks": ["한식 뷔페", "저녁 운영"],
       "mapQuery": "벽산e센텀클래스원",
       "color": "#9333ea"
+    },
+    {
+      "id": "dawa-qubi",
+      "name": "다와푸드 큐비e센텀점",
+      "shortName": "다와푸드 큐비e",
+      "building": "큐비e센텀",
+      "address": "부산 해운대구 센텀중앙로 79",
+      "landmark": "큐비e센텀",
+      "floor": "지하 1층",
+      "prices": { "lunch": 7000 },
+      "hours": {
+        "lunch": "11:00 – 14:00"
+      },
+      "tips": ["탄산음료(콜라·사이다·오렌지·파인애플) 제공", "7~8가지 반찬"],
+      "perks": ["한식 뷔페", "탄산음료"],
+      "mapQuery": "다와푸드 큐비e센텀",
+      "color": "#0d9488"
+    },
+    {
+      "id": "schmaus",
+      "name": "슈마우스만찬센텀점",
+      "shortName": "슈마우스",
+      "building": "센텀스카이비즈",
+      "address": "부산 해운대구 센텀중앙로 97",
+      "landmark": "센텀스카이비즈 구내식당",
+      "floor": "지하 1층",
+      "prices": { "lunch": 7500 },
+      "hours": {
+        "lunch": "11:00 – 14:00"
+      },
+      "tips": ["가격은 조금 높지만 시설이 깔끔한 편"],
+      "perks": ["한식 뷔페"],
+      "mapQuery": "슈마우스만찬 센텀점",
+      "color": "#dc2626"
+    },
+    {
+      "id": "uncle-bapcha",
+      "name": "삼촌밥차런치펍",
+      "shortName": "삼촌밥차",
+      "building": "센텀스카이비즈",
+      "address": "부산 해운대구 센텀중앙로 97",
+      "landmark": "센텀스카이비즈",
+      "floor": "지하 1층",
+      "prices": { "lunch": 7500 },
+      "hours": {
+        "lunch": "11:00 – 14:00"
+      },
+      "perks": ["런치펍", "일일 메뉴"],
+      "mapQuery": "삼촌밥차런치펍 센텀스카이비즈",
+      "color": "#d97706"
+    },
+    {
+      "id": "jeongdam",
+      "name": "정담식당",
+      "shortName": "정담",
+      "building": "센텀스카이비즈",
+      "address": "부산 해운대구 센텀중앙로 97",
+      "landmark": "센텀스카이비즈 구내식당",
+      "floor": "지하 1층",
+      "prices": { "lunch": 7500 },
+      "hours": {
+        "lunch": "11:00 – 14:00"
+      },
+      "perks": ["한식 뷔페"],
+      "mapQuery": "정담식당 센텀스카이비즈",
+      "color": "#7c3aed"
     }
   ]
 }

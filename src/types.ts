@@ -1,4 +1,12 @@
-export type CafeteriaId = 'stx' | 'partibox' | 'dawa' | 'manna'
+export type CafeteriaId =
+  | 'stx'
+  | 'partibox'
+  | 'dawa'
+  | 'manna'
+  | 'dawa-qubi'
+  | 'schmaus'
+  | 'uncle-bapcha'
+  | 'jeongdam'
 
 export type DayKey = 'mon' | 'tue' | 'wed' | 'thu' | 'fri'
 
@@ -50,6 +58,7 @@ export interface WeekMenu {
   updatedAt: string
   menus: Record<CafeteriaId, Record<DayKey, DayMenu>>
   menuImages?: Partial<Record<CafeteriaId, string>>
+  menuSourceUrls?: Partial<Record<CafeteriaId, string>>
 }
 
 export interface WeekIndexEntry {

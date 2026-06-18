@@ -31,17 +31,17 @@ export const faqContent = {
     {
       question: '식권은 어디서 구매하나요?',
       answer:
-        '영상산업센터(STX F&C)는 식당 입구 자동판매기에서 식권을 구입합니다. 다른 식당은 현장 카운터·키오스크 결제 방식일 수 있으니 방문 시 안내를 확인하세요.',
+        '영상산업센터 구내식당은 식당 입구 자동판매기에서 식권을 구입합니다. 다른 식당은 현장 카운터·키오스크 결제 방식일 수 있으니 방문 시 안내를 확인하세요.',
     },
     {
       question: '저녁도 운영하는 곳은 어디인가요?',
       answer:
-        '영상산업센터(STX F&C)와 만나한식뷔페는 저녁 시간대를 운영합니다. 나머지 식당은 점심 위주로 운영됩니다. 정확한 시간은 식당 정보 카드의 영업 시간을 참고하세요.',
+        '영상산업센터 구내식당과 만나한식뷔페는 저녁 시간대를 운영합니다. 나머지 식당은 점심 위주로 운영됩니다. 정확한 시간은 식당 정보 카드의 영업 시간을 참고하세요.',
     },
     {
       question: '점심 가격이 가장 저렴한 곳은?',
       answer:
-        '현재 기준으로 STX F&C와 다와푸드 센텀점 점심이 6,500원으로 가장 저렴합니다. 7,000원대(파티박스, 만나, 다와푸드 큐비e), 7,500원대(슈마우스, 삼촌밥차, 정담) 식당도 있습니다. 가격은 변동될 수 있으니 방문 전 현장 안내를 확인하세요.',
+        '현재 기준으로 영상산업센터 구내식당과 다와푸드 센텀점 점심이 6,500원으로 가장 저렴합니다. 7,000원대(파티박스, 만나, 다와푸드 큐비e), 7,500원대(슈마우스, 삼촌밥차, 정담) 식당도 있습니다. 가격은 변동될 수 있으니 방문 전 현장 안내를 확인하세요.',
     },
     {
       question: '식단표는 언제 업데이트되나요?',
@@ -129,17 +129,10 @@ export const aboutPagePath = '/about.html'
 export const mainNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
-  { label: '자주하는 질문', href: `#${faqContent.id}` },
-  { label: '주요 기능', href: `#${featuresContent.id}` },
-  { label: '사이트 소개', href: aboutPagePath },
-  { label: '개인정보처리방침', href: privacyPagePath },
 ] as const
 
 export const subPageNavLinks = [
   { label: '홈', href: '/' },
   { label: '이번 주 식단', href: '/#menus' },
   { label: '식당 정보', href: '/#restaurants' },
-  { label: '자주하는 질문', href: `/#${faqContent.id}` },
-  { label: '주요 기능', href: `/#${featuresContent.id}` },
-  { label: '사이트 소개', href: aboutPagePath },
 ] as const

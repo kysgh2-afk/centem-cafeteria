@@ -89,7 +89,7 @@ jobs:
           pwd
           lcd dist
           !echo "Uploading dist/ ..."
-          mirror -R --parallel=3 --only-newer --exclude-glob .git* --exclude-glob .DS_Store
+          mirror -R --parallel=3 --only-newer --exclude-glob .git* --exclude-glob .DS_Store --exclude-glob api/data/*
           !echo "Upload finished"
           quit
           SCRIPT

@@ -96,3 +96,36 @@ jobs:
           set -x
 
           echo "Deploy complete"
+
+      - name: Purge Cloudways Varnish cache
+        env:
+          CW_EMAIL: ${{ secrets.CW_API_EMAIL }}
+          CW_API_KEY: ${{ secrets.CW_API_KEY }}
+          CW_APP_ID: ${{ secrets.CW_APP_ID }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${CW_EMAIL:-}" ] || [ -z "${CW_API_KEY:-}" ] || [ -z "${CW_APP_ID:-}" ]; then
+            echo "::warning::CW_API_EMAIL, CW_API_KEY, CW_APP_ID Secret이 없어 Varnish purge를 건너뜁니다."
+            exit 0
+          fi
+
+          echo "Requesting Cloudways API token..."
+          TOKEN=$(curl -sf -X POST "https://api.cloudways.com/api/v2/oauth/access_token" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            --data-urlencode "email=${CW_EMAIL}" \
+            --data-urlencode "api_key=${CW_API_KEY}" \
+            | jq -r '.access_token // empty')
+
+          if [ -z "${TOKEN}" ]; then
+            echo "::error::Cloudways API token 발급 실패. 이메일/API Key를 확인하세요."
+            exit 1
+          fi
+
+          echo "Purging application cache (Varnish) for app ${CW_APP_ID}..."
+          RESPONSE=$(curl -sf -X POST "https://api.cloudways.com/api/v2/applications/${CW_APP_ID}/cache/clear" \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Accept: application/json")
+
+          echo "${RESPONSE}"
+          echo "Varnish cache purge requested successfully"

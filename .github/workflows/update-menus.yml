@@ -1,13 +1,13 @@
-name: Weekly menu update
+name: Daily menu update
 
 on:
-  # 매주 월요일 10:00 (KST) = UTC 01:00
+  # 매일 10:00 (KST) = UTC 01:00
   schedule:
-    - cron: '0 1 * * 1'
+    - cron: '0 1 * * *'
   workflow_dispatch:
 
 concurrency:
-  group: weekly-menu-update
+  group: daily-menu-update
   cancel-in-progress: true
 
 jobs:

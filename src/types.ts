@@ -24,6 +24,8 @@ export interface Cafeteria {
     breakTime?: string
   }
   notes?: string
+  parkingInfo?: string
+  tips?: string[]
   perks?: string[]
   mapQuery: string
   color: string

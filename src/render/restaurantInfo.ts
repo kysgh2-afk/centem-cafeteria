@@ -59,7 +59,15 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
             </div>
 
             <p class="text-xs text-slate-400 mb-3">${c.hours.lunch}${c.hours.dinner ? ` · ${c.hours.dinner}` : ''}</p>
-            ${c.notes ? `<p class="text-xs text-slate-500 mb-3">${c.notes}</p>` : ''}
+            ${c.notes ? `<p class="text-xs text-slate-500 mb-2">${c.notes}</p>` : ''}
+            ${c.parkingInfo ? `<p class="text-xs text-slate-500 mb-2">${c.parkingInfo}</p>` : ''}
+            ${
+              c.tips?.length
+                ? `<ul class="text-xs text-slate-500 mb-3 space-y-1 list-disc pl-4">
+                    ${c.tips.map((tip) => `<li>${tip}</li>`).join('')}
+                  </ul>`
+                : ''
+            }
 
             <a
               href="${mapSearchUrl(c.mapQuery)}"

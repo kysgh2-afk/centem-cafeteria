@@ -1,5 +1,5 @@
 import type { AppData } from '../types'
-import { formatPrice } from '../services/menuService'
+import { formatPrice, mapSearchUrl } from '../services/menuService'
 
 export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   const { weeks, currentWeekId } = data.weekIndex
@@ -44,17 +44,33 @@ export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   `
 }
 
-function renderMenuLinkButton(url: string): string {
-  return `
-    <div class="px-4 pb-4 pt-3 bg-slate-50 border-t border-slate-100 text-center">
+function renderCardActions(menuLink: string | undefined, mapQuery: string): string {
+  const menuButton = menuLink
+    ? `
       <a
-        href="${url}"
+        href="${menuLink}"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-1 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+        class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
       >
         메뉴 확인하기 →
       </a>
+    `
+    : ''
+
+  return `
+    <div class="px-4 pb-4 pt-3 bg-slate-50 border-t border-slate-100">
+      <div class="flex flex-col gap-2">
+        ${menuButton}
+        <a
+          href="${mapSearchUrl(mapQuery)}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50"
+        >
+          지도 보기 →
+        </a>
+      </div>
     </div>
   `
 }
@@ -135,7 +151,7 @@ export function renderMenuCards(data: AppData): string {
                 </p>
               </div>
               ${renderMenuContent(c.name, data.week.title, imageUrl, menuBoardHtml, sourceUrl)}
-              ${menuLink ? renderMenuLinkButton(menuLink) : ''}
+              ${renderCardActions(menuLink, c.mapQuery)}
             </article>
           `
         })

@@ -1,9 +1,10 @@
 name: Daily menu update
 
 on:
-  # 매일 10:00 (KST) = UTC 01:00
+  # 매일 오전 10:00 (한국 시간)
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 10 * * *'
+      timezone: Asia/Seoul
   workflow_dispatch:
 
 concurrency:
@@ -89,7 +90,7 @@ jobs:
           pwd
           lcd dist
           !echo "Uploading dist/ ..."
-          mirror -R --parallel=3 --only-newer --exclude-glob .git* --exclude-glob .DS_Store --exclude-glob api/data/*
+          mirror -R --parallel=3 --only-newer --exclude-glob .git* --exclude-glob .DS_Store
           !echo "Upload finished"
           quit
           SCRIPT
@@ -98,90 +99,34 @@ jobs:
           echo "Deploy complete"
 
       - name: Purge Cloudways Varnish cache
-        continue-on-error: true
         env:
           CW_EMAIL: ${{ secrets.CW_API_EMAIL }}
           CW_API_KEY: ${{ secrets.CW_API_KEY }}
           CW_APP_ID: ${{ secrets.CW_APP_ID }}
-          CW_SERVER_ID: ${{ secrets.CW_SERVER_ID }}
         run: |
-          set -uo pipefail
+          set -euo pipefail
 
           if [ -z "${CW_EMAIL:-}" ] || [ -z "${CW_API_KEY:-}" ] || [ -z "${CW_APP_ID:-}" ]; then
             echo "::warning::CW_API_EMAIL, CW_API_KEY, CW_APP_ID Secret이 없어 Varnish purge를 건너뜁니다."
             exit 0
           fi
 
-          echo "Requesting Cloudways API token (v1)..."
-          RAW=$(curl -sS -w "\n%{http_code}" -X POST "https://api.cloudways.com/api/v1/oauth/access_token" \
+          echo "Requesting Cloudways API token..."
+          TOKEN=$(curl -sf -X POST "https://api.cloudways.com/api/v2/oauth/access_token" \
             -H "Content-Type: application/x-www-form-urlencoded" \
             --data-urlencode "email=${CW_EMAIL}" \
-            --data-urlencode "api_key=${CW_API_KEY}")
-
-          HTTP_CODE=$(echo "${RAW}" | tail -n1)
-          BODY=$(echo "${RAW}" | sed '$d')
-
-          if [ "${HTTP_CODE}" != "200" ]; then
-            echo "v1 token failed (${HTTP_CODE}), trying v2..."
-            RAW=$(curl -sS -w "\n%{http_code}" -X POST "https://api.cloudways.com/api/v2/oauth/access_token" \
-              -H "Content-Type: application/json" \
-              -d "{\"email\":\"${CW_EMAIL}\",\"api_key\":\"${CW_API_KEY}\"}")
-            HTTP_CODE=$(echo "${RAW}" | tail -n1)
-            BODY=$(echo "${RAW}" | sed '$d')
-          fi
-
-          echo "Token response HTTP ${HTTP_CODE}"
-          TOKEN=$(echo "${BODY}" | jq -r '.access_token // empty')
+            --data-urlencode "api_key=${CW_API_KEY}" \
+            | jq -r '.access_token // empty')
 
           if [ -z "${TOKEN}" ]; then
-            echo "::warning::Cloudways API token 발급 실패. 이메일/API Key를 확인하세요."
-            echo "${BODY}"
-            exit 0
+            echo "::error::Cloudways API token 발급 실패. 이메일/API Key를 확인하세요."
+            exit 1
           fi
 
-          purge_with_v2() {
-            curl -sS -w "\n%{http_code}" -X POST \
-              "https://api.cloudways.com/api/v2/applications/${CW_APP_ID}/cache/clear" \
-              -H "Authorization: Bearer ${TOKEN}" \
-              -H "Accept: application/json"
-          }
+          echo "Purging application cache (Varnish) for app ${CW_APP_ID}..."
+          RESPONSE=$(curl -sf -X POST "https://api.cloudways.com/api/v2/applications/${CW_APP_ID}/cache/clear" \
+            -H "Authorization: Bearer ${TOKEN}" \
+            -H "Accept: application/json")
 
-          purge_with_v1() {
-            curl -sS -w "\n%{http_code}" -X POST \
-              "https://api.cloudways.com/api/v1/app/cache/purge" \
-              -H "Authorization: Bearer ${TOKEN}" \
-              -H "Content-Type: application/x-www-form-urlencoded" \
-              -d "server_id=${CW_SERVER_ID}&app_id=${CW_APP_ID}"
-          }
-
-          echo "Purging application cache for app ${CW_APP_ID}..."
-          if [ -n "${CW_SERVER_ID:-}" ]; then
-            RAW=$(purge_with_v1)
-          else
-            RAW=$(purge_with_v2)
-          fi
-
-          HTTP_CODE=$(echo "${RAW}" | tail -n1)
-          BODY=$(echo "${RAW}" | sed '$d')
-          echo "${BODY}"
-
-          if [ "${HTTP_CODE}" = "200" ] || echo "${BODY}" | jq -e '.status == true' >/dev/null 2>&1; then
-            echo "Varnish cache purge requested successfully"
-            exit 0
-          fi
-
-          if [ -n "${CW_SERVER_ID:-}" ]; then
-            echo "v1 purge failed (${HTTP_CODE}), trying v2..."
-            RAW=$(purge_with_v2)
-            HTTP_CODE=$(echo "${RAW}" | tail -n1)
-            BODY=$(echo "${RAW}" | sed '$d')
-            echo "${BODY}"
-          fi
-
-          if [ "${HTTP_CODE}" = "200" ] || echo "${BODY}" | jq -e '.status == true' >/dev/null 2>&1; then
-            echo "Varnish cache purge requested successfully (v2)"
-            exit 0
-          fi
-
-          echo "::warning::Varnish purge failed (HTTP ${HTTP_CODE}). 배포는 완료되었습니다. Cloudways에서 수동 Purge Varnish를 실행하세요."
-          exit 0
+          echo "${RESPONSE}"
+          echo "Varnish cache purge requested successfully"

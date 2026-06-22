@@ -39,6 +39,10 @@ export function mapSearchUrl(query: string): string {
   return `https://map.kakao.com/?q=${encodeURIComponent(query)}`
 }
 
+export function cafeteriaMapUrl(cafeteria: { mapUrl?: string; mapQuery: string }): string {
+  return cafeteria.mapUrl ?? mapSearchUrl(cafeteria.mapQuery)
+}
+
 async function fetchJson<T>(url: string): Promise<T> {
   const response = await fetch(url)
   if (!response.ok) {

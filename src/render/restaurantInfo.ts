@@ -1,5 +1,5 @@
 import type { Cafeteria } from '../types'
-import { formatPrice, mapSearchUrl } from '../services/menuService'
+import { formatPrice, cafeteriaMapUrl } from '../services/menuService'
 import { getOperatingStatus, operatingStatusBadgeClass } from '../utils/operatingStatus'
 
 function renderStatusBadge(cafeteria: Cafeteria): string {
@@ -70,7 +70,7 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
             }
 
             <a
-              href="${mapSearchUrl(c.mapQuery)}"
+              href="${cafeteriaMapUrl(c)}"
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"

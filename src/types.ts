@@ -37,6 +37,7 @@ export interface Cafeteria {
   perks?: string[]
   menuLink?: string
   mapQuery: string
+  mapUrl?: string
   color: string
 }
 

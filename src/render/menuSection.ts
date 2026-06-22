@@ -1,5 +1,5 @@
 import type { AppData } from '../types'
-import { formatPrice, mapSearchUrl } from '../services/menuService'
+import { formatPrice, cafeteriaMapUrl } from '../services/menuService'
 
 export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   const { weeks, currentWeekId } = data.weekIndex
@@ -44,7 +44,7 @@ export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   `
 }
 
-function renderCardActions(menuLink: string | undefined, mapQuery: string): string {
+function renderCardActions(menuLink: string | undefined, mapUrl: string): string {
   const menuButton = menuLink
     ? `
       <a
@@ -63,7 +63,7 @@ function renderCardActions(menuLink: string | undefined, mapQuery: string): stri
       <div class="flex flex-col gap-2">
         ${menuButton}
         <a
-          href="${mapSearchUrl(mapQuery)}"
+          href="${mapUrl}"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50"
@@ -151,7 +151,7 @@ export function renderMenuCards(data: AppData): string {
                 </p>
               </div>
               ${renderMenuContent(c.name, data.week.title, imageUrl, menuBoardHtml, sourceUrl)}
-              ${renderCardActions(menuLink, c.mapQuery)}
+              ${renderCardActions(menuLink, cafeteriaMapUrl(c))}
             </article>
           `
         })

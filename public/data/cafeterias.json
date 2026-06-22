@@ -20,6 +20,7 @@
       "perks": ["샐러드바", "라면", "계란", "음료", "식빵"],
       "menuLink": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
       "mapQuery": "영상산업센터",
+      "mapUrl": "https://kko.to/8OSCCGiB3x",
       "color": "#2563eb"
     },
     {
@@ -78,6 +79,7 @@
       "perks": ["한식 뷔페", "저녁 운영"],
       "menuLink": "https://blog.naver.com/jusik1606",
       "mapQuery": "벽산e센텀클래스원",
+      "mapUrl": "https://place.map.kakao.com/7902379",
       "color": "#9333ea"
     },
     {
@@ -132,6 +134,7 @@
       "perks": ["런치펍", "일일 메뉴"],
       "menuLink": "https://pf.kakao.com/_FxbaQC",
       "mapQuery": "삼촌밥차런치펍 센텀스카이비즈",
+      "mapUrl": "https://place.map.kakao.com/24576579",
       "color": "#d97706"
     },
     {
@@ -150,6 +153,7 @@
       "perks": ["한식 뷔페", "셀프 계란후라이", "셀프 라면"],
       "menuLink": "https://pf.kakao.com/_vKxgdn",
       "mapQuery": "정담식당 센텀스카이비즈",
+      "mapUrl": "https://place.map.kakao.com/24576579",
       "color": "#7c3aed"
     }
   ]

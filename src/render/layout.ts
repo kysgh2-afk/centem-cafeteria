@@ -1,7 +1,11 @@
 import {
   aboutContent,
+  areaGuideContent,
+  disclaimerContent,
   faqContent,
   featuresContent,
+  footerNavLinks,
+  guideContent,
   mainNavLinks,
   privacyContent,
   siteMeta,
@@ -44,6 +48,75 @@ export function renderHeader(data: AppData | null, navLinks: readonly NavLink[] 
 }
 
 export function renderAboutSection(): string {
+  return `
+    <section id="${aboutContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="about-heading">
+      <h2 id="about-heading" class="text-2xl font-bold text-slate-900 mb-4">${aboutContent.title}</h2>
+      <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed text-sm">
+        ${aboutContent.paragraphs.map((p) => `<p>${p}</p>`).join('')}
+      </div>
+    </section>
+  `
+}
+
+export function renderGuideSection(): string {
+  return `
+    <section id="${guideContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="guide-heading">
+      <h2 id="guide-heading" class="text-2xl font-bold text-slate-900 mb-2">${guideContent.title}</h2>
+      <p class="text-sm text-slate-600 leading-relaxed mb-6">${guideContent.intro}</p>
+      <div class="space-y-4">
+        ${guideContent.sections
+          .map(
+            (section) => `
+          <article class="rounded-xl bg-white border border-slate-200 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 mb-2">${section.title}</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">${section.body}</p>
+          </article>
+        `,
+          )
+          .join('')}
+      </div>
+    </section>
+  `
+}
+
+export function renderAreaGuideSection(): string {
+  return `
+    <section id="${areaGuideContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="areas-heading">
+      <h2 id="areas-heading" class="text-2xl font-bold text-slate-900 mb-2">${areaGuideContent.title}</h2>
+      <p class="text-sm text-slate-500 mb-6">센텀시티 주요 건물별 구내식당 위치와 특징을 정리했습니다.</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        ${areaGuideContent.areas
+          .map(
+            (area) => `
+          <article class="rounded-xl bg-white border border-slate-200 p-5 shadow-sm">
+            <h3 class="font-semibold text-slate-900 mb-1">${area.name}</h3>
+            <p class="text-sm font-medium text-emerald-700 mb-2">${area.restaurants}</p>
+            <p class="text-sm text-slate-600 leading-relaxed">${area.note}</p>
+          </article>
+        `,
+          )
+          .join('')}
+      </div>
+    </section>
+  `
+}
+
+export function renderDisclaimerSection(): string {
+  return `
+    <section id="${disclaimerContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="disclaimer-heading">
+      <h2 id="disclaimer-heading" class="text-2xl font-bold text-slate-900 mb-4">${disclaimerContent.title}</h2>
+      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5 space-y-3 text-sm text-slate-600 leading-relaxed">
+        ${disclaimerContent.paragraphs.map((p) => `<p>${p}</p>`).join('')}
+        <p class="pt-2 border-t border-slate-200">
+          <span class="font-medium text-slate-800">${disclaimerContent.contactLabel}:</span>
+          <a href="mailto:${siteMeta.contactEmail}" class="text-emerald-700 hover:underline ml-1">${siteMeta.contactEmail}</a>
+        </p>
+      </div>
+    </section>
+  `
+}
+
+export function renderAboutSectionArticle(): string {
   return `
     <article aria-labelledby="about-heading">
       <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed">
@@ -119,7 +192,7 @@ export function renderPrivacySection(): string {
   `
 }
 
-export function renderFooter(navLinks: readonly NavLink[] = mainNavLinks): string {
+export function renderFooter(navLinks: readonly NavLink[] = footerNavLinks): string {
   return `
     <footer class="border-t border-slate-200 bg-white mt-16">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">

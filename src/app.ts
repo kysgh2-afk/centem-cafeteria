@@ -1,8 +1,12 @@
 import { fetchAppData } from './services/menuService'
 import {
+  renderAboutSection,
+  renderAreaGuideSection,
+  renderDisclaimerSection,
   renderFeaturesSection,
   renderFaqSection,
   renderFooter,
+  renderGuideSection,
   renderHeader,
   updateJsonLd,
 } from './render/layout'
@@ -58,7 +62,11 @@ export function createApp(root: HTMLElement) {
             </section>
 
             ${renderFaqSection()}
+            ${renderGuideSection()}
+            ${renderAreaGuideSection()}
+            ${renderAboutSection()}
             ${renderFeaturesSection()}
+            ${renderDisclaimerSection()}
           `
           }
         </main>

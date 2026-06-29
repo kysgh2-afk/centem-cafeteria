@@ -10,7 +10,7 @@ import {
   renderHeader,
   updateJsonLd,
 } from './render/layout'
-import { renderMenuCards, renderWeekNav } from './render/menuSection'
+import { bindMenuImageZoom, renderMenuCards, renderWeekNav } from './render/menuSection'
 import { renderRestaurantInfoCards } from './render/restaurantInfo'
 import type { AppData } from './types'
 
@@ -28,6 +28,8 @@ export function createApp(root: HTMLElement) {
     loading: true,
     error: null,
   }
+
+  let menuZoomAbort: AbortController | null = null
 
   function render() {
     updateJsonLd(state.data)
@@ -79,6 +81,10 @@ export function createApp(root: HTMLElement) {
   }
 
   function bindEvents() {
+    menuZoomAbort?.abort()
+    const zoomAbort = new AbortController()
+    menuZoomAbort = zoomAbort
+
     document.querySelectorAll<HTMLButtonElement>('[data-week-nav]').forEach((btn) => {
       btn.addEventListener('click', async () => {
         if (!state.data || btn.disabled) return
@@ -103,8 +109,10 @@ export function createApp(root: HTMLElement) {
           state.loading = false
           render()
         }
-      })
+      }, { signal: zoomAbort.signal })
     })
+
+    bindMenuImageZoom(zoomAbort.signal)
   }
 
   async function init() {

@@ -202,6 +202,7 @@ export const mainNavLinks = [
 export const footerNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
+  { label: '사이트 소개', href: aboutPagePath },
   { label: '개인정보처리방침', href: privacyPagePath },
 ] as const
 
@@ -209,5 +210,6 @@ export const subPageNavLinks = [
   { label: '홈', href: '/' },
   { label: '이번 주 식단', href: '/#menus' },
   { label: '식당 정보', href: '/#restaurants' },
+  { label: '사이트 소개', href: aboutPagePath },
   { label: '개인정보처리방침', href: privacyPagePath },
 ] as const

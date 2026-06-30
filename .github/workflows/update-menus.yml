@@ -32,6 +32,8 @@ jobs:
         run: npm run update-menus
 
       - name: Build site
+        env:
+          VITE_SITE_URL: ${{ secrets.SITE_URL }}
         run: npm run build
 
       - name: List build output

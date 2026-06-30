@@ -11,6 +11,8 @@ import {
   siteMeta,
 } from '../content/siteContent'
 import type { AppData } from '../types'
+import { getSiteOrigin } from '../seo/documentMeta'
+import { buildOrganizationJsonLd, buildWebSiteJsonLd } from '../seo/jsonLd'
 
 type NavLink = { label: string; href: string }
 
@@ -198,6 +200,10 @@ export function renderFooter(navLinks: readonly NavLink[] = footerNavLinks): str
       <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
         <p class="font-semibold text-slate-900 mb-2">${siteMeta.name}</p>
         <p class="text-sm text-slate-500 mb-4">${siteMeta.tagline}</p>
+        <p class="text-sm text-slate-500 mb-4">
+          문의:
+          <a href="mailto:${siteMeta.contactEmail}" class="text-emerald-700 hover:underline ml-1">${siteMeta.contactEmail}</a>
+        </p>
         <nav aria-label="하단 메뉴">
           <ul class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-500">
             ${navLinks.map((link) => `<li><a href="${link.href}" class="hover:text-slate-800">${link.label}</a></li>`).join('')}
@@ -210,19 +216,18 @@ export function renderFooter(navLinks: readonly NavLink[] = footerNavLinks): str
 }
 
 export function updateJsonLd(data: AppData | null): void {
+  const origin = getSiteOrigin()
   const payload = {
     '@context': 'https://schema.org',
     '@graph': [
-      {
-        '@type': 'WebSite',
-        name: siteMeta.name,
-        description: siteMeta.description,
-        inLanguage: 'ko-KR',
-      },
+      buildWebSiteJsonLd(),
+      buildOrganizationJsonLd(),
       {
         '@type': 'WebPage',
         name: siteMeta.name,
         description: siteMeta.description,
+        inLanguage: 'ko-KR',
+        ...(origin ? { url: origin } : {}),
         about: data?.cafeterias.map((c) => ({
           '@type': 'Restaurant',
           name: c.name,

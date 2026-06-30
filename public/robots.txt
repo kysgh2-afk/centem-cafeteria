@@ -3,4 +3,4 @@ Allow: /
 
 Disallow: /data/
 
-Sitemap: /sitemap.xml
+Sitemap: https://centumlc.com/sitemap.xml

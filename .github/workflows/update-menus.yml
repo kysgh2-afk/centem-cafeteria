@@ -1,10 +1,10 @@
 name: Daily menu update
 
 on:
-  # 매일 오전 10:00 (한국 시간)
+  # 매일 오전 10:05 (한국 시간) — GitHub cron은 UTC 기준
+  # KST 10:05 = UTC 01:05 (timezone 필드는 일부 환경에서 무시될 수 있음)
   schedule:
-    - cron: '0 10 * * *'
-      timezone: Asia/Seoul
+    - cron: '5 1 * * *'
   workflow_dispatch:
 
 concurrency:

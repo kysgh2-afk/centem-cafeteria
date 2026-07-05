@@ -1,5 +1,10 @@
-import type { AppData } from '../types'
+import type { AppData, Cafeteria } from '../types'
+import { partiboxGuidePagePath } from '../content/partiboxGuide'
 import { formatPrice, cafeteriaMapUrl } from '../services/menuService'
+
+function getGuidePage(cafeteria: Cafeteria): string | undefined {
+  return cafeteria.guidePage ?? (cafeteria.id === 'partibox' ? partiboxGuidePagePath : undefined)
+}
 
 export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   const { weeks, currentWeekId } = data.weekIndex
@@ -176,7 +181,7 @@ export function renderMenuCards(data: AppData): string {
                 </p>
               </div>
               ${renderMenuContent(c.name, data.week.title, imageUrl, menuBoardHtml, sourceUrl)}
-              ${renderCardActions(menuLink, cafeteriaMapUrl(c), c.guidePage)}
+              ${renderCardActions(menuLink, cafeteriaMapUrl(c), getGuidePage(c))}
             </article>
           `
         })

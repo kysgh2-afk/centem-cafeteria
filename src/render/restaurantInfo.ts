@@ -1,6 +1,11 @@
 import type { Cafeteria } from '../types'
+import { partiboxGuidePagePath } from '../content/partiboxGuide'
 import { formatPrice, cafeteriaMapUrl } from '../services/menuService'
 import { getOperatingStatus, operatingStatusBadgeClass } from '../utils/operatingStatus'
+
+function getGuidePage(cafeteria: Cafeteria): string | undefined {
+  return cafeteria.guidePage ?? (cafeteria.id === 'partibox' ? partiboxGuidePagePath : undefined)
+}
 
 function renderStatusBadge(cafeteria: Cafeteria): string {
   const status = getOperatingStatus(cafeteria)
@@ -26,6 +31,7 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
       ${cafeterias
         .map((c) => {
           const isCheapest = c.prices.lunch === cheapestLunch
+          const guidePage = getGuidePage(c)
           return `
           <article
             class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"
@@ -69,20 +75,20 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
                 : ''
             }
 
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 mt-1">
               <a
                 href="${cafeteriaMapUrl(c)}"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
+                class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50"
               >
                 지도 보기 →
               </a>
               ${
-                c.guidePage
+                guidePage
                   ? `<a
-                      href="${c.guidePage}"
-                      class="inline-flex items-center gap-1 text-sm font-medium text-orange-600 hover:text-orange-700"
+                      href="${guidePage}"
+                      class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-orange-200 bg-white px-4 py-2 text-sm font-medium text-orange-600 hover:bg-orange-50"
                     >
                       식당 안내 →
                     </a>`

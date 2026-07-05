@@ -69,14 +69,26 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
                 : ''
             }
 
-            <a
-              href="${cafeteriaMapUrl(c)}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
-            >
-              지도 보기 →
-            </a>
+            <div class="flex flex-col gap-2">
+              <a
+                href="${cafeteriaMapUrl(c)}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:text-blue-700"
+              >
+                지도 보기 →
+              </a>
+              ${
+                c.guidePage
+                  ? `<a
+                      href="${c.guidePage}"
+                      class="inline-flex items-center gap-1 text-sm font-medium text-orange-600 hover:text-orange-700"
+                    >
+                      식당 안내 →
+                    </a>`
+                  : ''
+              }
+            </div>
           </article>
         `
         })

@@ -23,7 +23,7 @@ const today = new Date().toISOString().slice(0, 10)
 const pages = [
   { path: '/', priority: '1.0', changefreq: 'daily' },
   { path: '/about.html', priority: '0.7', changefreq: 'monthly' },
-  { path: '/privacy.html', priority: '0.6', changefreq: 'monthly' },
+  { path: '/partibox.html', priority: '0.8', changefreq: 'monthly' },
 ]
 
 const sitemapEntries = pages

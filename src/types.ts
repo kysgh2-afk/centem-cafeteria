@@ -38,6 +38,7 @@ export interface Cafeteria {
   menuLink?: string
   mapQuery: string
   mapUrl?: string
+  guidePage?: string
   color: string
 }
 

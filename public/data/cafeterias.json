@@ -41,6 +41,7 @@
       "perks": ["반찬 20여 가지", "1인 1계란프라이", "어묵", "국"],
       "menuLink": "https://pf.kakao.com/_DCpLK/posts",
       "mapQuery": "동서대학교 센텀캠퍼스 파티박스",
+      "guidePage": "/partibox.html",
       "color": "#ea580c"
     },
     {

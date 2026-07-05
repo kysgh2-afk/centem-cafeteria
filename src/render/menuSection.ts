@@ -44,7 +44,7 @@ export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   `
 }
 
-function renderCardActions(menuLink: string | undefined, mapUrl: string): string {
+function renderCardActions(menuLink: string | undefined, mapUrl: string, guidePage?: string): string {
   const menuButton = menuLink
     ? `
       <a
@@ -54,6 +54,17 @@ function renderCardActions(menuLink: string | undefined, mapUrl: string): string
         class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
       >
         메뉴 확인하기 →
+      </a>
+    `
+    : ''
+
+  const guideButton = guidePage
+    ? `
+      <a
+        href="${guidePage}"
+        class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-orange-200 bg-white px-4 py-2 text-sm font-medium text-orange-600 hover:bg-orange-50"
+      >
+        식당 안내 →
       </a>
     `
     : ''
@@ -70,6 +81,7 @@ function renderCardActions(menuLink: string | undefined, mapUrl: string): string
         >
           지도 보기 →
         </a>
+        ${guideButton}
       </div>
     </div>
   `
@@ -164,7 +176,7 @@ export function renderMenuCards(data: AppData): string {
                 </p>
               </div>
               ${renderMenuContent(c.name, data.week.title, imageUrl, menuBoardHtml, sourceUrl)}
-              ${renderCardActions(menuLink, cafeteriaMapUrl(c))}
+              ${renderCardActions(menuLink, cafeteriaMapUrl(c), c.guidePage)}
             </article>
           `
         })

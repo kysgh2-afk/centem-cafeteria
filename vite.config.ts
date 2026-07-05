@@ -10,6 +10,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
         privacy: resolve(__dirname, 'privacy.html'),
+        partibox: resolve(__dirname, 'partibox.html'),
       },
     },
   },

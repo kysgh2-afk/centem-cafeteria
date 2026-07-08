@@ -1,10 +1,6 @@
-import type { AppData, Cafeteria } from '../types'
-import { partiboxGuidePagePath } from '../content/partiboxGuide'
+import type { AppData } from '../types'
 import { formatPrice, cafeteriaMapUrl } from '../services/menuService'
-
-function getGuidePage(cafeteria: Cafeteria): string | undefined {
-  return cafeteria.guidePage ?? (cafeteria.id === 'partibox' ? partiboxGuidePagePath : undefined)
-}
+import { getGuidePage } from '../utils/guidePage'
 
 export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   const { weeks, currentWeekId } = data.weekIndex

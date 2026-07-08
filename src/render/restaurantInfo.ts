@@ -1,11 +1,7 @@
 import type { Cafeteria } from '../types'
-import { partiboxGuidePagePath } from '../content/partiboxGuide'
 import { formatPrice, cafeteriaMapUrl } from '../services/menuService'
+import { getGuidePage } from '../utils/guidePage'
 import { getOperatingStatus, operatingStatusBadgeClass } from '../utils/operatingStatus'
-
-function getGuidePage(cafeteria: Cafeteria): string | undefined {
-  return cafeteria.guidePage ?? (cafeteria.id === 'partibox' ? partiboxGuidePagePath : undefined)
-}
 
 function renderStatusBadge(cafeteria: Cafeteria): string {
   const status = getOperatingStatus(cafeteria)

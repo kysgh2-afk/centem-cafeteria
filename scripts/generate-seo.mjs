@@ -24,6 +24,7 @@ const pages = [
   { path: '/', priority: '1.0', changefreq: 'daily' },
   { path: '/about.html', priority: '0.7', changefreq: 'monthly' },
   { path: '/partibox.html', priority: '0.8', changefreq: 'monthly' },
+  { path: '/stx.html', priority: '0.8', changefreq: 'monthly' },
 ]
 
 const sitemapEntries = pages

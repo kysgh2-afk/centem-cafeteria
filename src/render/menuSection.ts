@@ -9,37 +9,29 @@ export function renderWeekNav(data: AppData, selectedWeekId: string): string {
   const hasNext = currentIndex > 0
 
   return `
-    <div class="flex items-center justify-between gap-4 mb-6">
+    <div class="week-switcher">
       <button
         data-week-nav="prev"
-        class="rounded-xl px-4 py-2 text-sm font-medium transition-colors ${
-          hasPrev
-            ? 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
-            : 'bg-slate-100 text-slate-300 cursor-not-allowed'
-        }"
+        class="week-switcher__button"
         ${hasPrev ? '' : 'disabled'}
       >
-        ← 이전 주
+        <span aria-hidden="true">←</span> 이전 주
       </button>
 
-      <div class="text-center">
-        <p class="text-lg font-bold text-slate-900">${data.week.title}</p>
-        <p class="text-xs text-slate-400 mt-0.5">
+      <div class="week-switcher__date">
+        <strong>${data.week.title}</strong>
+        <span>
           ${selectedWeekId === currentWeekId ? '이번 주' : '지난 주'}
           · ${data.week.updatedAt} 업데이트
-        </p>
+        </span>
       </div>
 
       <button
         data-week-nav="next"
-        class="rounded-xl px-4 py-2 text-sm font-medium transition-colors ${
-          hasNext
-            ? 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50'
-            : 'bg-slate-100 text-slate-300 cursor-not-allowed'
-        }"
+        class="week-switcher__button"
         ${hasNext ? '' : 'disabled'}
       >
-        다음 주 →
+        다음 주 <span aria-hidden="true">→</span>
       </button>
     </div>
   `
@@ -52,7 +44,7 @@ function renderCardActions(menuLink: string | undefined, mapUrl: string, guidePa
         href="${menuLink}"
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100"
+        class="action-button"
       >
         메뉴 확인하기 →
       </a>
@@ -63,7 +55,7 @@ function renderCardActions(menuLink: string | undefined, mapUrl: string, guidePa
     ? `
       <a
         href="${guidePage}"
-        class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-orange-200 bg-white px-4 py-2 text-sm font-medium text-orange-600 hover:bg-orange-50"
+        class="action-button"
       >
         식당 안내 →
       </a>
@@ -71,19 +63,17 @@ function renderCardActions(menuLink: string | undefined, mapUrl: string, guidePa
     : ''
 
   return `
-    <div class="px-4 pb-4 pt-3 bg-slate-50 border-t border-slate-100">
-      <div class="flex flex-col gap-2">
+    <div class="menu-actions">
         ${menuButton}
         <a
           href="${mapUrl}"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50"
+          class="action-button"
         >
           지도 보기 →
         </a>
         ${guideButton}
-      </div>
     </div>
   `
 }
@@ -98,7 +88,7 @@ function renderMenuContent(
   if (imageUrl) {
     const alt = `${name} ${weekTitle} 주간 식단표`
     return `
-      <figure class="p-4 bg-slate-50">
+      <figure class="menu-media p-3 sm:p-4">
         <button
           type="button"
           class="group block w-full text-left"
@@ -110,7 +100,7 @@ function renderMenuContent(
           <img
             src="${imageUrl}"
             alt="${alt}"
-            class="w-full rounded-lg border border-slate-200 transition group-hover:opacity-95 cursor-zoom-in"
+            class="w-full rounded-lg transition group-hover:opacity-95 cursor-zoom-in"
             loading="lazy"
             width="600"
             height="800"
@@ -126,7 +116,7 @@ function renderMenuContent(
 
   if (menuBoardHtml) {
     return `
-      <div class="menu-board overflow-x-auto p-4 bg-slate-50">
+      <div class="menu-media menu-board overflow-x-auto p-3 sm:p-4">
         ${menuBoardHtml}
       </div>
     `
@@ -134,7 +124,7 @@ function renderMenuContent(
 
   if (sourceUrl) {
     return `
-      <div class="p-8 text-center bg-slate-50">
+      <div class="menu-media p-8 text-center">
         <p class="text-sm text-slate-500 mb-4">이번 주 식단표를 불러오지 못했습니다.</p>
         <a
           href="${sourceUrl}"
@@ -148,7 +138,7 @@ function renderMenuContent(
     `
   }
 
-  return `<div class="p-8 text-center text-slate-400 text-sm">이번 주 식단표 이미지 준비 중</div>`
+  return `<div class="menu-media p-8 text-center text-slate-400 text-sm">이번 주 식단표 이미지 준비 중</div>`
 }
 
 export function renderMenuCards(data: AppData): string {
@@ -157,7 +147,7 @@ export function renderMenuCards(data: AppData): string {
   const menuBoards = data.week.menuBoardHtml ?? {}
 
   return `
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+    <div class="menu-grid">
       ${data.cafeterias
         .map((c) => {
           const imageUrl = images[c.id]
@@ -167,14 +157,16 @@ export function renderMenuCards(data: AppData): string {
 
           return `
             <article
-              class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm"
-              style="border-left: 4px solid ${c.color}"
+              class="menu-card"
+              style="--card-accent: ${c.color}"
             >
-              <div class="px-5 py-4 border-b border-slate-100">
-                <h3 class="text-lg font-bold text-slate-900">${c.name}</h3>
-                <p class="text-sm text-slate-500 mt-1">
-                  ${c.building} ${c.floor} · 점심 ${formatPrice(c.prices.lunch)}${c.prices.dinner ? ` · 저녁 ${formatPrice(c.prices.dinner)}` : ''}
-                </p>
+              <span class="menu-card__accent" aria-hidden="true"></span>
+              <div class="menu-card__header">
+                <div>
+                  <h3 class="menu-card__title">${c.name}</h3>
+                  <p class="menu-card__meta">${c.building} ${c.floor}${c.prices.dinner ? ` · 저녁 ${formatPrice(c.prices.dinner)}` : ''}</p>
+                </div>
+                <span class="menu-card__price">점심 ${formatPrice(c.prices.lunch)}</span>
               </div>
               ${renderMenuContent(c.name, data.week.title, imageUrl, menuBoardHtml, sourceUrl)}
               ${renderCardActions(menuLink, cafeteriaMapUrl(c), getGuidePage(c))}

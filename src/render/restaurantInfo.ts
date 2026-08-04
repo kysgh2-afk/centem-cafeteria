@@ -23,15 +23,15 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
   const cheapestLunch = Math.min(...cafeterias.map((c) => c.prices.lunch))
 
   return `
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+    <div class="restaurant-grid">
       ${cafeterias
         .map((c) => {
           const isCheapest = c.prices.lunch === cheapestLunch
           const guidePage = getGuidePage(c)
           return `
           <article
-            class="rounded-2xl bg-white border border-slate-200 p-5 shadow-sm"
-            style="border-top: 3px solid ${c.color}"
+            class="restaurant-card"
+            style="--card-accent: ${c.color}"
           >
             <div class="flex items-start justify-between gap-2 mb-3">
               <div>
@@ -76,7 +76,7 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
                 href="${cafeteriaMapUrl(c)}"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50"
+                class="action-button w-full"
               >
                 지도 보기 →
               </a>
@@ -84,7 +84,7 @@ export function renderRestaurantInfoCards(cafeterias: Cafeteria[]): string {
                 guidePage
                   ? `<a
                       href="${guidePage}"
-                      class="inline-flex w-full items-center justify-center gap-1 rounded-lg border border-orange-200 bg-white px-4 py-2 text-sm font-medium text-orange-600 hover:bg-orange-50"
+                      class="action-button w-full"
                     >
                       식당 안내 →
                     </a>`

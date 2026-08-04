@@ -18,32 +18,53 @@ type NavLink = { label: string; href: string }
 
 export function renderHeader(data: AppData | null, navLinks: readonly NavLink[] = mainNavLinks): string {
   return `
-    <header class="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <nav aria-label="주요 메뉴" class="mb-6">
-          <ul class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-emerald-50">
+    <header class="site-header">
+      <div class="site-header__glow" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <nav aria-label="주요 메뉴" class="site-nav">
+          <a href="/" class="site-brand" aria-label="센텀 구내식당 홈">
+            <span class="site-brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 10h16a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7Z" />
+                <path d="M8 6c0-1 1-1.5 1-2.5M12 6c0-1 1-1.5 1-2.5M16 6c0-1 1-1.5 1-2.5M7 20h10" />
+              </svg>
+            </span>
+            <span>센텀 런치 가이드</span>
+          </a>
+          <ul class="site-nav__links">
             ${navLinks
-              .map(
-                (link) =>
-                  `<li><a href="${link.href}" class="hover:text-white underline-offset-2 hover:underline">${link.label}</a></li>`,
-              )
+              .map((link) => `<li><a href="${link.href}" class="site-nav__link">${link.label}</a></li>`)
               .join('')}
           </ul>
         </nav>
 
-        <p class="text-emerald-100 text-sm font-medium mb-2">부산 해운대 · 센텀시티</p>
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">${siteMeta.name}</h1>
-        <p class="text-emerald-50 text-base max-w-2xl leading-relaxed">${siteMeta.description}</p>
-        ${
-          data
-            ? `
-          <div class="mt-5 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-sm">
-            <span class="h-2 w-2 rounded-full bg-green-300" aria-hidden="true"></span>
-            ${data.week.title} · ${data.cafeterias.length}개 구내식당
+        <div class="hero-wrap">
+          <div>
+            <p class="hero-eyebrow">Busan · Centum City</p>
+            <h1 class="hero-title">오늘의 점심을<br />더 잘 고르는 방법</h1>
+            <p class="hero-copy">센텀시티 곳곳의 구내식당 메뉴와 가격, 위치를 한눈에 비교하세요. 매일의 점심 선택이 더 빠르고 즐거워집니다.</p>
+            ${
+              data
+                ? `
+              <div class="hero-meta">
+                <span class="hero-chip"><span class="hero-chip__dot" aria-hidden="true"></span>${data.week.title} 식단 업데이트</span>
+                <span class="hero-chip">점심 ${Math.min(...data.cafeterias.map((c) => c.prices.lunch)).toLocaleString('ko-KR')}원부터</span>
+              </div>
+            `
+                : ''
+            }
           </div>
-        `
-            : ''
-        }
+          ${
+            data
+              ? `
+            <div class="hero-number" aria-label="등록된 구내식당 수">
+              <strong>${data.cafeterias.length}</strong>
+              <span>센텀시티<br />구내식당 모음</span>
+            </div>
+          `
+              : ''
+          }
+        </div>
       </div>
     </header>
   `
@@ -51,9 +72,14 @@ export function renderHeader(data: AppData | null, navLinks: readonly NavLink[] 
 
 export function renderAboutSection(): string {
   return `
-    <section id="${aboutContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="about-heading">
-      <h2 id="about-heading" class="text-2xl font-bold text-slate-900 mb-4">${aboutContent.title}</h2>
-      <div class="prose prose-slate max-w-none space-y-4 text-slate-600 leading-relaxed text-sm">
+    <section id="${aboutContent.id}" class="content-section" aria-labelledby="about-heading">
+      <div class="section-heading">
+        <div class="section-heading__copy">
+          <p class="section-eyebrow">About</p>
+          <h2 id="about-heading" class="section-title">${aboutContent.title}</h2>
+        </div>
+      </div>
+      <div class="editorial-panel space-y-4 text-slate-600 leading-relaxed text-sm">
         ${aboutContent.paragraphs.map((p) => `<p>${p}</p>`).join('')}
       </div>
     </section>
@@ -62,14 +88,19 @@ export function renderAboutSection(): string {
 
 export function renderGuideSection(): string {
   return `
-    <section id="${guideContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="guide-heading">
-      <h2 id="guide-heading" class="text-2xl font-bold text-slate-900 mb-2">${guideContent.title}</h2>
-      <p class="text-sm text-slate-600 leading-relaxed mb-6">${guideContent.intro}</p>
-      <div class="space-y-4">
+    <section id="${guideContent.id}" class="content-section" aria-labelledby="guide-heading">
+      <div class="section-heading">
+        <div class="section-heading__copy">
+          <p class="section-eyebrow">Lunch tips</p>
+          <h2 id="guide-heading" class="section-title">${guideContent.title}</h2>
+          <p class="section-description">${guideContent.intro}</p>
+        </div>
+      </div>
+      <div class="content-grid">
         ${guideContent.sections
           .map(
             (section) => `
-          <article class="rounded-xl bg-white border border-slate-200 p-5 shadow-sm">
+          <article class="content-card">
             <h3 class="font-semibold text-slate-900 mb-2">${section.title}</h3>
             <p class="text-sm text-slate-600 leading-relaxed">${section.body}</p>
           </article>
@@ -83,14 +114,19 @@ export function renderGuideSection(): string {
 
 export function renderAreaGuideSection(): string {
   return `
-    <section id="${areaGuideContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="areas-heading">
-      <h2 id="areas-heading" class="text-2xl font-bold text-slate-900 mb-2">${areaGuideContent.title}</h2>
-      <p class="text-sm text-slate-500 mb-6">센텀시티 주요 건물별 구내식당 위치와 특징을 정리했습니다.</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section id="${areaGuideContent.id}" class="content-section" aria-labelledby="areas-heading">
+      <div class="section-heading">
+        <div class="section-heading__copy">
+          <p class="section-eyebrow">Area guide</p>
+          <h2 id="areas-heading" class="section-title">${areaGuideContent.title}</h2>
+          <p class="section-description">센텀시티 주요 건물별 구내식당 위치와 특징을 정리했습니다.</p>
+        </div>
+      </div>
+      <div class="content-grid">
         ${areaGuideContent.areas
           .map(
             (area) => `
-          <article class="rounded-xl bg-white border border-slate-200 p-5 shadow-sm">
+          <article class="content-card">
             <h3 class="font-semibold text-slate-900 mb-1">${area.name}</h3>
             <p class="text-sm font-medium text-emerald-700 mb-2">${area.restaurants}</p>
             <p class="text-sm text-slate-600 leading-relaxed">${area.note}</p>
@@ -105,9 +141,14 @@ export function renderAreaGuideSection(): string {
 
 export function renderDisclaimerSection(): string {
   return `
-    <section id="${disclaimerContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="disclaimer-heading">
-      <h2 id="disclaimer-heading" class="text-2xl font-bold text-slate-900 mb-4">${disclaimerContent.title}</h2>
-      <div class="rounded-xl bg-slate-50 border border-slate-200 p-5 space-y-3 text-sm text-slate-600 leading-relaxed">
+    <section id="${disclaimerContent.id}" class="content-section" aria-labelledby="disclaimer-heading">
+      <div class="section-heading">
+        <div class="section-heading__copy">
+          <p class="section-eyebrow">Information</p>
+          <h2 id="disclaimer-heading" class="section-title">${disclaimerContent.title}</h2>
+        </div>
+      </div>
+      <div class="content-card space-y-3 text-sm text-slate-600 leading-relaxed">
         ${disclaimerContent.paragraphs.map((p) => `<p>${p}</p>`).join('')}
         <p class="pt-2 border-t border-slate-200">
           <span class="font-medium text-slate-800">${disclaimerContent.contactLabel}:</span>
@@ -130,14 +171,19 @@ export function renderAboutSectionArticle(): string {
 
 export function renderFaqSection(): string {
   return `
-    <section id="${faqContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="faq-heading">
-      <h2 id="faq-heading" class="text-2xl font-bold text-slate-900 mb-2">${faqContent.title}</h2>
-      <p class="text-sm text-slate-500 mb-6">센텀시티 구내식당 이용 전 자주 묻는 질문입니다.</p>
+    <section id="${faqContent.id}" class="content-section" aria-labelledby="faq-heading">
+      <div class="section-heading">
+        <div class="section-heading__copy">
+          <p class="section-eyebrow">FAQ</p>
+          <h2 id="faq-heading" class="section-title">${faqContent.title}</h2>
+          <p class="section-description">센텀시티 구내식당 이용 전 자주 묻는 질문입니다.</p>
+        </div>
+      </div>
       <div class="space-y-3">
         ${faqContent.items
           .map(
             (item) => `
-          <details class="group rounded-xl bg-white border border-slate-200 shadow-sm">
+          <details class="group faq-card">
             <summary class="cursor-pointer list-none px-5 py-4 font-semibold text-slate-900 flex items-center justify-between gap-3">
               <span>${item.question}</span>
               <span class="text-slate-400 group-open:rotate-180 transition-transform" aria-hidden="true">▾</span>
@@ -156,13 +202,18 @@ export function renderFaqSection(): string {
 
 export function renderFeaturesSection(): string {
   return `
-    <section id="${featuresContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="features-heading">
-      <h2 id="features-heading" class="text-2xl font-bold text-slate-900 mb-6">${featuresContent.title}</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <section id="${featuresContent.id}" class="content-section" aria-labelledby="features-heading">
+      <div class="section-heading">
+        <div class="section-heading__copy">
+          <p class="section-eyebrow">Service</p>
+          <h2 id="features-heading" class="section-title">${featuresContent.title}</h2>
+        </div>
+      </div>
+      <div class="content-grid">
         ${featuresContent.items
           .map(
             (item) => `
-          <article class="rounded-xl bg-white border border-slate-200 p-5 shadow-sm">
+          <article class="content-card">
             <h3 class="font-semibold text-slate-900 mb-2">${item.title}</h3>
             <p class="text-sm text-slate-600 leading-relaxed">${item.description}</p>
           </article>
@@ -196,20 +247,23 @@ export function renderPrivacySection(): string {
 
 export function renderFooter(navLinks: readonly NavLink[] = footerNavLinks): string {
   return `
-    <footer class="border-t border-slate-200 bg-white mt-16">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
-        <p class="font-semibold text-slate-900 mb-2">${siteMeta.name}</p>
-        <p class="text-sm text-slate-500 mb-4">${siteMeta.tagline}</p>
-        <p class="text-sm text-slate-500 mb-4">
-          문의:
-          <a href="mailto:${siteMeta.contactEmail}" class="text-emerald-700 hover:underline ml-1">${siteMeta.contactEmail}</a>
-        </p>
-        <nav aria-label="하단 메뉴">
-          <ul class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-slate-500">
-            ${navLinks.map((link) => `<li><a href="${link.href}" class="hover:text-slate-800">${link.label}</a></li>`).join('')}
-          </ul>
-        </nav>
-        <p class="text-xs text-slate-400 mt-6">© ${new Date().getFullYear()} ${siteMeta.name}. All rights reserved.</p>
+    <footer class="site-footer">
+      <div class="site-footer__inner max-w-6xl mx-auto px-4 sm:px-6">
+        <div>
+          <p class="text-lg font-bold text-white mb-2">센텀 런치 가이드</p>
+          <p class="text-sm max-w-xl leading-relaxed">${siteMeta.tagline}</p>
+          <p class="text-xs mt-6">© ${new Date().getFullYear()} ${siteMeta.name}. All rights reserved.</p>
+        </div>
+        <div>
+          <nav aria-label="하단 메뉴">
+            <ul class="flex flex-wrap gap-x-5 gap-y-3 text-sm">
+              ${navLinks.map((link) => `<li><a href="${link.href}">${link.label}</a></li>`).join('')}
+            </ul>
+          </nav>
+          <p class="text-sm mt-5">
+            문의 <a href="mailto:${siteMeta.contactEmail}" class="text-white ml-1">${siteMeta.contactEmail}</a>
+          </p>
+        </div>
       </div>
     </footer>
   `

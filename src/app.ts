@@ -38,7 +38,7 @@ export function createApp(root: HTMLElement) {
       <div class="min-h-screen">
         ${renderHeader(state.data)}
 
-        <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+        <main class="page-shell max-w-6xl mx-auto px-4 sm:px-6">
           ${
             state.loading
               ? `
@@ -50,16 +50,26 @@ export function createApp(root: HTMLElement) {
               : state.error
                 ? `<div class="rounded-xl bg-red-50 border border-red-200 p-6 text-red-700" role="alert">${state.error}</div>`
                 : `
-            <section id="menus" class="scroll-mt-8" aria-labelledby="menus-heading">
-              <h2 id="menus-heading" class="text-2xl font-bold text-slate-900 mb-2">이번 주 식단표</h2>
-              <p class="text-sm text-slate-500 mb-6">센텀시티 구내식당 8곳의 주간 식단표입니다. 식당별로 이번 주 메뉴를 확인하세요.</p>
+            <section id="menus" class="content-section" aria-labelledby="menus-heading">
+              <div class="section-heading">
+                <div class="section-heading__copy">
+                  <p class="section-eyebrow">Weekly menu</p>
+                  <h2 id="menus-heading" class="section-title">이번 주 식단표</h2>
+                  <p class="section-description">센텀시티 구내식당 8곳의 메뉴를 한눈에 비교해 보세요. 식단표를 누르면 더 크게 볼 수 있습니다.</p>
+                </div>
+              </div>
               ${renderWeekNav(state.data!, state.selectedWeekId)}
               ${renderMenuCards(state.data!)}
             </section>
 
-            <section id="restaurants" class="scroll-mt-8 mt-12" aria-labelledby="restaurants-heading">
-              <h2 id="restaurants-heading" class="text-2xl font-bold text-slate-900 mb-2">식당 정보</h2>
-              <p class="text-sm text-slate-500 mb-6">위치, 가격, 영업 시간을 비교해 보세요. 영업 상태는 한국 시간 기준이며 현장과 다를 수 있습니다.</p>
+            <section id="restaurants" class="content-section" aria-labelledby="restaurants-heading">
+              <div class="section-heading">
+                <div class="section-heading__copy">
+                  <p class="section-eyebrow">Restaurant directory</p>
+                  <h2 id="restaurants-heading" class="section-title">식당 정보</h2>
+                  <p class="section-description">위치, 가격, 영업 시간을 비교해 오늘의 점심 동선을 계획하세요. 영업 상태는 한국 시간 기준입니다.</p>
+                </div>
+              </div>
               ${renderRestaurantInfoCards(state.data!.cafeterias)}
             </section>
 

@@ -97,18 +97,19 @@ function renderMenuContent(
 ): string {
   if (imageUrl) {
     const alt = `${name} ${weekTitle} 주간 식단표`
+    const safeImageUrl = imageUrl.replace(/^http:/, 'https:')
     return `
-      <figure class="p-4 bg-slate-50">
+      <figure class="p-4 bg-slate-50" data-menu-image-container>
         <button
           type="button"
           class="group block w-full text-left"
           data-menu-image-zoom
-          data-image-src="${imageUrl}"
+          data-image-src="${safeImageUrl}"
           data-image-alt="${alt}"
           aria-label="${name} 식단표 크게 보기"
         >
           <img
-            src="${imageUrl}"
+            src="${safeImageUrl}"
             alt="${alt}"
             class="w-full rounded-lg border border-slate-200 transition group-hover:opacity-95 cursor-zoom-in"
             loading="lazy"
@@ -119,6 +120,10 @@ function renderMenuContent(
             클릭하여 크게 보기
           </span>
         </button>
+        <div class="hidden rounded-xl border border-amber-200 bg-amber-50 p-5 text-center" data-menu-image-fallback>
+          <p class="text-sm font-medium text-amber-900">식단표 이미지 주소가 만료됐어요.</p>
+          ${sourceUrl ? `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white">공식 메뉴 확인하기 →</a>` : ''}
+        </div>
         <figcaption class="sr-only">${name} 이번 주 식단표</figcaption>
       </figure>
     `
@@ -245,6 +250,16 @@ export function bindMenuImageZoom(signal?: AbortSignal): void {
   if (!lightbox || !lightboxImage || !lightboxCaption) return
 
   const listenerOptions = signal ? { signal } : undefined
+
+  document.querySelectorAll<HTMLImageElement>('[data-menu-image-container] img').forEach((image) => {
+    const showFallback = () => {
+      const container = image.closest<HTMLElement>('[data-menu-image-container]')
+      container?.querySelector<HTMLElement>('[data-menu-image-zoom]')?.classList.add('hidden')
+      container?.querySelector<HTMLElement>('[data-menu-image-fallback]')?.classList.remove('hidden')
+    }
+    image.addEventListener('error', showFallback, listenerOptions)
+    if (image.complete && image.naturalWidth === 0) showFallback()
+  })
 
   const closeLightbox = () => {
     lightbox.classList.add('hidden')

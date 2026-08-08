@@ -88,13 +88,26 @@ async function cachePoster(event) {
 }
 
 async function main() {
-  const response = await fetch(SOURCE_URL, {
-    headers: { 'User-Agent': USER_AGENT, Accept: 'text/html' },
-    signal: AbortSignal.timeout(20_000),
-  })
-  if (!response.ok) throw new Error(`BEXCO schedule request failed: HTTP ${response.status}`)
+  const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' })
+  const monthEnd = `${today.slice(0, 8)}${new Date(Number(today.slice(0, 4)), Number(today.slice(5, 7)), 0).getDate()}`
+  const collected = []
 
-  const events = parseEvents(await response.text())
+  for (let page = 1; page <= 12; page += 1) {
+    const pageUrl = page === 1 ? SOURCE_URL : `${SOURCE_URL}&page=${page}&robot=Y`
+    const response = await fetch(pageUrl, {
+      headers: { 'User-Agent': USER_AGENT, Accept: 'text/html' },
+      signal: AbortSignal.timeout(20_000),
+    })
+    if (!response.ok) throw new Error(`BEXCO schedule request failed: HTTP ${response.status}`)
+
+    const pageEvents = parseEvents(await response.text())
+    collected.push(...pageEvents)
+    if (pageEvents.some((event) => event.startDate > monthEnd)) break
+  }
+
+  const events = [...new Map(collected.map((event) => [event.id, event])).values()]
+    .filter((event) => event.endDate >= today && event.startDate <= monthEnd)
+    .sort((a, b) => a.startDate.localeCompare(b.startDate))
   if (!events.length) throw new Error('No public BEXCO exhibitions or events were found')
 
   await mkdir(IMAGE_DIR, { recursive: true })

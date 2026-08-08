@@ -27,6 +27,12 @@ const BVIC_VIEW_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMMV.do?_menuNo=36&bbs_id
 const BVIC_FILE_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMMFileDown.do'
 
 const NAVER_BLOG = {
+  dawa: {
+    rssUrl: 'https://rss.blog.naver.com/dawafood-centum.xml',
+    blogId: 'dawafood-centum',
+    titleKeyword: '메뉴',
+    sourceUrl: 'https://blog.naver.com/dawafood-centum',
+  },
   'dawa-qubi': {
     rssUrl: 'https://rss.blog.naver.com/dawafood-qubi.xml',
     blogId: 'dawafood-qubi',
@@ -394,11 +400,24 @@ async function fetchPortlockroyWeek() {
 }
 
 async function fetchNaverBlogMenu(id, config) {
-  const logNo = config.logNo ?? (await fetchText(config.rssUrl).then((rssXml) => {
+  let logNo = config.logNo
+
+  if (!logNo) {
+    const rssXml = await fetchText(config.rssUrl)
     const items = parseRssItems(rssXml)
     const menuPost = items.find((item) => item.title.includes(config.titleKeyword))
-    return menuPost?.link.match(/\/(\d+)(?:\?|$)/)?.[1]
-  }))
+    logNo = menuPost?.link.match(/\/(\d+)(?:\?|$)/)?.[1]
+  }
+
+  if (!logNo) {
+    const postListUrl = `https://blog.naver.com/PostList.naver?blogId=${config.blogId}&categoryNo=0&directAccess=true`
+    const postListHtml = await fetchText(postListUrl)
+    const candidates = [
+      ...postListHtml.matchAll(new RegExp(`/${config.blogId}/(\\d{8,})`, 'g')),
+      ...postListHtml.matchAll(/PostView\.naver\?[^"']*logNo=(\d{8,})/g),
+    ]
+    logNo = candidates[0]?.[1]
+  }
 
   if (!logNo) {
     console.warn(`[${id}] 네이버 블로그 메뉴 게시글 없음`)

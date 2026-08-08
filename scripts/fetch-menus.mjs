@@ -6,7 +6,9 @@
  * - 카카오채널: 슈마우스, 삼촌밥차, 정담식당
  */
 
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
+import { spawn } from 'node:child_process'
+import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -18,6 +20,11 @@ const IMAGE_DIR = join(DATA_DIR, 'assets')
 const PORTLOCKROY_RSS = 'https://portlockroy.me/rss'
 const PORTLOCKROY_KEYWORD = '센텀시티 구내식당 식단표'
 const PORTLOCKROY_IDS = ['stx', 'partibox', 'dawa', 'manna']
+
+const BVIC_BOARD_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500'
+const BVIC_LIST_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMML.json'
+const BVIC_VIEW_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMMV.do?_menuNo=36&bbs_id=NT_BBS_0500'
+const BVIC_FILE_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMMFileDown.do'
 
 const NAVER_BLOG = {
   'dawa-qubi': {
@@ -201,12 +208,152 @@ function imageExtension(contentType) {
   return 'jpg'
 }
 
+function addDays(date, days) {
+  const result = new Date(date)
+  result.setUTCDate(result.getUTCDate() + days)
+  return result
+}
+
+function formatDate(date) {
+  return date.toISOString().slice(0, 10)
+}
+
+function weekFromBvicPublication(publishedAt) {
+  const published = new Date(`${publishedAt}T00:00:00Z`)
+  const daysUntilMonday = published.getUTCDay() === 1 ? 0 : (8 - published.getUTCDay()) % 7
+  const start = addDays(published, daysUntilMonday)
+  const end = addDays(start, 4)
+
+  return {
+    id: formatDate(start),
+    weekStart: formatDate(start),
+    weekEnd: formatDate(end),
+    title: `${start.getUTCMonth() + 1}월 ${start.getUTCDate()}일 ~ ${end.getUTCMonth() + 1}월 ${end.getUTCDate()}일`,
+  }
+}
+
+function cookieHeader(response) {
+  const cookies = response.headers.getSetCookie?.() ?? [response.headers.get('set-cookie')].filter(Boolean)
+  return cookies.map((cookie) => cookie.split(';', 1)[0]).join('; ')
+}
+
+function runCommand(command, args) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, {
+      shell: process.platform === 'win32',
+      stdio: ['ignore', 'ignore', 'pipe'],
+    })
+    let stderr = ''
+    child.stderr.on('data', (chunk) => { stderr += chunk })
+    child.on('error', reject)
+    child.on('close', (code) => {
+      if (code === 0) resolve()
+      else reject(new Error(`${command} exited with ${code}: ${stderr.trim()}`))
+    })
+  })
+}
+
+async function fetchBvicLatestMenu() {
+  const listResponse = await fetchWithRetry(BVIC_BOARD_URL, {
+    'User-Agent': USER_AGENT,
+    Accept: 'text/html',
+  })
+  const listHtml = await listResponse.text()
+  const cookie = cookieHeader(listResponse)
+  const csrf = listHtml.match(/name=["']_csrf["'][^>]*value=["']([^"']+)/i)?.[1]
+  if (!csrf) throw new Error('BVIC security token was not found')
+
+  const baseForm = {
+    _menuNo: '36',
+    pageNo: '1',
+    schSel: 'NTC_TITLE',
+    schTxt: '',
+    bbs_id: 'NT_BBS_0500',
+    ntc_id: '',
+    cudMode: '',
+    _csrf: csrf,
+  }
+  const postHeaders = {
+    'User-Agent': USER_AGENT,
+    Accept: 'text/html,application/pdf',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    Cookie: cookie,
+    Referer: BVIC_BOARD_URL,
+  }
+  const listDataResponse = await fetch(BVIC_LIST_URL, {
+    method: 'POST',
+    headers: { ...postHeaders, Accept: 'application/json' },
+    body: new URLSearchParams(baseForm),
+    signal: AbortSignal.timeout(15_000),
+  })
+  if (!listDataResponse.ok) throw new Error(`BVIC list request failed: HTTP ${listDataResponse.status}`)
+  const listData = await listDataResponse.json()
+  const latestPost = listData.dtList?.[0] ?? listData.topLst?.[0]
+  const noticeId = String(latestPost?.ntc_id ?? '')
+  const publishedAt = latestPost?.ins_dt
+  if (!noticeId || !publishedAt) throw new Error('BVIC latest menu post was not found')
+
+  const form = new URLSearchParams({ ...baseForm, ntc_id: noticeId })
+  const viewResponse = await fetch(BVIC_VIEW_URL, {
+    method: 'POST',
+    headers: postHeaders,
+    body: form,
+    signal: AbortSignal.timeout(15_000),
+  })
+  if (!viewResponse.ok) throw new Error(`BVIC view request failed: HTTP ${viewResponse.status}`)
+  const viewHtml = await viewResponse.text()
+  const fileNo = viewHtml.match(/fFileDown\(['"]?(\d+)['"]?\)/i)?.[1]
+  if (!fileNo) throw new Error('BVIC menu attachment was not found')
+
+  const fileResponse = await fetch(`${BVIC_FILE_URL}?file_no=${fileNo}`, {
+    method: 'POST',
+    headers: { ...postHeaders, Referer: BVIC_VIEW_URL },
+    body: form,
+    signal: AbortSignal.timeout(20_000),
+  })
+  if (!fileResponse.ok) throw new Error(`BVIC file download failed: HTTP ${fileResponse.status}`)
+  const pdf = Buffer.from(await fileResponse.arrayBuffer())
+  if (pdf.subarray(0, 4).toString() !== '%PDF') {
+    const contentType = fileResponse.headers.get('content-type') ?? ''
+    throw new Error(`Unexpected BVIC attachment type: ${contentType}`)
+  }
+
+  return {
+    ...weekFromBvicPublication(publishedAt),
+    pdf,
+    sourceUrl: BVIC_BOARD_URL,
+  }
+}
+
+async function renderBvicMenuImage(weekId, pdf) {
+  const tempDir = await mkdtemp(join(tmpdir(), 'centum-bvic-'))
+  const pdfPath = join(tempDir, 'menu.pdf')
+  const outputPrefix = join(tempDir, 'menu')
+  const targetDir = join(IMAGE_DIR, weekId)
+  const targetPath = join(targetDir, 'stx.png')
+
+  try {
+    await writeFile(pdfPath, pdf)
+    const converter = process.platform === 'win32' ? 'pdftoppm.cmd' : 'pdftoppm'
+    await runCommand(converter, ['-png', '-f', '1', '-singlefile', '-r', '150', pdfPath, outputPrefix])
+    await mkdir(targetDir, { recursive: true })
+    await writeFile(targetPath, await readFile(`${outputPrefix}.png`))
+    return `/data/weeks/assets/${weekId}/stx.png`
+  } finally {
+    await rm(tempDir, { recursive: true, force: true })
+  }
+}
+
 async function cacheMenuImages(weekId, images) {
   const cached = {}
   const targetDir = join(IMAGE_DIR, weekId)
   await mkdir(targetDir, { recursive: true })
 
   for (const [id, rawUrl] of Object.entries(images)) {
+    if (rawUrl.startsWith('/')) {
+      cached[id] = rawUrl
+      continue
+    }
     const url = rawUrl.replace(/^http:/, 'https:')
     try {
       const response = await fetchWithRetry(url, {
@@ -296,13 +443,37 @@ async function fetchKakaoChannelMenu(id, profileId) {
 }
 
 async function fetchAllMenus() {
-  const week = await fetchPortlockroyWeek()
-  const menuImages = { ...week.menuImages }
+  let bvicMenu
+  try {
+    bvicMenu = await fetchBvicLatestMenu()
+    console.log(`[stx] BVIC latest menu: ${bvicMenu.weekStart}`)
+  } catch (error) {
+    console.warn(`[stx] BVIC fetch failed: ${error.message}`)
+  }
+
+  let portlockroyWeek
+  try {
+    portlockroyWeek = await fetchPortlockroyWeek()
+  } catch (error) {
+    console.warn(`[portlockroy] fetch failed: ${error.message}`)
+  }
+
+  if (!bvicMenu && !portlockroyWeek) throw new Error('No weekly menu source is available')
+
+  const week = bvicMenu && (!portlockroyWeek || bvicMenu.weekStart >= portlockroyWeek.weekStart)
+    ? bvicMenu
+    : portlockroyWeek
+  const menuImages = { ...(portlockroyWeek?.menuImages ?? {}) }
   const menuSourceUrls = {}
   const menuBoardHtml = {}
 
   for (const id of PORTLOCKROY_IDS) {
-    menuSourceUrls[id] = week.sourceUrl
+    menuSourceUrls[id] = portlockroyWeek?.sourceUrl ?? week.sourceUrl
+  }
+
+  if (bvicMenu) {
+    menuImages.stx = await renderBvicMenuImage(week.id, bvicMenu.pdf)
+    menuSourceUrls.stx = bvicMenu.sourceUrl
   }
 
   for (const [id, config] of Object.entries(NAVER_BLOG)) {
@@ -334,6 +505,7 @@ async function fetchAllMenus() {
 
   return {
     ...week,
+    sourceUrl: week.sourceUrl,
     menuImages,
     menuSourceUrls,
     menuBoardHtml,
@@ -423,3 +595,4 @@ main().catch((err) => {
   console.error('업데이트 실패:', err.message)
   process.exit(1)
 })
+

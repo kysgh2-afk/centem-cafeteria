@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "node scripts/generate-seo.mjs && tsc && vite build",
     "preview": "vite preview",
-    "update-menus": "node scripts/fetch-menus.mjs"
+    "update-menus": "node scripts/fetch-menus.mjs",
+    "update-bexco": "node scripts/fetch-bexco-events.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.1",

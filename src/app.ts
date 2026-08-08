@@ -10,7 +10,7 @@ import {
   renderHeader,
   updateJsonLd,
 } from './render/layout'
-import { bindMenuImageZoom, renderMenuCards, renderWeekNav } from './render/menuSection'
+import { bindMenuImageZoom, renderMenuCards, renderWeekNav, type MenuFilters } from './render/menuSection'
 import { renderRestaurantInfoCards } from './render/restaurantInfo'
 import type { AppData } from './types'
 
@@ -19,6 +19,9 @@ interface AppState {
   selectedWeekId: string
   loading: boolean
   error: string | null
+  filters: MenuFilters
+  favorites: Set<string>
+  recommendation: string | null
 }
 
 export function createApp(root: HTMLElement) {
@@ -27,6 +30,9 @@ export function createApp(root: HTMLElement) {
     selectedWeekId: '',
     loading: true,
     error: null,
+    filters: { query: '', maxPrice: null, favoritesOnly: false },
+    favorites: new Set(JSON.parse(localStorage.getItem('centum-favorites') ?? '[]') as string[]),
+    recommendation: null,
   }
 
   let menuZoomAbort: AbortController | null = null
@@ -38,7 +44,7 @@ export function createApp(root: HTMLElement) {
       <div class="min-h-screen">
         ${renderHeader(state.data)}
 
-        <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+        <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           ${
             state.loading
               ? `
@@ -51,10 +57,21 @@ export function createApp(root: HTMLElement) {
                 ? `<div class="rounded-xl bg-red-50 border border-red-200 p-6 text-red-700" role="alert">${state.error}</div>`
                 : `
             <section id="menus" class="scroll-mt-8" aria-labelledby="menus-heading">
-              <h2 id="menus-heading" class="text-2xl font-bold text-slate-900 mb-2">이번 주 식단표</h2>
-              <p class="text-sm text-slate-500 mb-6">센텀시티 구내식당 8곳의 주간 식단표입니다. 식당별로 이번 주 메뉴를 확인하세요.</p>
+              <div class="section-heading">
+                <div><p class="eyebrow">WEEKLY MENU</p><h2 id="menus-heading">오늘 점심, 빠르게 골라요</h2><p>검색하고 가격을 비교한 뒤 마음에 드는 식당을 저장해 보세요.</p></div>
+                <button type="button" data-random-pick class="primary-action">점심 추천받기</button>
+              </div>
+              ${state.recommendation ? `<div class="recommendation" role="status"><span>오늘의 추천</span><strong>${state.recommendation}</strong><button type="button" data-clear-recommendation aria-label="추천 닫기">×</button></div>` : ''}
+              <div class="menu-toolbar" aria-label="식당 필터">
+                <label class="search-field"><span class="sr-only">식당 또는 건물 검색</span><input data-menu-search type="search" value="${state.filters.query}" placeholder="식당·건물 검색" autocomplete="off" /></label>
+                <div class="filter-pills">
+                  <button type="button" data-price-filter="all" class="${state.filters.maxPrice === null ? 'is-active' : ''}">전체</button>
+                  <button type="button" data-price-filter="7000" class="${state.filters.maxPrice === 7000 ? 'is-active' : ''}">7천원 이하</button>
+                  <button type="button" data-favorites-only class="${state.filters.favoritesOnly ? 'is-active' : ''}">♥ 즐겨찾기</button>
+                </div>
+              </div>
               ${renderWeekNav(state.data!, state.selectedWeekId)}
-              ${renderMenuCards(state.data!)}
+              ${renderMenuCards(state.data!, state.filters, state.favorites)}
             </section>
 
             <section id="restaurants" class="scroll-mt-8 mt-12" aria-labelledby="restaurants-heading">
@@ -111,6 +128,50 @@ export function createApp(root: HTMLElement) {
         }
       }, { signal: zoomAbort.signal })
     })
+
+    document.querySelector<HTMLInputElement>('[data-menu-search]')?.addEventListener('input', (event) => {
+      state.filters.query = (event.currentTarget as HTMLInputElement).value
+      render()
+      requestAnimationFrame(() => {
+        const input = document.querySelector<HTMLInputElement>('[data-menu-search]')
+        input?.focus()
+        input?.setSelectionRange(input.value.length, input.value.length)
+      })
+    }, { signal: zoomAbort.signal })
+
+    document.querySelectorAll<HTMLButtonElement>('[data-price-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        state.filters.maxPrice = button.dataset.priceFilter === 'all' ? null : Number(button.dataset.priceFilter)
+        render()
+      }, { signal: zoomAbort.signal })
+    })
+
+    document.querySelector<HTMLButtonElement>('[data-favorites-only]')?.addEventListener('click', () => {
+      state.filters.favoritesOnly = !state.filters.favoritesOnly
+      render()
+    }, { signal: zoomAbort.signal })
+
+    document.querySelectorAll<HTMLButtonElement>('[data-favorite-id]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const id = button.dataset.favoriteId
+        if (!id) return
+        state.favorites.has(id) ? state.favorites.delete(id) : state.favorites.add(id)
+        localStorage.setItem('centum-favorites', JSON.stringify([...state.favorites]))
+        render()
+      }, { signal: zoomAbort.signal })
+    })
+
+    document.querySelector<HTMLButtonElement>('[data-random-pick]')?.addEventListener('click', () => {
+      if (!state.data) return
+      const candidates = state.data.cafeterias.filter((c) => state.filters.maxPrice === null || c.prices.lunch <= state.filters.maxPrice)
+      state.recommendation = candidates[Math.floor(Math.random() * candidates.length)]?.name ?? null
+      render()
+    }, { signal: zoomAbort.signal })
+
+    document.querySelector<HTMLButtonElement>('[data-clear-recommendation]')?.addEventListener('click', () => {
+      state.recommendation = null
+      render()
+    }, { signal: zoomAbort.signal })
 
     bindMenuImageZoom(zoomAbort.signal)
   }

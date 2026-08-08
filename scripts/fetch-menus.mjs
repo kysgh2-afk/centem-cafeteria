@@ -168,16 +168,30 @@ function pickKakaoImage(post) {
   return best?.xlarge_url ?? best?.url ?? null
 }
 
+async function fetchWithRetry(url, headers) {
+  let lastError
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch(url, {
+        headers,
+        signal: AbortSignal.timeout(15_000),
+      })
+      if (!response.ok) throw new Error(`HTTP ${response.status}`)
+      return response
+    } catch (error) {
+      lastError = error
+      if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 1_000))
+    }
+  }
+  throw new Error(`Fetch failed after 3 attempts: ${url} (${lastError?.message ?? 'unknown error'})`)
+}
+
 async function fetchText(url) {
-  const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT } })
-  if (!response.ok) throw new Error(`Fetch failed (${response.status}): ${url}`)
-  return response.text()
+  return (await fetchWithRetry(url, { 'User-Agent': USER_AGENT, Accept: 'text/html,application/xml' })).text()
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } })
-  if (!response.ok) throw new Error(`Fetch failed (${response.status}): ${url}`)
-  return response.json()
+  return (await fetchWithRetry(url, { 'User-Agent': USER_AGENT, Accept: 'application/json' })).json()
 }
 
 async function fetchPortlockroyWeek() {

@@ -151,14 +151,28 @@ function renderMenuContent(
   return `<div class="p-8 text-center text-slate-400 text-sm">이번 주 식단표 이미지 준비 중</div>`
 }
 
-export function renderMenuCards(data: AppData): string {
+export interface MenuFilters {
+  query: string
+  maxPrice: number | null
+  favoritesOnly: boolean
+}
+
+export function renderMenuCards(data: AppData, filters: MenuFilters, favorites: Set<string>): string {
   const images = data.week.menuImages ?? {}
   const sourceUrls = data.week.menuSourceUrls ?? {}
   const menuBoards = data.week.menuBoardHtml ?? {}
+  const normalizedQuery = filters.query.trim().toLocaleLowerCase('ko-KR')
+  const cafeterias = data.cafeterias.filter((cafeteria) => {
+    const matchesQuery = !normalizedQuery || [cafeteria.name, cafeteria.building, cafeteria.landmark]
+      .some((value) => value.toLocaleLowerCase('ko-KR').includes(normalizedQuery))
+    const matchesPrice = filters.maxPrice === null || cafeteria.prices.lunch <= filters.maxPrice
+    const matchesFavorite = !filters.favoritesOnly || favorites.has(cafeteria.id)
+    return matchesQuery && matchesPrice && matchesFavorite
+  })
 
   return `
-    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-      ${data.cafeterias
+    <div class="menu-grid grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+      ${cafeterias
         .map((c) => {
           const imageUrl = images[c.id]
           const sourceUrl = sourceUrls[c.id]
@@ -167,11 +181,16 @@ export function renderMenuCards(data: AppData): string {
 
           return `
             <article
-              class="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm"
+              class="menu-card rounded-3xl bg-white border border-slate-200 overflow-hidden shadow-sm"
               style="border-left: 4px solid ${c.color}"
             >
               <div class="px-5 py-4 border-b border-slate-100">
-                <h3 class="text-lg font-bold text-slate-900">${c.name}</h3>
+                <div class="flex items-start justify-between gap-3">
+                  <h3 class="text-lg font-bold text-slate-900">${c.name}</h3>
+                  <button type="button" data-favorite-id="${c.id}" class="favorite-button ${favorites.has(c.id) ? 'is-active' : ''}" aria-pressed="${favorites.has(c.id)}" aria-label="${c.name} 즐겨찾기">
+                    <span aria-hidden="true">${favorites.has(c.id) ? '♥' : '♡'}</span>
+                  </button>
+                </div>
                 <p class="text-sm text-slate-500 mt-1">
                   ${c.building} ${c.floor} · 점심 ${formatPrice(c.prices.lunch)}${c.prices.dinner ? ` · 저녁 ${formatPrice(c.prices.dinner)}` : ''}
                 </p>
@@ -183,6 +202,7 @@ export function renderMenuCards(data: AppData): string {
         })
         .join('')}
     </div>
+    ${cafeterias.length === 0 ? `<div class="empty-state"><p class="font-semibold text-slate-800">조건에 맞는 식당이 없어요.</p><p class="mt-1 text-sm text-slate-500">검색어나 가격 조건을 바꿔 보세요.</p></div>` : ''}
     ${renderMenuImageLightbox()}
   `
 }

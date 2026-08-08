@@ -18,9 +18,11 @@ type NavLink = { label: string; href: string }
 
 export function renderHeader(data: AppData | null, navLinks: readonly NavLink[] = mainNavLinks): string {
   return `
-    <header class="bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-700 text-white">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <nav aria-label="주요 메뉴" class="mb-6">
+    <header class="site-hero text-white">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div><div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-14 relative">
+        <nav aria-label="주요 메뉴" class="hero-nav mb-10">
+          <a href="/" class="brand-mark" aria-label="센텀 구내식당 홈">센텀런치</a>
           <ul class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-emerald-50">
             ${navLinks
               .map(
@@ -31,13 +33,15 @@ export function renderHeader(data: AppData | null, navLinks: readonly NavLink[] 
           </ul>
         </nav>
 
-        <p class="text-emerald-100 text-sm font-medium mb-2">부산 해운대 · 센텀시티</p>
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-3">${siteMeta.name}</h1>
-        <p class="text-emerald-50 text-base max-w-2xl leading-relaxed">${siteMeta.description}</p>
+        <div class="max-w-3xl py-4 sm:py-8">
+          <p class="hero-kicker">BUSAN · CENTUM CITY</p>
+          <h1 class="hero-title">오늘 점심 고민은<br/><span>여기서 끝.</span></h1>
+          <p class="hero-copy">센텀시티 구내식당 8곳의 메뉴와 가격, 위치를 한눈에 비교하세요.</p>
+        </div>
         ${
           data
             ? `
-          <div class="mt-5 inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-2 text-sm">
+          <div class="mt-5 inline-flex items-center gap-2 rounded-full bg-white/12 backdrop-blur px-4 py-2 text-sm border border-white/15">
             <span class="h-2 w-2 rounded-full bg-green-300" aria-hidden="true"></span>
             ${data.week.title} · ${data.cafeterias.length}개 구내식당
           </div>

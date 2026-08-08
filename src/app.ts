@@ -2,7 +2,6 @@ import { fetchAppData } from './services/menuService'
 import {
   renderAreaGuideSection,
   renderDisclaimerSection,
-  renderFeaturesSection,
   renderFooter,
   renderGuideSection,
   renderHeader,
@@ -79,7 +78,6 @@ export function createApp(root: HTMLElement) {
 
             ${renderGuideSection()}
             ${renderAreaGuideSection()}
-            ${renderFeaturesSection()}
             ${renderDisclaimerSection()}
           `
           }

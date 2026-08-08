@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Install PDF image converter
+        run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq poppler-utils
+
       - name: Fetch latest weekly menus
         id: fetch_menus
         continue-on-error: true
@@ -214,3 +217,4 @@ jobs:
           echo "::warning::Cloudways Servers(서버 ID) / Applications(앱 ID)를 CW_SERVER_ID, CW_APP_ID에 각각 넣었는지 확인하세요."
           echo "::warning::배포는 완료되었습니다. 사이트가 안 바뀌면 Cloudways 대시보드에서 Purge Varnish를 수동 실행하세요."
           exit 0
+

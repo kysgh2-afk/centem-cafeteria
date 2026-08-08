@@ -64,7 +64,7 @@ function renderEventCard(event: BexcoEvent): string {
       <a href="${event.detailUrl}" target="_blank" rel="noopener noreferrer" class="group block h-full">
         <div class="aspect-[4/3] overflow-hidden bg-gradient-to-br from-emerald-50 to-orange-50">
           ${event.imageUrl
-            ? `<img src="${event.imageUrl}" alt="${event.title} 포스터" class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />`
+            ? `<img src="${event.imageUrl}" alt="${event.title} 포스터" data-event-image data-event-type="${event.type}" class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" referrerpolicy="no-referrer" />`
             : `<div class="flex h-full items-center justify-center p-8 text-center"><span class="text-lg font-black text-emerald-800">BEXCO<br/>${event.type}</span></div>`}
         </div>
         <div class="p-5">
@@ -133,6 +133,10 @@ export async function createBexcoApp(root: HTMLElement): Promise<void> {
           ${upcomingEvents.length ? '' : '<p class="rounded-2xl bg-white p-8 text-center text-slate-500">이번 달 예정된 행사가 없습니다.</p>'}
         </section>
       `
+      main.querySelectorAll<HTMLImageElement>('[data-event-image]').forEach((image) => image.addEventListener('error', () => {
+        const type = image.dataset.eventType ?? '행사'
+        image.parentElement!.innerHTML = `<div class="flex h-full items-center justify-center p-8 text-center"><span class="text-lg font-black text-emerald-800">BEXCO<br/>${type}</span></div>`
+      }))
       main.querySelectorAll<HTMLButtonElement>('[data-event-filter]').forEach((button) => button.addEventListener('click', () => {
         selected = button.dataset.eventFilter as typeof selected
         renderContent()

@@ -1,10 +1,8 @@
 import { fetchAppData } from './services/menuService'
 import {
-  renderAboutSection,
   renderAreaGuideSection,
   renderDisclaimerSection,
   renderFeaturesSection,
-  renderFaqSection,
   renderFooter,
   renderGuideSection,
   renderHeader,
@@ -79,10 +77,8 @@ export function createApp(root: HTMLElement) {
               ${renderRestaurantInfoCards(state.data!.cafeterias)}
             </section>
 
-            ${renderFaqSection()}
             ${renderGuideSection()}
             ${renderAreaGuideSection()}
-            ${renderAboutSection()}
             ${renderFeaturesSection()}
             ${renderDisclaimerSection()}
           `

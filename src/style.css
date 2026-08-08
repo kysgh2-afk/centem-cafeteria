@@ -36,8 +36,6 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid 
 .recommendation strong { flex: 1; color: #431407; }
 .recommendation button { font-size: 1.35rem; line-height: 1; }
 .menu-toolbar { position: sticky; top: .5rem; z-index: 20; display: flex; align-items: center; gap: .75rem; margin-bottom: 1.5rem; padding: .75rem; border: 1px solid rgba(226,232,240,.9); border-radius: 1.1rem; background: rgba(255,255,255,.91); box-shadow: 0 12px 35px rgba(15,23,42,.08); backdrop-filter: blur(14px); }
-.search-field { flex: 1; }
-.search-field input { width: 100%; min-height: 44px; border: 0; border-radius: .8rem; background: #f1f5f9; padding: .7rem 1rem; color: #0f172a; }
 .filter-pills { display: flex; gap: .4rem; }
 .filter-pills button { min-height: 40px; white-space: nowrap; border-radius: 999px; padding: .55rem .85rem; color: #475569; font-size: .82rem; font-weight: 700; }
 .filter-pills button:hover, .filter-pills button.is-active { background: #064e3b; color: white; }
@@ -121,3 +119,4 @@ html {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+

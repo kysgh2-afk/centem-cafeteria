@@ -9,11 +9,12 @@
     "stx": "/data/weeks/assets/2026-08-10/stx.png",
     "schmaus": "/data/weeks/assets/2026-08-10/schmaus.jpg",
     "uncle-bapcha": "/data/weeks/assets/2026-08-10/uncle-bapcha.jpg",
-    "jeongdam": "/data/weeks/assets/2026-08-10/jeongdam.jpg"
+    "jeongdam": "/data/weeks/assets/2026-08-10/jeongdam.jpg",
+    "partibox": "/data/weeks/assets/2026-08-10/partibox.jpg"
   },
   "menuSourceUrls": {
     "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-    "partibox": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+    "partibox": "http://pf.kakao.com/_DCpLK/114142838",
     "dawa": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
     "manna": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
     "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291",

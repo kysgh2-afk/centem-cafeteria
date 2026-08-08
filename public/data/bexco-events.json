@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T12:26:49.843Z",
+  "updatedAt": "2026-08-08T12:34:51.255Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -10,7 +10,7 @@
       "endDate": "2026-08-09",
       "place": "제2전시장 4(E-F)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16235",
-      "imageUrl": null
+      "imageUrl": "/data/bexco/assets/16235.png"
     },
     {
       "id": "16473",
@@ -20,7 +20,7 @@
       "endDate": "2026-08-09",
       "place": "제2전시장 5A홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16473",
-      "imageUrl": null
+      "imageUrl": "/data/bexco/assets/16473.jpg"
     },
     {
       "id": "16502",
@@ -30,7 +30,7 @@
       "endDate": "2026-08-09",
       "place": "제2전시장 4(A-D)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16502",
-      "imageUrl": null
+      "imageUrl": "/data/bexco/assets/16502.png"
     },
     {
       "id": "15809",
@@ -40,7 +40,7 @@
       "endDate": "2026-08-09",
       "place": "제1전시장 3홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15809",
-      "imageUrl": null
+      "imageUrl": "/data/bexco/assets/15809.jpg"
     },
     {
       "id": "15661",
@@ -50,7 +50,7 @@
       "endDate": "2026-10-31",
       "place": "제2전시장 5(B-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
-      "imageUrl": null
+      "imageUrl": "/data/bexco/assets/15661.jpg"
     }
   ]
 }

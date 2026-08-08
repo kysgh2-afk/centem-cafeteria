@@ -37,6 +37,7 @@ const NAVER_BLOG = {
 }
 
 const KAKAO_CHANNELS = {
+  partibox: '_DCpLK',
   schmaus: '_CiVis',
   'uncle-bapcha': '_FxbaQC',
   jeongdam: '_vKxgdn',

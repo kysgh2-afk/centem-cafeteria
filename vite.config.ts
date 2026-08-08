@@ -12,6 +12,7 @@ export default defineConfig({
         privacy: resolve(__dirname, 'privacy.html'),
         partibox: resolve(__dirname, 'partibox.html'),
         stx: resolve(__dirname, 'stx.html'),
+        bexco: resolve(__dirname, 'bexco.html'),
       },
     },
   },

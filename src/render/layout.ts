@@ -35,7 +35,7 @@ export function renderHeader(data: AppData | null, navLinks: readonly NavLink[] 
 
         <div class="max-w-3xl py-4 sm:py-8">
           <p class="hero-kicker">BUSAN · CENTUM CITY</p>
-          <h1 class="hero-title">오늘 점심 고민은<br/><span>여기서 끝.</span></h1>
+          <h1 class="hero-title">센텀시티<br/><span>구내식당 식단표</span></h1>
           <p class="hero-copy">센텀시티 구내식당 8곳의 메뉴와 가격, 위치를 한눈에 비교하세요.</p>
         </div>
         ${

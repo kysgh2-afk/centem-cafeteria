@@ -30,7 +30,7 @@ export function createApp(root: HTMLElement) {
     selectedWeekId: '',
     loading: true,
     error: null,
-    filters: { query: '', maxPrice: null, favoritesOnly: false },
+    filters: { maxPrice: null, favoritesOnly: false },
     favorites: new Set(JSON.parse(localStorage.getItem('centum-favorites') ?? '[]') as string[]),
     recommendation: null,
   }
@@ -58,12 +58,11 @@ export function createApp(root: HTMLElement) {
                 : `
             <section id="menus" class="scroll-mt-8" aria-labelledby="menus-heading">
               <div class="section-heading">
-                <div><p class="eyebrow">WEEKLY MENU</p><h2 id="menus-heading">오늘 점심, 빠르게 골라요</h2><p>검색하고 가격을 비교한 뒤 마음에 드는 식당을 저장해 보세요.</p></div>
+                <div><p class="eyebrow">WEEKLY MENU</p><h2 id="menus-heading">오늘 점심, 빠르게 골라요</h2><p>가격을 비교하고 마음에 드는 식당을 저장해 보세요.</p></div>
                 <button type="button" data-random-pick class="primary-action">점심 추천받기</button>
               </div>
               ${state.recommendation ? `<div class="recommendation" role="status"><span>오늘의 추천</span><strong>${state.recommendation}</strong><button type="button" data-clear-recommendation aria-label="추천 닫기">×</button></div>` : ''}
               <div class="menu-toolbar" aria-label="식당 필터">
-                <label class="search-field"><span class="sr-only">식당 또는 건물 검색</span><input data-menu-search type="search" value="${state.filters.query}" placeholder="식당·건물 검색" autocomplete="off" /></label>
                 <div class="filter-pills">
                   <button type="button" data-price-filter="all" class="${state.filters.maxPrice === null ? 'is-active' : ''}">전체</button>
                   <button type="button" data-price-filter="7000" class="${state.filters.maxPrice === 7000 ? 'is-active' : ''}">7천원 이하</button>
@@ -129,16 +128,6 @@ export function createApp(root: HTMLElement) {
       }, { signal: zoomAbort.signal })
     })
 
-    document.querySelector<HTMLInputElement>('[data-menu-search]')?.addEventListener('input', (event) => {
-      state.filters.query = (event.currentTarget as HTMLInputElement).value
-      render()
-      requestAnimationFrame(() => {
-        const input = document.querySelector<HTMLInputElement>('[data-menu-search]')
-        input?.focus()
-        input?.setSelectionRange(input.value.length, input.value.length)
-      })
-    }, { signal: zoomAbort.signal })
-
     document.querySelectorAll<HTMLButtonElement>('[data-price-filter]').forEach((button) => {
       button.addEventListener('click', () => {
         state.filters.maxPrice = button.dataset.priceFilter === 'all' ? null : Number(button.dataset.priceFilter)
@@ -193,3 +182,4 @@ export function createApp(root: HTMLElement) {
 
   init()
 }
+

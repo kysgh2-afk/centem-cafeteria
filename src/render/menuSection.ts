@@ -157,7 +157,6 @@ function renderMenuContent(
 }
 
 export interface MenuFilters {
-  query: string
   maxPrice: number | null
   favoritesOnly: boolean
 }
@@ -166,13 +165,10 @@ export function renderMenuCards(data: AppData, filters: MenuFilters, favorites: 
   const images = data.week.menuImages ?? {}
   const sourceUrls = data.week.menuSourceUrls ?? {}
   const menuBoards = data.week.menuBoardHtml ?? {}
-  const normalizedQuery = filters.query.trim().toLocaleLowerCase('ko-KR')
   const cafeterias = data.cafeterias.filter((cafeteria) => {
-    const matchesQuery = !normalizedQuery || [cafeteria.name, cafeteria.building, cafeteria.landmark]
-      .some((value) => value.toLocaleLowerCase('ko-KR').includes(normalizedQuery))
     const matchesPrice = filters.maxPrice === null || cafeteria.prices.lunch <= filters.maxPrice
     const matchesFavorite = !filters.favoritesOnly || favorites.has(cafeteria.id)
-    return matchesQuery && matchesPrice && matchesFavorite
+    return matchesPrice && matchesFavorite
   })
 
   return `
@@ -207,7 +203,7 @@ export function renderMenuCards(data: AppData, filters: MenuFilters, favorites: 
         })
         .join('')}
     </div>
-    ${cafeterias.length === 0 ? `<div class="empty-state"><p class="font-semibold text-slate-800">조건에 맞는 식당이 없어요.</p><p class="mt-1 text-sm text-slate-500">검색어나 가격 조건을 바꿔 보세요.</p></div>` : ''}
+    ${cafeterias.length === 0 ? `<div class="empty-state"><p class="font-semibold text-slate-800">조건에 맞는 식당이 없어요.</p><p class="mt-1 text-sm text-slate-500">가격 또는 즐겨찾기 조건을 바꿔 보세요.</p></div>` : ''}
     ${renderMenuImageLightbox()}
   `
 }
@@ -314,3 +310,4 @@ export function bindMenuImageZoom(signal?: AbortSignal): void {
     listenerOptions,
   )
 }
+

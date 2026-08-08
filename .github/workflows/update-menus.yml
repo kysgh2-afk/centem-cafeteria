@@ -44,22 +44,31 @@ jobs:
         continue-on-error: true
         run: npm run update-menus
 
+      - name: Fetch latest BEXCO events
+        id: fetch_bexco
+        continue-on-error: true
+        run: npm run update-bexco
+
       - name: Report menu fetch fallback
         if: steps.fetch_menus.outcome == 'failure'
         run: echo "::warning::Menu source is unavailable. Deploying with the latest stored menu data."
 
+      - name: Report BEXCO fetch fallback
+        if: steps.fetch_bexco.outcome == 'failure'
+        run: echo "::warning::BEXCO source is unavailable. Deploying with the latest stored event data."
+
       - name: Save updated menu data
         id: menu_changes
         run: |
-          if git diff --quiet -- public/data/weeks; then
+          if git diff --quiet -- public/data/weeks public/data/bexco-events.json public/data/bexco; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
             echo "No menu data changes."
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add public/data/weeks
-            git commit -m "chore: update weekly cafeteria menus"
+            git add public/data/weeks public/data/bexco-events.json public/data/bexco
+            git commit -m "chore: update cafeteria menus and BEXCO events"
             git push
           fi
 
@@ -217,4 +226,3 @@ jobs:
           echo "::warning::Cloudways Servers(서버 ID) / Applications(앱 ID)를 CW_SERVER_ID, CW_APP_ID에 각각 넣었는지 확인하세요."
           echo "::warning::배포는 완료되었습니다. 사이트가 안 바뀌면 Cloudways 대시보드에서 Purge Varnish를 수동 실행하세요."
           exit 0
-

@@ -193,16 +193,19 @@ export const privacyContent = {
 
 export const privacyPagePath = '/privacy.html'
 export const aboutPagePath = '/about.html'
+export const bexcoPagePath = '/bexco.html'
 
 export const mainNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
+  { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
 ] as const
 
 export const footerNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
+  { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
   { label: '개인정보처리방침', href: privacyPagePath },
 ] as const
@@ -211,7 +214,7 @@ export const subPageNavLinks = [
   { label: '홈', href: '/' },
   { label: '이번 주 식단', href: '/#menus' },
   { label: '식당 정보', href: '/#restaurants' },
+  { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
   { label: '개인정보처리방침', href: privacyPagePath },
 ] as const
-

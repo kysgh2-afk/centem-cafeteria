@@ -1,16 +1,26 @@
 {
-  "updatedAt": "2026-08-08T12:34:51.255Z",
+  "updatedAt": "2026-08-08T12:42:21.851Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
-      "id": "16235",
+      "id": "15661",
       "type": "이벤트·공연",
-      "title": "2026 제16회 부산로봇경진대회",
-      "startDate": "2026-08-08",
+      "title": "2026 상상체험 키즈월드",
+      "startDate": "2025-12-06",
+      "endDate": "2026-10-31",
+      "place": "제2전시장 5(B-E)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
+      "imageUrl": "/data/bexco/assets/15661.jpg"
+    },
+    {
+      "id": "15809",
+      "type": "전시회",
+      "title": "2026 부산국제불교박람회",
+      "startDate": "2026-08-06",
       "endDate": "2026-08-09",
-      "place": "제2전시장 4(E-F)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16235",
-      "imageUrl": "/data/bexco/assets/16235.png"
+      "place": "제1전시장 3홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15809",
+      "imageUrl": "/data/bexco/assets/15809.jpg"
     },
     {
       "id": "16473",
@@ -33,24 +43,204 @@
       "imageUrl": "/data/bexco/assets/16502.png"
     },
     {
-      "id": "15809",
-      "type": "전시회",
-      "title": "2026 부산국제불교박람회",
-      "startDate": "2026-08-06",
+      "id": "16235",
+      "type": "이벤트·공연",
+      "title": "2026 제16회 부산로봇경진대회",
+      "startDate": "2026-08-08",
       "endDate": "2026-08-09",
-      "place": "제1전시장 3홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15809",
-      "imageUrl": "/data/bexco/assets/15809.jpg"
+      "place": "제2전시장 4(E-F)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16235",
+      "imageUrl": "/data/bexco/assets/16235.png"
     },
     {
-      "id": "15661",
+      "id": "16468",
+      "type": "전시회",
+      "title": "2026 부산베이비페어",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-17",
+      "place": "제1전시장 1홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16468",
+      "imageUrl": "/data/bexco/assets/16468.png"
+    },
+    {
+      "id": "16500",
+      "type": "전시회",
+      "title": "비더블류씨 웨딩박람회",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-16",
+      "place": "제2전시장 4F홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16500",
+      "imageUrl": "/data/bexco/assets/16500.jpg"
+    },
+    {
+      "id": "15806",
+      "type": "전시회",
+      "title": "2026 부산 캠핑&레저차량 박람회",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-16",
+      "place": "제2전시장 4(A-D)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15806",
+      "imageUrl": "/data/bexco/assets/15806.jpg"
+    },
+    {
+      "id": "15807",
+      "type": "전시회",
+      "title": "2026 부산국제주류박람회:BILIE",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-16",
+      "place": "제1전시장 3홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15807",
+      "imageUrl": "/data/bexco/assets/15807.png"
+    },
+    {
+      "id": "15808",
+      "type": "전시회",
+      "title": "부산인디커넥트페스티벌 2026",
+      "startDate": "2026-08-14",
+      "endDate": "2026-08-16",
+      "place": "제1전시장 2홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15808",
+      "imageUrl": "/data/bexco/assets/15808.jpg"
+    },
+    {
+      "id": "16408",
       "type": "이벤트·공연",
-      "title": "2026 상상체험 키즈월드",
-      "startDate": "2025-12-06",
-      "endDate": "2026-10-31",
-      "place": "제2전시장 5(B-E)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
-      "imageUrl": "/data/bexco/assets/15661.jpg"
+      "title": "2026 N.Flying LIVE '&CON5 : into REM' - 부산",
+      "startDate": "2026-08-15",
+      "endDate": "2026-08-16",
+      "place": "오디토리움",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16408",
+      "imageUrl": "/data/bexco/assets/16408.jpg"
+    },
+    {
+      "id": "16236",
+      "type": "이벤트·공연",
+      "title": "인카코리아2026",
+      "startDate": "2026-08-19",
+      "endDate": "2026-08-19",
+      "place": "제2전시장 4F홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16236",
+      "imageUrl": "/data/bexco/assets/16236.jpg"
+    },
+    {
+      "id": "16427",
+      "type": "전시회",
+      "title": "제7회 제일창업박람회 IN 부산",
+      "startDate": "2026-08-20",
+      "endDate": "2026-08-22",
+      "place": "제1전시장 2B홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16427",
+      "imageUrl": "/data/bexco/assets/16427.jpg"
+    },
+    {
+      "id": "16461",
+      "type": "이벤트·공연",
+      "title": "제14회 부산국제코미디페스티벌 개막공연",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-21",
+      "place": "오디토리움",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16461",
+      "imageUrl": "/data/bexco/assets/16461.jpg"
+    },
+    {
+      "id": "16534",
+      "type": "전시회",
+      "title": "2026 제4회 부산 너디너리 페스티벌",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-22",
+      "place": "제2전시장 4E홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16534",
+      "imageUrl": "/data/bexco/assets/16534.png"
+    },
+    {
+      "id": "15804",
+      "type": "전시회",
+      "title": "2026 북앤콘텐츠페어",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-23",
+      "place": "제2전시장 4(A-B)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15804",
+      "imageUrl": "/data/bexco/assets/15804.jpg"
+    },
+    {
+      "id": "15805",
+      "type": "전시회",
+      "title": "2026 간편식·밀키트전시회",
+      "startDate": "2026-08-21",
+      "endDate": "2026-08-23",
+      "place": "제2전시장 4(C, D)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15805",
+      "imageUrl": "/data/bexco/assets/15805.jpg"
+    },
+    {
+      "id": "16300",
+      "type": "전시회",
+      "title": "2026 일본유학박람회",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-22",
+      "place": "제2전시장 4F홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16300",
+      "imageUrl": "/data/bexco/assets/16300.jpg"
+    },
+    {
+      "id": "16301",
+      "type": "전시회",
+      "title": "렙타일페어",
+      "startDate": "2026-08-22",
+      "endDate": "2026-08-23",
+      "place": "제1전시장 3B홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16301",
+      "imageUrl": null
+    },
+    {
+      "id": "16538",
+      "type": "이벤트·공연",
+      "title": "제14회 코리아오픈부산국제드래곤보트대회 환송행사",
+      "startDate": "2026-08-23",
+      "endDate": "2026-08-23",
+      "place": "제2전시장 4F홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16538",
+      "imageUrl": null
+    },
+    {
+      "id": "16537",
+      "type": "전시회",
+      "title": "2026부산가구박람회",
+      "startDate": "2026-08-27",
+      "endDate": "2026-08-30",
+      "place": "제2전시장 4(A-D)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16537",
+      "imageUrl": null
+    },
+    {
+      "id": "16237",
+      "type": "전시회",
+      "title": "제19회 부산네일엑스포",
+      "startDate": "2026-08-28",
+      "endDate": "2026-08-30",
+      "place": "제1전시장 3A홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16237",
+      "imageUrl": "/data/bexco/assets/16237.jpg"
+    },
+    {
+      "id": "16143",
+      "type": "이벤트·공연",
+      "title": "2026 무명전설 전국투어 콘서트 - 부산",
+      "startDate": "2026-08-29",
+      "endDate": "2026-08-29",
+      "place": "제1전시장 1홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16143",
+      "imageUrl": "/data/bexco/assets/16143.jpg"
+    },
+    {
+      "id": "16144",
+      "type": "전시회",
+      "title": "2026 부산학원교육박람회",
+      "startDate": "2026-08-29",
+      "endDate": "2026-08-29",
+      "place": "제1전시장 2B홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16144",
+      "imageUrl": "/data/bexco/assets/16144.jpg"
     }
   ]
 }

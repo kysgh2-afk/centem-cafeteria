@@ -92,6 +92,10 @@ export async function createBexcoApp(root: HTMLElement): Promise<void> {
 
     const renderContent = () => {
       const events = selected === '전체' ? data.events : data.events.filter((event) => event.type === selected)
+      const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' })
+      const monthLabel = `${Number(today.slice(5, 7))}월`
+      const currentEvents = events.filter((event) => event.startDate <= today && event.endDate >= today)
+      const upcomingEvents = events.filter((event) => event.startDate > today && event.startDate.slice(0, 7) === today.slice(0, 7))
       const main = root.querySelector('main')!
       main.innerHTML = `
         <div class="mb-8 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
@@ -105,8 +109,29 @@ export async function createBexcoApp(root: HTMLElement): Promise<void> {
         <div class="mb-7 flex gap-2 overflow-x-auto" aria-label="행사 유형 필터">
           ${(['전체', '전시회', '이벤트·공연'] as const).map((type) => `<button type="button" data-event-filter="${type}" class="min-h-11 whitespace-nowrap rounded-full px-4 text-sm font-bold ${selected === type ? 'bg-emerald-800 text-white' : 'border border-slate-200 bg-white text-slate-600'}">${type}</button>`).join('')}
         </div>
-        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">${events.map(renderEventCard).join('')}</div>
-        ${events.length ? '' : '<p class="rounded-2xl bg-white p-8 text-center text-slate-500">표시할 행사가 없습니다.</p>'}
+        <section aria-labelledby="current-events-heading">
+          <div class="mb-5 flex items-end justify-between gap-4">
+            <div>
+              <p class="eyebrow">HAPPENING NOW</p>
+              <h2 id="current-events-heading" class="mt-2 text-2xl font-black tracking-tight text-slate-900">현재 진행 중인 행사</h2>
+            </div>
+            <span class="text-sm font-bold text-emerald-700">${currentEvents.length}건</span>
+          </div>
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">${currentEvents.map(renderEventCard).join('')}</div>
+          ${currentEvents.length ? '' : '<p class="rounded-2xl bg-white p-8 text-center text-slate-500">현재 진행 중인 행사가 없습니다.</p>'}
+        </section>
+        <section class="mt-14 border-t border-slate-200 pt-10" aria-labelledby="upcoming-events-heading">
+          <div class="mb-5 flex items-end justify-between gap-4">
+            <div>
+              <p class="eyebrow">COMING THIS MONTH</p>
+              <h2 id="upcoming-events-heading" class="mt-2 text-2xl font-black tracking-tight text-slate-900">${monthLabel} 진행 예정 행사</h2>
+              <p class="mt-2 text-sm text-slate-500">이번 달 안에 시작하는 전시회·이벤트·공연만 모았습니다.</p>
+            </div>
+            <span class="text-sm font-bold text-orange-700">${upcomingEvents.length}건</span>
+          </div>
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">${upcomingEvents.map(renderEventCard).join('')}</div>
+          ${upcomingEvents.length ? '' : '<p class="rounded-2xl bg-white p-8 text-center text-slate-500">이번 달 예정된 행사가 없습니다.</p>'}
+        </section>
       `
       main.querySelectorAll<HTMLButtonElement>('[data-event-filter]').forEach((button) => button.addEventListener('click', () => {
         selected = button.dataset.eventFilter as typeof selected

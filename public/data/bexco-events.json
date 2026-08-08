@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T12:42:21.851Z",
+  "updatedAt": "2026-08-08T12:50:27.572Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -10,7 +10,7 @@
       "endDate": "2026-10-31",
       "place": "제2전시장 5(B-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
-      "imageUrl": "/data/bexco/assets/15661.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI1LzExL0REbHpqb0pPREI5ckFRbW8=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "15809",
@@ -20,7 +20,7 @@
       "endDate": "2026-08-09",
       "place": "제1전시장 3홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15809",
-      "imageUrl": "/data/bexco/assets/15809.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvbVI1NFlWc1c2Mnk5cFBiTg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16473",
@@ -30,7 +30,7 @@
       "endDate": "2026-08-09",
       "place": "제2전시장 5A홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16473",
-      "imageUrl": "/data/bexco/assets/16473.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvWnlISlNMcnNRcVZSTUhjTA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16502",
@@ -40,7 +40,7 @@
       "endDate": "2026-08-09",
       "place": "제2전시장 4(A-D)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16502",
-      "imageUrl": "/data/bexco/assets/16502.png"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvdTZBeTFnUHY4N2tFdUtmOA==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "16235",
@@ -50,7 +50,7 @@
       "endDate": "2026-08-09",
       "place": "제2전시장 4(E-F)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16235",
-      "imageUrl": "/data/bexco/assets/16235.png"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2Lzcvc3RlQ2t4dTZldDlxaXBITQ==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "16468",
@@ -60,7 +60,7 @@
       "endDate": "2026-08-17",
       "place": "제1전시장 1홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16468",
-      "imageUrl": "/data/bexco/assets/16468.png"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvNmpKR1J3ZkRYWDFqdnJsaw==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "16500",
@@ -70,7 +70,7 @@
       "endDate": "2026-08-16",
       "place": "제2전시장 4F홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16500",
-      "imageUrl": "/data/bexco/assets/16500.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvYVFqdU9pakRmc0l6bjNjbA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "15806",
@@ -80,7 +80,7 @@
       "endDate": "2026-08-16",
       "place": "제2전시장 4(A-D)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15806",
-      "imageUrl": "/data/bexco/assets/15806.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvR2pjRkhob3NUUDhmM3ljWQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "15807",
@@ -90,7 +90,7 @@
       "endDate": "2026-08-16",
       "place": "제1전시장 3홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15807",
-      "imageUrl": "/data/bexco/assets/15807.png"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzUvdkVDajFRNTJLNjgyTjlsbw==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "15808",
@@ -100,7 +100,7 @@
       "endDate": "2026-08-16",
       "place": "제1전시장 2홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15808",
-      "imageUrl": "/data/bexco/assets/15808.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvNnpyaVl1M3NxNUpRSXJ4ZA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16408",
@@ -110,7 +110,7 @@
       "endDate": "2026-08-16",
       "place": "오디토리움",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16408",
-      "imageUrl": "/data/bexco/assets/16408.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvRlZvazgxOFFKTUs4akc2eA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16236",
@@ -120,7 +120,7 @@
       "endDate": "2026-08-19",
       "place": "제2전시장 4F홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16236",
-      "imageUrl": "/data/bexco/assets/16236.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvQ2tHMWFYZTNwbjhVdm0xYQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16427",
@@ -130,7 +130,7 @@
       "endDate": "2026-08-22",
       "place": "제1전시장 2B홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16427",
-      "imageUrl": "/data/bexco/assets/16427.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvS3U2WFg3aDdaRVNRRm5Leg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16461",
@@ -140,7 +140,7 @@
       "endDate": "2026-08-21",
       "place": "오디토리움",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16461",
-      "imageUrl": "/data/bexco/assets/16461.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvWXNlcmxlUGxoeW81MGZiUg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16534",
@@ -150,7 +150,7 @@
       "endDate": "2026-08-22",
       "place": "제2전시장 4E홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16534",
-      "imageUrl": "/data/bexco/assets/16534.png"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvR1JqWGlDTmpqcndkYnZwaA==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "15804",
@@ -160,7 +160,7 @@
       "endDate": "2026-08-23",
       "place": "제2전시장 4(A-B)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15804",
-      "imageUrl": "/data/bexco/assets/15804.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvQkJSYk1zd3lCdXo0Ymxlbg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "15805",
@@ -170,7 +170,7 @@
       "endDate": "2026-08-23",
       "place": "제2전시장 4(C, D)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15805",
-      "imageUrl": "/data/bexco/assets/15805.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvOVlrTWIwdmd0UHFUOXJhWA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16300",
@@ -180,7 +180,7 @@
       "endDate": "2026-08-22",
       "place": "제2전시장 4F홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16300",
-      "imageUrl": "/data/bexco/assets/16300.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvNkt3ZkpVTEpIc05DUXlBeA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16301",
@@ -220,7 +220,7 @@
       "endDate": "2026-08-30",
       "place": "제1전시장 3A홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16237",
-      "imageUrl": "/data/bexco/assets/16237.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvcVhuMWdLUkFCSTdvYTlwZQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16143",
@@ -230,7 +230,7 @@
       "endDate": "2026-08-29",
       "place": "제1전시장 1홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16143",
-      "imageUrl": "/data/bexco/assets/16143.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvR3R1eHdJRDJPQ05hdEdsVQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16144",
@@ -240,7 +240,7 @@
       "endDate": "2026-08-29",
       "place": "제1전시장 2B홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16144",
-      "imageUrl": "/data/bexco/assets/16144.jpg"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvcU9Tbm5LcDlEME9RU0dkMQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]
 }

@@ -37,7 +37,13 @@ jobs:
         run: npm ci
 
       - name: Fetch latest weekly menus
+        id: fetch_menus
+        continue-on-error: true
         run: npm run update-menus
+
+      - name: Report menu fetch fallback
+        if: steps.fetch_menus.outcome == 'failure'
+        run: echo "::warning::Menu source is unavailable. Deploying with the latest stored menu data."
 
       - name: Save updated menu data
         id: menu_changes

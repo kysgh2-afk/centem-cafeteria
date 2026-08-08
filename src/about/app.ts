@@ -1,5 +1,5 @@
 import { aboutContent, siteMeta, subPageNavLinks } from '../content/siteContent'
-import { renderAboutSectionArticle, renderFooter } from '../render/layout'
+import { renderAboutSectionArticle, renderFaqSection, renderFooter } from '../render/layout'
 
 export function renderAboutHeader(): string {
   return `
@@ -32,9 +32,11 @@ export function createAboutApp(root: HTMLElement): void {
 
       <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
         ${renderAboutSectionArticle()}
+        ${renderFaqSection()}
       </main>
 
       ${renderFooter(subPageNavLinks)}
     </div>
   `
 }
+

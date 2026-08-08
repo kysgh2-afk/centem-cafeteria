@@ -27,6 +27,12 @@ const BVIC_VIEW_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMMV.do?_menuNo=36&bbs_id
 const BVIC_FILE_URL = 'https://www.bvic.kr/bvic/bbs/BBSCMMFileDown.do'
 
 const NAVER_BLOG = {
+  manna: {
+    rssUrl: 'https://rss.blog.naver.com/jusik1606.xml',
+    blogId: 'jusik1606',
+    titleKeyword: '식단표',
+    sourceUrl: 'https://blog.naver.com/jusik1606',
+  },
   dawa: {
     rssUrl: 'https://rss.blog.naver.com/dawafood-centum.xml',
     blogId: 'dawafood-centum',
@@ -36,9 +42,8 @@ const NAVER_BLOG = {
   'dawa-qubi': {
     rssUrl: 'https://rss.blog.naver.com/dawafood-qubi.xml',
     blogId: 'dawafood-qubi',
-    logNo: '221629132291',
     titleKeyword: '이번주 메뉴',
-    sourceUrl: 'https://blog.naver.com/dawafood-qubi/221629132291',
+    sourceUrl: 'https://blog.naver.com/dawafood-qubi',
   },
 }
 
@@ -178,9 +183,8 @@ function pickKakaoImage(post) {
   const media = post?.media ?? []
   if (media.length === 0) return null
 
-  const sorted = [...media].sort((a, b) => (b.width ?? 0) * (b.height ?? 0) - (a.width ?? 0) * (a.height ?? 0))
-  const best = sorted[0]
-  return best?.xlarge_url ?? best?.url ?? null
+  const first = media[0]
+  return first?.xlarge_url ?? first?.url ?? null
 }
 
 async function fetchWithRetry(url, headers) {

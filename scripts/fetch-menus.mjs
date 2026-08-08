@@ -13,6 +13,7 @@ import { fileURLToPath } from 'node:url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const DATA_DIR = join(ROOT, 'public', 'data', 'weeks')
+const IMAGE_DIR = join(DATA_DIR, 'assets')
 
 const PORTLOCKROY_RSS = 'https://portlockroy.me/rss'
 const PORTLOCKROY_KEYWORD = '센텀시티 구내식당 식단표'
@@ -192,6 +193,37 @@ async function fetchText(url) {
 
 async function fetchJson(url) {
   return (await fetchWithRetry(url, { 'User-Agent': USER_AGENT, Accept: 'application/json' })).json()
+}
+
+function imageExtension(contentType) {
+  if (contentType.includes('png')) return 'png'
+  if (contentType.includes('webp')) return 'webp'
+  return 'jpg'
+}
+
+async function cacheMenuImages(weekId, images) {
+  const cached = {}
+  const targetDir = join(IMAGE_DIR, weekId)
+  await mkdir(targetDir, { recursive: true })
+
+  for (const [id, rawUrl] of Object.entries(images)) {
+    const url = rawUrl.replace(/^http:/, 'https:')
+    try {
+      const response = await fetchWithRetry(url, {
+        'User-Agent': USER_AGENT,
+        Accept: 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
+      })
+      const contentType = response.headers.get('content-type') ?? ''
+      if (!contentType.startsWith('image/')) throw new Error(`Unexpected content type: ${contentType}`)
+      const extension = imageExtension(contentType)
+      await writeFile(join(targetDir, `${id}.${extension}`), Buffer.from(await response.arrayBuffer()))
+      cached[id] = `/data/weeks/assets/${weekId}/${id}.${extension}`
+    } catch (error) {
+      console.warn(`[${id}] 이미지 저장 실패: ${error.message}`)
+    }
+  }
+
+  return cached
 }
 
 async function fetchPortlockroyWeek() {
@@ -375,6 +407,7 @@ async function main() {
   await mkdir(DATA_DIR, { recursive: true })
 
   const weekInfo = await fetchAllMenus()
+  weekInfo.menuImages = await cacheMenuImages(weekInfo.id, weekInfo.menuImages)
   console.log(`최신 주간: ${weekInfo.title}`)
   console.log(`기준 출처: ${weekInfo.sourceUrl}`)
   console.log(`식단표 이미지 ${Object.keys(weekInfo.menuImages).length}개 추출`)

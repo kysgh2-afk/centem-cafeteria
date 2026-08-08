@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
-import { mkdir, writeFile } from 'node:fs/promises'
+import { writeFile } from 'node:fs/promises'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 const DATA_PATH = join(ROOT, 'public', 'data', 'bexco-events.json')
-const IMAGE_DIR = join(ROOT, 'public', 'data', 'bexco', 'assets')
 const BEXCO_ORIGIN = 'https://www.bexco.co.kr'
 const SOURCE_URL = `${BEXCO_ORIGIN}/kor/CMS/EventScheduleMgr/list.do?mCode=MN214`
 const USER_AGENT = 'Mozilla/5.0 (compatible; CentumCafeteriaBot/1.0)'
@@ -61,32 +60,6 @@ function parseEvents(html) {
   return events
 }
 
-function imageExtension(contentType) {
-  if (contentType.includes('png')) return 'png'
-  if (contentType.includes('webp')) return 'webp'
-  return 'jpg'
-}
-
-async function cachePoster(event) {
-  if (!event.imageUrl) return event
-
-  try {
-    const response = await fetch(event.imageUrl, {
-      headers: { 'User-Agent': USER_AGENT, Accept: 'image/*' },
-      signal: AbortSignal.timeout(20_000),
-    })
-    if (!response.ok) throw new Error(`HTTP ${response.status}`)
-    const contentType = response.headers.get('content-type') ?? ''
-    if (!contentType.startsWith('image/')) throw new Error(`Unexpected content type: ${contentType}`)
-    const extension = imageExtension(contentType)
-    await writeFile(join(IMAGE_DIR, `${event.id}.${extension}`), Buffer.from(await response.arrayBuffer()))
-    return { ...event, imageUrl: `/data/bexco/assets/${event.id}.${extension}` }
-  } catch (error) {
-    console.warn(`[BEXCO ${event.id}] poster cache failed: ${error.message}`)
-    return { ...event, imageUrl: null }
-  }
-}
-
 async function main() {
   const today = new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' })
   const monthEnd = `${today.slice(0, 8)}${new Date(Number(today.slice(0, 4)), Number(today.slice(5, 7)), 0).getDate()}`
@@ -110,16 +83,14 @@ async function main() {
     .sort((a, b) => a.startDate.localeCompare(b.startDate))
   if (!events.length) throw new Error('No public BEXCO exhibitions or events were found')
 
-  await mkdir(IMAGE_DIR, { recursive: true })
-  const cachedEvents = await Promise.all(events.map(cachePoster))
   const payload = {
     updatedAt: new Date().toISOString(),
     sourceUrl: SOURCE_URL,
-    events: cachedEvents,
+    events,
   }
 
   await writeFile(DATA_PATH, JSON.stringify(payload, null, 2) + '\n', 'utf8')
-  console.log(`BEXCO events updated: ${cachedEvents.length}`)
+  console.log(`BEXCO events updated: ${events.length}`)
 }
 
 main().catch((error) => {

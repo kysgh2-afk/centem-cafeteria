@@ -3,7 +3,8 @@
  * 센텀시티 구내식당 식단표 자동 업데이트
  * - 생기방랑 RSS: STX, 파티박스, 다와푸드 센텀점, 만나
  * - 네이버 블로그: 다와푸드 큐비e센텀점
- * - 카카오채널: 슈마우스, 삼촌밥차, 정담식당
+ * - 카카오채널: 슈마우스, 정담식당
+ * - 인스타그램: 삼촌밥차런치펍
  */
 
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
@@ -50,8 +51,11 @@ const NAVER_BLOG = {
 const KAKAO_CHANNELS = {
   partibox: '_DCpLK',
   schmaus: '_CiVis',
-  'uncle-bapcha': '_FxbaQC',
   jeongdam: '_vKxgdn',
+}
+
+const INSTAGRAM_PROFILES = {
+  'uncle-bapcha': 'jnjskybiz',
 }
 
 const USER_AGENT = 'Mozilla/5.0 (compatible; CentumCafeteriaBot/1.0)'
@@ -466,6 +470,32 @@ async function fetchKakaoChannelMenu(id, profileId) {
   }
 }
 
+async function fetchInstagramMenu(id, username) {
+  const sourceUrl = `https://www.instagram.com/${username}/`
+  const response = await fetchWithRetry(
+    `https://www.instagram.com/api/v1/users/web_profile_info/?username=${encodeURIComponent(username)}`,
+    {
+      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/127.0.0.0 Safari/537.36',
+      Accept: 'application/json',
+      'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
+      'X-IG-App-ID': '936619743392459',
+      Referer: sourceUrl,
+    },
+  )
+  const payload = await response.json()
+  const edge = payload?.data?.user?.edge_owner_to_timeline_media?.edges?.[0]
+  const post = edge?.node
+  const imageUrl = post?.display_url ?? post?.thumbnail_src
+  const shortcode = post?.shortcode
+
+  if (!imageUrl || !shortcode) throw new Error('인스타그램 최신 게시물 이미지를 찾지 못했습니다.')
+
+  return {
+    imageUrl,
+    sourceUrl: `https://www.instagram.com/${username}/p/${shortcode}/`,
+  }
+}
+
 async function fetchAllMenus() {
   let bvicMenu
   try {
@@ -524,6 +554,18 @@ async function fetchAllMenus() {
     } catch (error) {
       console.warn(`[${id}] 수집 실패: ${error.message}`)
       menuSourceUrls[id] = `https://pf.kakao.com/${profileId}`
+    }
+  }
+
+  for (const [id, username] of Object.entries(INSTAGRAM_PROFILES)) {
+    try {
+      const result = await fetchInstagramMenu(id, username)
+      menuImages[id] = result.imageUrl
+      menuSourceUrls[id] = result.sourceUrl
+      console.log(`[${id}] 인스타그램 최신 이미지 추출`)
+    } catch (error) {
+      console.warn(`[${id}] 인스타그램 수집 실패: ${error.message}`)
+      menuSourceUrls[id] = `https://www.instagram.com/${username}/`
     }
   }
 
@@ -619,4 +661,3 @@ main().catch((err) => {
   console.error('업데이트 실패:', err.message)
   process.exit(1)
 })
-

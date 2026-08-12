@@ -55,7 +55,7 @@ const KAKAO_CHANNELS = {
 }
 
 const INSTAGRAM_PROFILES = {
-  'uncle-bapcha': 'jnjskybiz',
+  'uncle-bapcha': { username: 'jnjskybiz', fallbackShortcode: 'Db7C18WPqAe' },
 }
 
 const USER_AGENT = 'Mozilla/5.0 (compatible; CentumCafeteriaBot/1.0)'
@@ -470,30 +470,45 @@ async function fetchKakaoChannelMenu(id, profileId) {
   }
 }
 
-async function fetchInstagramMenu(id, username) {
+async function fetchInstagramMenu(id, { username, fallbackShortcode }) {
   const sourceUrl = `https://www.instagram.com/${username}/`
-  const response = await fetchWithRetry(
-    `https://www.instagram.com/api/v1/users/web_profile_info/?username=${encodeURIComponent(username)}`,
-    {
-      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/127.0.0.0 Safari/537.36',
-      Accept: 'application/json',
-      'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
-      'X-IG-App-ID': '936619743392459',
-      Referer: sourceUrl,
-    },
-  )
-  const payload = await response.json()
-  const edge = payload?.data?.user?.edge_owner_to_timeline_media?.edges?.[0]
-  const post = edge?.node
-  const imageUrl = post?.display_url ?? post?.thumbnail_src
-  const shortcode = post?.shortcode
-
-  if (!imageUrl || !shortcode) throw new Error('인스타그램 최신 게시물 이미지를 찾지 못했습니다.')
-
-  return {
-    imageUrl,
-    sourceUrl: `https://www.instagram.com/${username}/p/${shortcode}/`,
+  const profileResponse = await fetchWithRetry(sourceUrl, {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/127.0.0.0 Safari/537.36',
+    Accept: 'text/html',
+    'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
+  })
+  const profileHtml = await profileResponse.text()
+  const csrfToken = profileHtml.match(/"csrf_token":"([^"]+)"/)?.[1] ?? ''
+  const cookie = cookieHeader(profileResponse)
+  try {
+    const response = await fetchWithRetry(
+      `https://www.instagram.com/api/v1/users/web_profile_info/?username=${encodeURIComponent(username)}`,
+      {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/127.0.0.0 Safari/537.36',
+        Accept: 'application/json',
+        'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
+        'X-IG-App-ID': '936619743392459',
+        'X-CSRFToken': csrfToken,
+        Cookie: cookie,
+        Referer: sourceUrl,
+      },
+    )
+    const payload = await response.json()
+    const post = payload?.data?.user?.edge_owner_to_timeline_media?.edges?.[0]?.node
+    const imageUrl = post?.display_url ?? post?.thumbnail_src
+    const shortcode = post?.shortcode
+    if (imageUrl && shortcode) {
+      return { imageUrl, sourceUrl: `https://www.instagram.com/${username}/p/${shortcode}/` }
+    }
+  } catch (error) {
+    console.warn(`[${id}] 인스타그램 프로필 API 제한: ${error.message}`)
   }
+
+  const postUrl = `https://www.instagram.com/${username}/p/${fallbackShortcode}/`
+  const postHtml = await fetchText(postUrl)
+  const imageUrl = decodeHtml(postHtml.match(/<meta property="og:image" content="([^"]+)"/)?.[1] ?? '')
+  if (!imageUrl) throw new Error('인스타그램 최신 게시물 이미지를 찾지 못했습니다.')
+  return { imageUrl, sourceUrl: postUrl }
 }
 
 async function fetchAllMenus() {
@@ -557,15 +572,15 @@ async function fetchAllMenus() {
     }
   }
 
-  for (const [id, username] of Object.entries(INSTAGRAM_PROFILES)) {
+  for (const [id, profile] of Object.entries(INSTAGRAM_PROFILES)) {
     try {
-      const result = await fetchInstagramMenu(id, username)
+      const result = await fetchInstagramMenu(id, profile)
       menuImages[id] = result.imageUrl
       menuSourceUrls[id] = result.sourceUrl
       console.log(`[${id}] 인스타그램 최신 이미지 추출`)
     } catch (error) {
       console.warn(`[${id}] 인스타그램 수집 실패: ${error.message}`)
-      menuSourceUrls[id] = `https://www.instagram.com/${username}/`
+      menuSourceUrls[id] = `https://www.instagram.com/${profile.username}/`
     }
   }
 

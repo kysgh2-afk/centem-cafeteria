@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-10T03:14:53.937Z",
+  "updatedAt": "2026-08-12T03:25:51.725Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -39,7 +39,7 @@
       "startDate": "2026-08-14",
       "endDate": "2026-08-16",
       "place": "제2전시장 4(A-D)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15806",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15806",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvR2pjRkhob3NUUDhmM3ljWQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -49,7 +49,7 @@
       "startDate": "2026-08-14",
       "endDate": "2026-08-16",
       "place": "제1전시장 3홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15807",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15807",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzUvdkVDajFRNTJLNjgyTjlsbw==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
@@ -148,8 +148,8 @@
       "title": "렙타일페어",
       "startDate": "2026-08-22",
       "endDate": "2026-08-23",
-      "place": "제1전시장 3B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16301",
+      "place": "제1전시장 3A홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16301",
       "imageUrl": null
     },
     {
@@ -159,7 +159,7 @@
       "startDate": "2026-08-23",
       "endDate": "2026-08-23",
       "place": "제2전시장 4F홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16538",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16538",
       "imageUrl": null
     },
     {

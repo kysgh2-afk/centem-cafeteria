@@ -114,10 +114,12 @@
       "hours": {
         "lunch": "11:00 – 14:00"
       },
-      "tips": ["가격은 조금 높지만 시설이 깔끔한 편"],
-      "perks": ["한식 뷔페"],
+      "notes": "식권 10장 구매 시 1장 추가 제공",
+      "tips": ["시설이 깔끔하며 계란후라이와 보리차를 무료로 이용할 수 있음"],
+      "perks": ["한식 뷔페", "계란후라이", "보리차", "식권 10+1"],
       "menuLink": "https://pf.kakao.com/_CiVis/posts",
       "mapQuery": "슈마우스만찬 센텀점",
+      "guidePage": "/schmaus.html",
       "color": "#dc2626"
     },
     {

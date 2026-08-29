@@ -4,13 +4,14 @@
   "title": "8월 31일 ~ 9월 4일",
   "menus": {},
   "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-  "updatedAt": "2026-08-28",
+  "updatedAt": "2026-08-29",
   "menuImages": {
     "stx": "/data/weeks/assets/2026-08-31/stx.png",
     "manna": "/data/weeks/assets/2026-08-31/manna.jpg",
     "partibox": "/data/weeks/assets/2026-08-31/partibox.jpg",
     "schmaus": "/data/weeks/assets/2026-08-31/schmaus.jpg",
-    "jeongdam": "/data/weeks/assets/2026-08-31/jeongdam.jpg"
+    "jeongdam": "/data/weeks/assets/2026-08-31/jeongdam.jpg",
+    "uncle-bapcha": "/data/weeks/assets/2026-08-31/uncle-bapcha.jpg"
   },
   "menuSourceUrls": {
     "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
@@ -20,7 +21,7 @@
     "dawa-qubi": "https://blog.naver.com/dawafood-qubi",
     "schmaus": "http://pf.kakao.com/_CiVis/114398143",
     "jeongdam": "http://pf.kakao.com/_vKxgdn/114397583",
-    "uncle-bapcha": "https://www.instagram.com/jnjskybiz/"
+    "uncle-bapcha": "https://www.instagram.com/jnjskybiz/p/Db7C18WPqAe/"
   },
   "menuBoardHtml": {}
 }

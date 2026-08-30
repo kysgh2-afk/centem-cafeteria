@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-29T07:47:41.526Z",
+  "updatedAt": "2026-08-30T06:26:37.047Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -21,26 +21,6 @@
       "place": "제1전시장 3A홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16237",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvcVhuMWdLUkFCSTdvYTlwZQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16143",
-      "type": "이벤트·공연",
-      "title": "2026 무명전설 전국투어 콘서트 - 부산",
-      "startDate": "2026-08-29",
-      "endDate": "2026-08-29",
-      "place": "제1전시장 1홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16143",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvR3R1eHdJRDJPQ05hdEdsVQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16144",
-      "type": "전시회",
-      "title": "2026 부산학원교육박람회",
-      "startDate": "2026-08-29",
-      "endDate": "2026-08-29",
-      "place": "제1전시장 2B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16144",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzYvcU9Tbm5LcDlEME9RU0dkMQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]
 }

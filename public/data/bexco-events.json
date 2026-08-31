@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30T06:26:37.047Z",
+  "updatedAt": "2026-08-31T06:53:24.618Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -11,16 +11,6 @@
       "place": "제2전시장 5(B-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI1LzExL0REbHpqb0pPREI5ckFRbW8=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16237",
-      "type": "전시회",
-      "title": "2026 부산네일엑스포",
-      "startDate": "2026-08-28",
-      "endDate": "2026-08-30",
-      "place": "제1전시장 3A홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16237",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzcvcVhuMWdLUkFCSTdvYTlwZQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]
 }

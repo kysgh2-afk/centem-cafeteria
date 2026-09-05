@@ -4,23 +4,24 @@
   "title": "9월 7일 ~ 9월 11일",
   "menus": {},
   "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-  "updatedAt": "2026-09-04",
+  "updatedAt": "2026-09-05",
   "menuImages": {
     "stx": "/data/weeks/assets/2026-09-07/stx.png",
     "manna": "/data/weeks/assets/2026-09-07/manna.jpg",
     "partibox": "/data/weeks/assets/2026-09-07/partibox.jpg",
     "schmaus": "/data/weeks/assets/2026-09-07/schmaus.jpg",
-    "jeongdam": "/data/weeks/assets/2026-09-07/jeongdam.jpg"
+    "jeongdam": "/data/weeks/assets/2026-09-07/jeongdam.jpg",
+    "uncle-bapcha": "/data/weeks/assets/2026-09-07/uncle-bapcha.jpg"
   },
   "menuSourceUrls": {
     "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-    "partibox": "http://pf.kakao.com/_DCpLK/114405054",
+    "partibox": "http://pf.kakao.com/_DCpLK/114492706",
     "dawa": "https://blog.naver.com/dawafood-centum",
     "manna": "https://blog.naver.com/jusik1606",
     "dawa-qubi": "https://blog.naver.com/dawafood-qubi",
     "schmaus": "http://pf.kakao.com/_CiVis/114481109",
     "jeongdam": "http://pf.kakao.com/_vKxgdn/114480413",
-    "uncle-bapcha": "https://www.instagram.com/jnjskybiz/"
+    "uncle-bapcha": "https://www.instagram.com/jnjskybiz/p/Db7C18WPqAe/"
   },
   "menuBoardHtml": {}
 }

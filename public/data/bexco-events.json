@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T05:55:39.747Z",
+  "updatedAt": "2026-09-08T05:48:13.968Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -89,7 +89,7 @@
       "startDate": "2026-09-12",
       "endDate": "2026-09-13",
       "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16604",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16604",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvNVluVUF6MGs1czlKUEVnRg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {

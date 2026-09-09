@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-08T05:48:13.968Z",
+  "updatedAt": "2026-09-09T05:51:59.888Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -11,26 +11,6 @@
       "place": "제2전시장 5(B-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI1LzExL0REbHpqb0pPREI5ckFRbW8=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16303",
-      "type": "이벤트·공연",
-      "title": "2026년 해양수산 취업박람회",
-      "startDate": "2026-09-08",
-      "endDate": "2026-09-08",
-      "place": "제2전시장 4(A,B)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16303",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvOUtCZUttOGFuOVF5cjJOYg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16304",
-      "type": "이벤트·공연",
-      "title": "2026 부울경 광역이음 일자리박람회",
-      "startDate": "2026-09-08",
-      "endDate": "2026-09-08",
-      "place": "제2전시장 4(C,D)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16304",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvUkxpSm5EWkt2SGJYMlljNg==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "15776",
@@ -59,7 +39,7 @@
       "startDate": "2026-09-11",
       "endDate": "2026-09-13",
       "place": "제2전시장 4(A-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15778",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15778",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvaFlJOGtZSGFxbHBlMEJSOA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -69,7 +49,7 @@
       "startDate": "2026-09-11",
       "endDate": "2026-09-13",
       "place": "제2전시장 4F홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16306",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16306",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvQXA3TEY0SW50NVVWbE90QQ==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {

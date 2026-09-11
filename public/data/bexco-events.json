@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-10T05:47:02.498Z",
+  "updatedAt": "2026-09-11T05:47:03.842Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -103,13 +103,33 @@
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvcUxuY0dkWXhsNEVqWDFYMg==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
+      "id": "16668",
+      "type": "이벤트·공연",
+      "title": "2026 한화생명 콘서트",
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-19",
+      "place": "오디토리움",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16668",
+      "imageUrl": null
+    },
+    {
+      "id": "16670",
+      "type": "이벤트·공연",
+      "title": "캔들라이트 콘서트",
+      "startDate": "2026-09-19",
+      "endDate": "2026-09-19",
+      "place": "누리마루",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16670",
+      "imageUrl": null
+    },
+    {
       "id": "16309",
       "type": "이벤트·공연",
       "title": "2026 세븐브릿지 투어",
       "startDate": "2026-09-20",
       "endDate": "2026-09-20",
       "place": "제1전시장 2,3홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16309",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16309",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvY2d6RUR6YmZ2YnJTWmFpUA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -119,7 +139,7 @@
       "startDate": "2026-09-21",
       "endDate": "2026-09-21",
       "place": "제2전시장 4(A-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16308",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16308",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvelNJVHZYdnkxTFN5aWlBZA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]

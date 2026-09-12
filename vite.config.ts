@@ -13,6 +13,7 @@ export default defineConfig({
         partibox: resolve(__dirname, 'partibox.html'),
         stx: resolve(__dirname, 'stx.html'),
         schmaus: resolve(__dirname, 'schmaus.html'),
+        jeongdam: resolve(__dirname, 'jeongdam.html'),
         bexco: resolve(__dirname, 'bexco.html'),
       },
     },

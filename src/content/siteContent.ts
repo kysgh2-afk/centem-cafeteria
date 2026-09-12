@@ -154,19 +154,19 @@ export const featuresContent = {
 export const privacyContent = {
   title: '개인정보처리방침',
   id: 'privacy',
-  updatedAt: '2026-06-17',
+  updatedAt: '2026-09-12',
   sections: [
     {
       title: '1. 개인정보의 처리 목적',
-      body: '센텀 구내식당 식단표 모음(이하 "사이트")는 별도의 회원가입 없이 구내식당 식단·위치·가격 정보를 제공합니다. 사이트는 이용자의 이름, 연락처, 주소 등 개인을 식별할 수 있는 정보를 직접 수집·저장하지 않습니다.',
+      body: '센텀 구내식당 식단표 모음(이하 "사이트")는 구내식당 정보 제공과 센텀 커뮤니티 운영을 위해 이용자가 입력한 게시글·댓글을 처리합니다. 커뮤니티는 별도의 회원가입 없이 이용할 수 있으며 실명, 연락처, 주소 입력을 요구하지 않습니다.',
     },
     {
       title: '2. 수집하는 정보',
-      body: '사이트 자체 입력 양식을 통한 개인정보 수집은 하지 않습니다. 다만 서비스 운영 및 광고 게재 과정에서 아래 정보가 자동으로 생성·수집될 수 있습니다: 접속 IP, 쿠키, 접속 기기·브라우저 정보, 방문 일시, 페이지 조회 기록. 이는 Google AdSense 등 제3자 광고·분석 서비스를 통해 처리될 수 있습니다.',
+      body: '커뮤니티 이용 시 닉네임, 게시글·댓글 내용, 작성·수정 시각, 글 비밀번호의 암호화된 값이 저장됩니다. 도배 방지와 신고 중복 확인을 위해 접속 IP를 복원할 수 없는 해시값으로 변환해 일시적으로 처리합니다. 광고·분석 서비스 이용 과정에서 쿠키, 기기·브라우저 정보, 방문 일시와 페이지 조회 기록이 자동 생성될 수 있습니다.',
     },
     {
       title: '3. 쿠키(Cookie)의 사용',
-      body: '사이트는 이용자에게 맞춤형 광고 및 서비스 품질 개선을 위해 쿠키를 사용할 수 있습니다. 쿠키는 브라우저에 저장되는 소량의 정보이며, 브라우저 설정에서 쿠키 저장을 거부하거나 삭제할 수 있습니다. 쿠키 저장을 거부할 경우 일부 기능·광고 표시에 제한이 있을 수 있습니다.',
+      body: '사이트는 서비스 품질 개선과 맞춤형 광고를 위해 쿠키를 사용할 수 있습니다. 커뮤니티에서는 다음 작성 때 편리하도록 이용자가 입력한 닉네임만 해당 기기의 브라우저 저장소에 보관합니다. 브라우저 설정에서 쿠키와 저장 정보를 삭제하거나 사용을 제한할 수 있습니다.',
     },
     {
       title: '4. 제3자 서비스',
@@ -174,7 +174,7 @@ export const privacyContent = {
     },
     {
       title: '5. 개인정보의 보유 및 파기',
-      body: '사이트 운영자가 직접 수집·보관하는 개인정보는 없습니다. 제3자 서비스를 통해 수집되는 정보의 보유 기간은 각 서비스 제공자의 정책을 따릅니다.',
+      body: '게시글과 댓글은 이용자가 비밀번호로 삭제하거나 운영자가 운영 원칙에 따라 삭제할 때까지 보관됩니다. 삭제 시 작성 내용·닉네임·비밀번호 해시를 제거합니다. 요청 제한용 접속 정보는 새 쓰기 요청 처리 시 24시간이 지난 기록을 정리하며, 신고 정보는 운영자가 처리 완료하면 제거합니다. 제3자 서비스가 처리하는 정보는 각 서비스 제공자의 정책을 따릅니다.',
     },
     {
       title: '6. 이용자의 권리',
@@ -194,10 +194,12 @@ export const privacyContent = {
 export const privacyPagePath = '/privacy.html'
 export const aboutPagePath = '/about.html'
 export const bexcoPagePath = '/bexco.html'
+export const communityPagePath = '/community.html'
 
 export const mainNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
+  { label: '센텀 커뮤니티', href: communityPagePath },
   { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
 ] as const
@@ -205,6 +207,7 @@ export const mainNavLinks = [
 export const footerNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
+  { label: '센텀 커뮤니티', href: communityPagePath },
   { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
   { label: '개인정보처리방침', href: privacyPagePath },
@@ -214,6 +217,7 @@ export const subPageNavLinks = [
   { label: '홈', href: '/' },
   { label: '이번 주 식단', href: '/#menus' },
   { label: '식당 정보', href: '/#restaurants' },
+  { label: '센텀 커뮤니티', href: communityPagePath },
   { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
   { label: '개인정보처리방침', href: privacyPagePath },

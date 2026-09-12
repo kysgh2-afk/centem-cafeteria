@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 
 Disallow: /data/
+Disallow: /api/.data/
+Disallow: /community-admin.html
 
 Sitemap: https://centumlc.com/sitemap.xml

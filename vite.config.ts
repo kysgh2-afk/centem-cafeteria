@@ -15,6 +15,8 @@ export default defineConfig({
         schmaus: resolve(__dirname, 'schmaus.html'),
         jeongdam: resolve(__dirname, 'jeongdam.html'),
         bexco: resolve(__dirname, 'bexco.html'),
+        community: resolve(__dirname, 'community.html'),
+        communityAdmin: resolve(__dirname, 'community-admin.html'),
       },
     },
   },

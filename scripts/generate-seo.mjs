@@ -26,6 +26,7 @@ const pages = [
   { path: '/partibox.html', priority: '0.8', changefreq: 'monthly' },
   { path: '/stx.html', priority: '0.8', changefreq: 'monthly' },
   { path: '/schmaus.html', priority: '0.8', changefreq: 'monthly' },
+  { path: '/jeongdam.html', priority: '0.8', changefreq: 'monthly' },
   { path: '/bexco.html', priority: '0.9', changefreq: 'daily' },
 ]
 

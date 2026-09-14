@@ -16,14 +16,14 @@ $dataDir = __DIR__ . '/.data';
 $dataFile = $dataDir . '/community.json';
 $categories = ['meal', 'traffic', 'event', 'lost'];
 
-function respond(array $payload, int $status = 200): never
+function respond(array $payload, int $status = 200): void
 {
     http_response_code($status);
     echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     exit;
 }
 
-function fail(string $message, int $status = 400): never
+function fail(string $message, int $status = 400): void
 {
     respond(['error' => $message], $status);
 }
@@ -33,7 +33,7 @@ function defaultData(): array
     return ['posts' => [], 'comments' => [], 'reports' => [], '_rate' => []];
 }
 
-function normalizeData(mixed $value): array
+function normalizeData($value): array
 {
     $data = is_array($value) ? $value : [];
     foreach (['posts', 'comments', 'reports', '_rate'] as $key) {
@@ -64,7 +64,7 @@ function readData(string $dataFile): array
     return normalizeData($raw ? json_decode($raw, true) : null);
 }
 
-function mutateData(string $dataFile, callable $callback): mixed
+function mutateData(string $dataFile, callable $callback)
 {
     $handle = fopen($dataFile, 'c+');
     if ($handle === false || !flock($handle, LOCK_EX)) fail('요청을 저장하지 못했습니다.', 503);
@@ -88,7 +88,7 @@ function mutateData(string $dataFile, callable $callback): mixed
 function inputJson(): array
 {
     $contentType = $_SERVER['CONTENT_TYPE'] ?? '';
-    if (!str_starts_with(strtolower($contentType), 'application/json')) fail('올바르지 않은 요청입니다.', 415);
+    if (strpos(strtolower($contentType), 'application/json') !== 0) fail('올바르지 않은 요청입니다.', 415);
     $raw = file_get_contents('php://input');
     if ($raw === false || strlen($raw) > 20000) fail('요청 내용이 너무 큽니다.', 413);
     $input = json_decode($raw, true);

@@ -28,6 +28,7 @@ const pages = [
   { path: '/schmaus.html', priority: '0.8', changefreq: 'monthly' },
   { path: '/jeongdam.html', priority: '0.8', changefreq: 'monthly' },
   { path: '/bexco.html', priority: '0.9', changefreq: 'daily' },
+  { path: '/community.html', priority: '0.8', changefreq: 'daily' },
 ]
 
 const sitemapEntries = pages
@@ -54,6 +55,8 @@ const robots = `User-agent: *
 Allow: /
 
 Disallow: /data/
+Disallow: /api/.data/
+Disallow: /community-admin.html
 
 Sitemap: ${siteUrl ? `${siteUrl}/sitemap.xml` : '/sitemap.xml'}
 `

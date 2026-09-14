@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T05:54:26.059Z",
+  "updatedAt": "2026-09-14T03:21:13.496Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -13,53 +13,13 @@
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI1LzExL0REbHpqb0pPREI5ckFRbW8=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
-      "id": "15778",
-      "type": "전시회",
-      "title": "2026 부산캣쇼",
-      "startDate": "2026-09-11",
-      "endDate": "2026-09-13",
-      "place": "제2전시장 4(A-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15778",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvaFlJOGtZSGFxbHBlMEJSOA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16306",
-      "type": "전시회",
-      "title": "2026 W웨딩박람회",
-      "startDate": "2026-09-11",
-      "endDate": "2026-09-13",
-      "place": "제2전시장 4F홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16306",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvQXA3TEY0SW50NVVWbE90QQ==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
-    },
-    {
-      "id": "16305",
-      "type": "전시회",
-      "title": "제 60회 해외 유학박람회 / 제 49회 해외 이민,투자박람회",
-      "startDate": "2026-09-12",
-      "endDate": "2026-09-13",
-      "place": "제2전시장 4D홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16305",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvSDFGMEZDRVpqcnFocjM0Qg==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
-    },
-    {
-      "id": "16604",
-      "type": "이벤트·공연",
-      "title": "2026 CNBLUE LIVE ‘3LOGY’ ENCORE",
-      "startDate": "2026-09-12",
-      "endDate": "2026-09-13",
-      "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16604",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvNVluVUF6MGs1czlKUEVnRg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
       "id": "16307",
       "type": "이벤트·공연",
       "title": "제43회 전국장애인기능경기대회",
       "startDate": "2026-09-15",
       "endDate": "2026-09-18",
       "place": "제2전시장 4홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16307",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16307",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvaGlTTWJTUXB3Z2JJNWIxag==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -69,7 +29,7 @@
       "startDate": "2026-09-16",
       "endDate": "2026-09-18",
       "place": "제1전시장 1홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15895",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15895",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvaVNrc2IxR0ZVVGlFbFU2Mw==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -79,7 +39,7 @@
       "startDate": "2026-09-16",
       "endDate": "2026-09-18",
       "place": "제1전시장 2홀, 3홀, 오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16310",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16310",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzgvcUxuY0dkWXhsNEVqWDFYMg==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
@@ -109,7 +69,7 @@
       "startDate": "2026-09-20",
       "endDate": "2026-09-20",
       "place": "제1전시장 2,3홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16309",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16309",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvY2d6RUR6YmZ2YnJTWmFpUA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -119,7 +79,7 @@
       "startDate": "2026-09-21",
       "endDate": "2026-09-21",
       "place": "제2전시장 4(A-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16308",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16308",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvelNJVHZYdnkxTFN5aWlBZA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]

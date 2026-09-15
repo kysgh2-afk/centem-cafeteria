@@ -14,7 +14,6 @@ const PAGE_SIZE = 20;
 
 $dataDir = __DIR__ . '/.data';
 $dataFile = $dataDir . '/community.json';
-$categories = ['meal', 'traffic', 'event', 'lost'];
 
 function respond(array $payload, int $status = 200): void
 {
@@ -178,14 +177,12 @@ $action = (string) ($_GET['action'] ?? 'list');
 
 if ($method === 'GET' && $action === 'list') {
     $data = readData($dataFile);
-    $category = (string) ($_GET['category'] ?? 'all');
     $query = trim((string) ($_GET['q'] ?? ''));
     if (strlen($query) > 120) fail('검색어가 너무 깁니다.');
     $page = max(1, (int) ($_GET['page'] ?? 1));
     $publishedComments = array_filter($data['comments'], static fn($comment) => ($comment['status'] ?? '') === 'published');
-    $posts = array_values(array_filter($data['posts'], static function ($post) use ($category, $query): bool {
+    $posts = array_values(array_filter($data['posts'], static function ($post) use ($query): bool {
         if (($post['status'] ?? '') !== 'published') return false;
-        if ($category !== 'all' && ($post['category'] ?? '') !== $category) return false;
         return containsText((string) (($post['title'] ?? '') . ' ' . ($post['body'] ?? '')), $query);
     }));
     usort($posts, static fn($a, $b) => strcmp((string) ($b['createdAt'] ?? ''), (string) ($a['createdAt'] ?? '')));
@@ -241,13 +238,12 @@ if ($method !== 'POST') fail('지원하지 않는 요청입니다.', 405);
 $input = inputJson();
 
 if ($action === 'create') {
-    $result = mutateData($dataFile, static function (array &$data) use ($input, $categories): array {
+    $result = mutateData($dataFile, static function (array &$data) use ($input): array {
         enforceRateLimit($data, 'create', 3, 600);
         if (trim((string) ($input['website'] ?? '')) !== '') fail('등록할 수 없는 요청입니다.');
         if (($input['agree'] ?? '') !== 'on') fail('커뮤니티 운영 원칙에 동의해 주세요.');
-        $category = (string) ($input['category'] ?? '');
-        if (!in_array($category, $categories, true)) fail('분류를 선택해 주세요.');
-        $nickname = textValue($input, 'nickname', 2, 12, '닉네임');
+        $category = 'general';
+        $nickname = textValue(['nickname' => trim((string) ($input['nickname'] ?? '')) ?: '익명'], 'nickname', 2, 12, '닉네임');
         $title = textValue($input, 'title', 4, 80, '제목');
         $body = textValue($input, 'body', 10, 2000, '내용');
         $password = textValue($input, 'password', 6, 30, '글 비밀번호');
@@ -264,12 +260,11 @@ if ($action === 'create') {
 }
 
 if ($action === 'update') {
-    $result = mutateData($dataFile, static function (array &$data) use ($input, $categories): array {
+    $result = mutateData($dataFile, static function (array &$data) use ($input): array {
         enforceRateLimit($data, 'update', 5, 600);
         $id = (string) ($input['id'] ?? '');
-        $category = (string) ($input['category'] ?? '');
-        if (!in_array($category, $categories, true)) fail('분류를 선택해 주세요.');
-        $nickname = textValue($input, 'nickname', 2, 12, '닉네임');
+        $category = 'general';
+        $nickname = textValue(['nickname' => trim((string) ($input['nickname'] ?? '')) ?: '익명'], 'nickname', 2, 12, '닉네임');
         $title = textValue($input, 'title', 4, 80, '제목');
         $body = textValue($input, 'body', 10, 2000, '내용');
         $password = textValue($input, 'password', 6, 30, '글 비밀번호');
@@ -297,7 +292,7 @@ if ($action === 'comment') {
         $postId = (string) ($input['postId'] ?? '');
         $exists = count(array_filter($data['posts'], static fn($post) => ($post['id'] ?? '') === $postId && ($post['status'] ?? '') === 'published')) > 0;
         if (!$exists) fail('게시글을 찾을 수 없습니다.', 404);
-        $nickname = textValue($input, 'nickname', 2, 12, '닉네임');
+        $nickname = textValue(['nickname' => trim((string) ($input['nickname'] ?? '')) ?: '익명'], 'nickname', 2, 12, '닉네임');
         $body = textValue($input, 'body', 2, 500, '댓글');
         $password = textValue($input, 'password', 6, 30, '댓글 비밀번호');
         validateSafeContent($nickname . ' ' . $body);

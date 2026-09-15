@@ -72,7 +72,7 @@ function renderDashboard(): void {
           <div class="admin-section-heading"><h2 id="posts-heading">게시글 관리</h2><button type="button" data-refresh>새로고침</button></div>
           ${data.posts.length ? data.posts.map((post) => `
             <article class="admin-post">
-              <div class="admin-post-head"><span>${escapeHtml(post.category)}</span><span class="status-${post.status}">${post.status}</span><time>${formatDate(post.createdAt)}</time></div>
+              <div class="admin-post-head"><span class="status-${post.status}">${post.status}</span><time>${formatDate(post.createdAt)}</time></div>
               <h3>${escapeHtml(post.title)}</h3>
               <p>${escapeHtml(post.body)}</p>
               <small>${escapeHtml(post.nickname)} · 댓글 ${(commentsByPost.get(post.id) ?? []).length} · 신고 ${post.reportCount ?? 0}</small>

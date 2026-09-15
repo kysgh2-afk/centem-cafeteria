@@ -1,21 +1,12 @@
 import { renderFooter } from '../render/layout'
 import { siteMeta, subPageNavLinks } from '../content/siteContent'
 import { fetchPost, fetchPosts, postAction } from './api'
-import type { CommunityCategory, CommunityDetailResponse, CommunityListResponse, CommunityPost } from './types'
-
-const categories: ReadonlyArray<{ id: 'all' | CommunityCategory; label: string; icon: string }> = [
-  { id: 'all', label: '전체', icon: '모두' },
-  { id: 'meal', label: '맛집·식단', icon: '점심' },
-  { id: 'traffic', label: '교통·주차', icon: '이동' },
-  { id: 'event', label: '행사·생활', icon: '소식' },
-  { id: 'lost', label: '분실물', icon: '찾기' },
-]
+import type { CommunityDetailResponse, CommunityListResponse, CommunityPost } from './types'
 
 type View = 'list' | 'detail' | 'write' | 'edit'
 
 interface CommunityState {
   view: View
-  category: 'all' | CommunityCategory
   query: string
   page: number
   list: CommunityListResponse | null
@@ -46,10 +37,6 @@ function formatDate(value: string): string {
   }).format(date)
 }
 
-function categoryLabel(id: string): string {
-  return categories.find((category) => category.id === id)?.label ?? '소식'
-}
-
 function renderHeader(): string {
   return `
     <header class="community-hero text-white">
@@ -69,19 +56,10 @@ function renderHeader(): string {
   `
 }
 
-function renderCategoryPills(selected: string): string {
-  return categories.map((category) => `
-    <button type="button" data-category="${category.id}" class="community-category ${selected === category.id ? 'is-active' : ''}" aria-pressed="${selected === category.id}">
-      <span>${category.icon}</span>${category.label}
-    </button>
-  `).join('')
-}
-
 function renderPostRow(post: CommunityPost): string {
   return `
     <article class="community-post-row">
       <button type="button" data-open-post="${escapeHtml(post.id)}" class="community-post-link">
-        <span class="community-post-category">${categoryLabel(post.category)}</span>
         <span class="community-post-copy">
           <strong>${escapeHtml(post.title)}</strong>
           <small>${escapeHtml(post.nickname)} · ${formatDate(post.createdAt)}</small>
@@ -122,8 +100,7 @@ function renderList(state: CommunityState): string {
         <p>개인정보·회사 기밀·비방·광고성 글은 숨김 또는 삭제될 수 있습니다. 게시글 비밀번호는 수정·삭제할 때 사용합니다.</p>
       </section>
 
-      <div class="community-toolbar">
-        <div class="community-categories" aria-label="게시글 분류">${renderCategoryPills(state.category)}</div>
+      <div class="community-toolbar community-toolbar-simple">
         <button type="button" data-write class="community-primary">글쓰기</button>
       </div>
 
@@ -158,10 +135,7 @@ function renderComposer(state: CommunityState): string {
         <p class="community-form-intro">업무 중 알게 된 유용한 지역 정보를 구체적으로 적어주시면 더 많은 사람에게 도움이 됩니다.</p>
         ${state.error ? `<div class="community-error" role="alert">${escapeHtml(state.error)}</div>` : ''}
         <form data-post-form>
-          <div class="community-field-row">
-            <label>분류<select name="category" required>${categories.filter((category) => category.id !== 'all').map((category) => `<option value="${category.id}" ${post?.category === category.id ? 'selected' : ''}>${category.label}</option>`).join('')}</select></label>
-            <label>닉네임<input name="nickname" required minlength="2" maxlength="12" value="${escapeHtml(post?.nickname ?? localStorage.getItem('centum-community-nickname') ?? '')}" placeholder="2~12자" /></label>
-          </div>
+          <label>닉네임<input name="nickname" required minlength="2" maxlength="12" value="${escapeHtml(post?.nickname ?? '익명')}" /></label>
           <label>제목<input name="title" required minlength="4" maxlength="80" value="${escapeHtml(post?.title ?? '')}" placeholder="내용을 한눈에 알 수 있게 적어주세요" /></label>
           <label>내용<textarea name="body" required minlength="10" maxlength="2000" rows="10" placeholder="장소, 시간, 이용 방법 등 필요한 내용을 적어주세요">${escapeHtml(post?.body ?? '')}</textarea><small>전화번호·이메일·회사 기밀·외부 링크는 입력하지 마세요.</small></label>
           <label>글 비밀번호<input name="password" type="password" required minlength="6" maxlength="30" autocomplete="new-password" placeholder="수정·삭제할 때 사용할 6자 이상 비밀번호" /></label>
@@ -187,7 +161,6 @@ function renderDetail(state: CommunityState): string {
       ${state.notice ? `<p class="community-flash" role="status">${escapeHtml(state.notice)}</p>` : ''}
       ${state.error ? `<div class="community-error" role="alert">${escapeHtml(state.error)}</div>` : ''}
       <article class="community-detail">
-        <span class="community-post-category">${categoryLabel(post.category)}</span>
         <h1>${escapeHtml(post.title)}</h1>
         <p class="community-detail-meta">${escapeHtml(post.nickname)} · ${formatDate(post.createdAt)}${post.updatedAt !== post.createdAt ? ' · 수정됨' : ''}</p>
         <div class="community-detail-body">${escapeHtml(post.body).replaceAll('\n', '<br />')}</div>
@@ -211,8 +184,8 @@ function renderDetail(state: CommunityState): string {
         </div>
         <form class="community-comment-form" data-comment-form>
           <div class="community-field-row">
-            <label>닉네임<input name="nickname" required minlength="2" maxlength="12" value="${escapeHtml(localStorage.getItem('centum-community-nickname') ?? '')}" /></label>
-            <label>댓글 비밀번호<input name="password" type="password" required minlength="6" maxlength="30" autocomplete="new-password" /></label>
+            <label>닉네임<input name="nickname" required minlength="2" maxlength="12" value="익명" /></label>
+            <label>댓글 비밀번호<input name="password" type="password" required minlength="6" maxlength="30" autocomplete="new-password" placeholder="삭제할 때 사용할 6자 이상 비밀번호" /></label>
           </div>
           <label>댓글<textarea name="body" required minlength="2" maxlength="500" rows="4" placeholder="서로 배려하는 댓글을 남겨주세요"></textarea></label>
           <label class="community-honeypot" aria-hidden="true">홈페이지<input name="website" tabindex="-1" autocomplete="off" /></label>
@@ -228,7 +201,6 @@ export function createCommunityApp(root: HTMLElement): void {
   const initialPostId = params.get('post')
   const state: CommunityState = {
     view: initialPostId ? 'detail' : 'list',
-    category: 'all',
     query: '',
     page: 1,
     list: null,
@@ -256,7 +228,7 @@ export function createCommunityApp(root: HTMLElement): void {
     state.error = null
     render()
     try {
-      state.list = await fetchPosts(state.category, state.query, state.page)
+      state.list = await fetchPosts(state.query, state.page)
     } catch (error) {
       state.error = error instanceof Error ? error.message : '게시글을 불러오지 못했습니다.'
     } finally {
@@ -294,11 +266,6 @@ export function createCommunityApp(root: HTMLElement): void {
     }))
     root.querySelectorAll<HTMLButtonElement>('[data-back]').forEach((button) => button.addEventListener('click', () => void showList()))
     root.querySelector<HTMLButtonElement>('[data-retry]')?.addEventListener('click', () => void loadList())
-    root.querySelectorAll<HTMLButtonElement>('[data-category]').forEach((button) => button.addEventListener('click', () => {
-      state.category = button.dataset.category as CommunityState['category']
-      state.page = 1
-      void loadList()
-    }))
     root.querySelector<HTMLFormElement>('[data-search-form]')?.addEventListener('submit', (event) => {
       event.preventDefault()
       const form = event.currentTarget as HTMLFormElement
@@ -325,7 +292,6 @@ export function createCommunityApp(root: HTMLElement): void {
       render()
       try {
         const payload = readForm(form)
-        localStorage.setItem('centum-community-nickname', String(payload.nickname ?? ''))
         if (state.view === 'edit' && state.detail) {
           await postAction('update', { ...payload, id: state.detail.post.id })
           await openPost(state.detail.post.id, '게시글을 수정했습니다.')
@@ -388,7 +354,6 @@ export function createCommunityApp(root: HTMLElement): void {
       if (!form.reportValidity()) return
       try {
         const payload = readForm(form)
-        localStorage.setItem('centum-community-nickname', String(payload.nickname ?? ''))
         await postAction('comment', { ...payload, postId: state.detail.post.id })
         await openPost(state.detail.post.id, '댓글을 등록했습니다.')
       } catch (error) {

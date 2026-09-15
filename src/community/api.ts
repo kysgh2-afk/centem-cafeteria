@@ -13,8 +13,8 @@ async function request<T>(url: string, options?: RequestInit): Promise<T> {
   return payload
 }
 
-export function fetchPosts(category: string, query: string, page: number): Promise<CommunityListResponse> {
-  const params = new URLSearchParams({ action: 'list', category, q: query, page: String(page) })
+export function fetchPosts(query: string, page: number): Promise<CommunityListResponse> {
+  const params = new URLSearchParams({ action: 'list', q: query, page: String(page) })
   return request(`${endpoint}?${params}`)
 }
 

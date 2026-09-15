@@ -1,4 +1,4 @@
-export type CommunityCategory = 'meal' | 'traffic' | 'event' | 'lost'
+export type CommunityCategory = 'general' | 'meal' | 'traffic' | 'event' | 'lost'
 
 export interface CommunityPost {
   id: string

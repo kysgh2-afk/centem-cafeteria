@@ -5,7 +5,7 @@ import {
   faqContent,
   featuresContent,
   footerNavLinks,
-  guideContent,
+  resourceGuidesContent,
   mainNavLinks,
   privacyContent,
   siteMeta,
@@ -64,19 +64,21 @@ export function renderAboutSection(): string {
   `
 }
 
-export function renderGuideSection(): string {
+export function renderResourceGuidesSection(): string {
   return `
-    <section id="${guideContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="guide-heading">
-      <h2 id="guide-heading" class="text-2xl font-bold text-slate-900 mb-2">${guideContent.title}</h2>
-      <p class="text-sm text-slate-600 leading-relaxed mb-6">${guideContent.intro}</p>
-      <div class="space-y-4">
-        ${guideContent.sections
+    <section id="${resourceGuidesContent.id}" class="scroll-mt-8 mt-12" aria-labelledby="guide-heading">
+      <h2 id="guide-heading" class="text-2xl font-bold text-slate-900 mb-2">${resourceGuidesContent.title}</h2>
+      <p class="text-base text-slate-600 leading-relaxed mb-6">${resourceGuidesContent.intro}</p>
+      <div class="resource-guide-grid">
+        ${resourceGuidesContent.guides
           .map(
-            (section) => `
-          <article class="rounded-xl bg-white border border-slate-200 p-5 shadow-sm">
-            <h3 class="font-semibold text-slate-900 mb-2">${section.title}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">${section.body}</p>
-          </article>
+            (guide) => `
+          <a class="resource-guide-card" href="${guide.href}">
+            <span>${guide.eyebrow}</span>
+            <h3>${guide.title}</h3>
+            <p>${guide.body}</p>
+            <strong>자세히 보기 →</strong>
+          </a>
         `,
           )
           .join('')}

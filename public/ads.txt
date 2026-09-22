@@ -1,2 +1,2 @@
-# Google AdSense 승인 후 아래 한 줄을 추가하세요.
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# Google AdSense 게시자 ID가 아직 설정되지 않았습니다.
+# 광고를 활성화하기 전에 AdSense 계정에서 제공한 정확한 레코드를 이 파일에 추가하세요.

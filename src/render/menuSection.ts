@@ -228,7 +228,6 @@ export function renderMenuImageLightbox(): string {
       <figure class="flex max-h-full max-w-full flex-col items-center">
         <img
           data-lightbox-image
-          src=""
           alt=""
           class="max-h-[85vh] max-w-full rounded-lg object-contain shadow-2xl"
         />

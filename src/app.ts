@@ -3,7 +3,7 @@ import {
   renderAreaGuideSection,
   renderDisclaimerSection,
   renderFooter,
-  renderGuideSection,
+  renderResourceGuidesSection,
   renderHeader,
   updateJsonLd,
 } from './render/layout'
@@ -76,7 +76,7 @@ export function createApp(root: HTMLElement) {
               ${renderRestaurantInfoCards(state.data!.cafeterias)}
             </section>
 
-            ${renderGuideSection()}
+            ${renderResourceGuidesSection()}
             ${renderAreaGuideSection()}
             ${renderDisclaimerSection()}
           `

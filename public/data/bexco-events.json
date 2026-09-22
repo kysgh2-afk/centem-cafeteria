@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-20T05:59:37.697Z",
+  "updatedAt": "2026-09-22T02:45:37.425Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -11,26 +11,6 @@
       "place": "제2전시장 5(B-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI1LzExL0REbHpqb0pPREI5ckFRbW8=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16309",
-      "type": "이벤트·공연",
-      "title": "2026 세븐브릿지 투어",
-      "startDate": "2026-09-20",
-      "endDate": "2026-09-20",
-      "place": "제1전시장 2,3홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16309",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvTjlkYWxzQkhjbWtab0pLMQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16308",
-      "type": "이벤트·공연",
-      "title": "2026 부산청년 MEGA 채용박람회",
-      "startDate": "2026-09-21",
-      "endDate": "2026-09-21",
-      "place": "제2전시장 4(A-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16308",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvelNJVHZYdnkxTFN5aWlBZA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]
 }

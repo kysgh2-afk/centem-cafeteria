@@ -1,0 +1,30 @@
+{
+  "weekStart": "2026-09-21",
+  "weekEnd": "2026-09-25",
+  "title": "9월 21일 ~ 9월 25일",
+  "menus": {},
+  "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+  "updatedAt": "2026-09-22",
+  "menuImages": {
+    "stx": "/data/weeks/assets/2026-09-21/stx.png",
+    "manna": "/data/weeks/assets/2026-09-21/manna.jpg",
+    "partibox": "/data/weeks/assets/2026-09-21/partibox.jpg",
+    "schmaus": "/data/weeks/assets/2026-09-21/schmaus.jpg",
+    "jeongdam": "/data/weeks/assets/2026-09-21/jeongdam.jpg",
+    "uncle-bapcha": "/data/weeks/assets/2026-09-21/uncle-bapcha.jpg"
+  },
+  "menuSourceUrls": {
+    "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+    "partibox": "http://pf.kakao.com/_DCpLK/114642951",
+    "dawa": "https://blog.naver.com/dawafood-centum",
+    "manna": "https://blog.naver.com/jusik1606",
+    "dawa-qubi": "https://blog.naver.com/dawafood-qubi",
+    "schmaus": "http://pf.kakao.com/_CiVis/114651835",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/114651386",
+    "uncle-bapcha": "https://www.instagram.com/jnjskybiz/p/Db7C18WPqAe/"
+  },
+  "menuBoardHtml": {
+    "dawa": "<table class=\"menu-board-table\"><tbody><tr><td>9월 21일 (월)</td><td>9월 22일(화)</td><td>9월 23일 (수)</td><td>9월 24일 (목)</td><td>9월 25일 (금)</td></tr><tr><td>백미밥</td><td>백미밥</td><td>백미밥</td><td>​</td><td>​</td></tr><tr><td>순두부찌개</td><td>시 락 국</td><td>얼큰콩나물국</td><td>​</td><td>​</td></tr><tr><td>청경채돈불고기</td><td>닭볶음탕</td><td>그릴떡갈비</td><td>​</td><td>​</td></tr><tr><td>굴소스야끼우동</td><td>후르츠탕수육</td><td>메밀비빔국수</td><td>추</td><td>추</td></tr><tr><td>어묵우엉채조림</td><td>도라지무침</td><td>바삭멸치볶음</td><td>석</td><td>​</td></tr><tr><td>아삭고추무침</td><td>모듬콩조림</td><td>양념깻잎지</td><td>연</td><td>석</td></tr><tr><td>무우생채</td><td>숙주나물</td><td>배추겉절이</td><td>휴</td><td>​</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>​</td><td>​</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>​</td><td>​</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>​</td><td>​</td></tr></tbody></table>",
+    "dawa-qubi": "<table class=\"menu-board-table\"><tbody><tr><td>9월 21일 (월)</td><td>9월 22일 (화)</td><td>9월 23일 (수)</td><td>9월 24일 (목)</td><td>9월 25일 (금)</td></tr><tr><td>보리밥 / 백미밥</td><td>보리밥 / 백미밥</td><td>백미밥</td><td>​</td><td>​</td></tr><tr><td>팽이유부장국</td><td>냉모밀국수</td><td>김치콩나물국</td><td>​</td><td>​</td></tr><tr><td>등심돈까스</td><td>양념치킨</td><td>팽이버섯돈불고기</td><td>추</td><td>추</td></tr><tr><td>카레라이스</td><td>감자강된장</td><td>고구마고로케 / 케찹</td><td>​</td><td>​</td></tr><tr><td>비빔냉면</td><td>도토리묵무침</td><td>비빔막국수</td><td>석</td><td>​</td></tr><tr><td>미역줄기볶음</td><td>꼬시래기무침</td><td>바삭멸치볶음</td><td>​</td><td>​</td></tr><tr><td>양념깻잎지</td><td>고추지</td><td>고들빼기무침</td><td>연</td><td>​</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>​</td><td>​</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>휴</td><td>석</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>​</td><td>​</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>​</td><td>​</td></tr></tbody></table>"
+  }
+}

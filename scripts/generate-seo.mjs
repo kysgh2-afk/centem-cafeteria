@@ -18,11 +18,20 @@ function readSiteUrl() {
 }
 
 const siteUrl = readSiteUrl()
-const today = new Date().toISOString().slice(0, 10)
+const today = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Seoul',
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}).format(new Date())
 
 const pages = [
   { path: '/', priority: '1.0', changefreq: 'daily' },
   { path: '/about.html', priority: '0.7', changefreq: 'monthly' },
+  { path: '/privacy.html', priority: '0.4', changefreq: 'monthly' },
+  { path: '/cafeteria-guide.html', priority: '0.9', changefreq: 'weekly' },
+  { path: '/first-visit.html', priority: '0.8', changefreq: 'monthly' },
+  { path: '/menu-policy.html', priority: '0.7', changefreq: 'monthly' },
   { path: '/partibox.html', priority: '0.8', changefreq: 'monthly' },
   { path: '/stx.html', priority: '0.8', changefreq: 'monthly' },
   { path: '/schmaus.html', priority: '0.8', changefreq: 'monthly' },
@@ -54,7 +63,6 @@ writeFileSync(resolve(root, 'public/sitemap.xml'), sitemap)
 const robots = `User-agent: *
 Allow: /
 
-Disallow: /data/
 Disallow: /api/.data/
 Disallow: /community-admin.html
 

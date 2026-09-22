@@ -9,23 +9,29 @@ export const siteMeta = {
   contactEmail: 'kysgh2@naver.com',
 } as const
 
-export const guideContent = {
-  title: '센텀시티 점심 선택 가이드',
+export const resourceGuidesContent = {
+  title: '센텀시티 점심 이용 가이드',
   id: 'guide',
   intro:
-    '부산 해운대구 센텀시티는 IT·미디어·금융 기업이 밀집한 업무 지구입니다. 점심시간에는 인근 구내식당과 식당가로 몰리는 직장인이 많아, 미리 메뉴와 위치를 확인해 두면 대기 시간을 줄일 수 있습니다.',
-  sections: [
+    '가격만 비교하는 표를 넘어, 오늘 상황에 맞는 식당을 고르고 처음 방문할 때 헤매지 않도록 직접 정리한 안내입니다.',
+  guides: [
     {
-      title: '가성비 위주로 고른다면',
-      body: '영상산업센터 구내식당(6,500원)과 다와푸드 센텀점(6,500원)이 점심 가격이 가장 낮은 편입니다. 셀프라면·음료 등 부가 혜택이 있는 곳도 있어 실질 부담이 더 적을 수 있습니다. 다만 인기 메뉴는 빠르게 소진되므로 12시 이전 방문을 권장합니다.',
+      eyebrow: '비교·선택',
+      title: '구내식당 8곳 비교',
+      body: '가격, 건물, 운영 시간, 저녁 운영 여부를 한 표에서 비교하고 예산·이동 시간·늦은 점심 상황별 선택 기준을 확인합니다.',
+      href: '/cafeteria-guide.html',
     },
     {
-      title: '건물별로 빠르게 찾기',
-      body: '센텀스카이비즈 지하 1층에는 슈마우스만찬, 삼촌밥차런치펍, 정담식당이 함께 있습니다. 큐비e센텀·벽산e센텀클래스원·에이스하이테크21·동서대 센텀캠퍼스·영상산업센터 등 건물마다 식당이 나뉘어 있으니, 출근 건물과 가까운 곳을 먼저 비교해 보세요.',
+      eyebrow: '첫 방문',
+      title: '건물 진입부터 식권까지',
+      body: '식단 날짜 확인, 건물·층 찾기, 외부인 출입과 결제 방식을 실제 방문 순서대로 안내합니다.',
+      href: '/first-visit.html',
     },
     {
-      title: '메뉴 확인 팁',
-      body: '일부 식당은 주간 식단표 이미지를, 일부는 카카오채널·네이버 블로그·건물 게시판에 매일 올립니다. 본 사이트는 여러 출처의 메뉴를 한곳에 모아 비교할 수 있도록 정리하며, 각 식당 카드의 「메뉴 확인하기」에서 공식 채널로 이동할 수 있습니다.',
+      eyebrow: '정보 신뢰도',
+      title: '식단표 수집·검수 기준',
+      body: '식당별 원문 출처, 이번 주 식단 판정 방식, 오전 10시 갱신과 오류 정정 절차를 공개합니다.',
+      href: '/menu-policy.html',
     },
   ],
 } as const
@@ -74,7 +80,8 @@ export const aboutContent = {
   paragraphs: [
     '센텀 구내식당 식단표 모음은 부산 해운대구 센텀시티 일대 직장인·학생·방문객을 위해 만든 비공식 정보 안내 사이트입니다. 매주 갱신되는 주간 식단표를 모아, 점심 메뉴를 고를 때 시간을 절약할 수 있도록 돕습니다.',
     '센텀시티에는 파티박스, 다와푸드(센텀·큐비e), 만나한식뷔페, 영상산업센터 구내식당, 슈마우스만찬, 삼촌밥차런치펍, 정담식당 등 8곳의 구내식당이 운영되고 있습니다. 각 식당마다 가격, 위치, 영업 시간, 주간 메뉴가 다르기 때문에 한 페이지에서 비교하는 것이 편리합니다.',
-    '본 사이트는 식당 운영사나 학교·건물 관리 측과 공식적으로 제휴하지 않은 개인 정보 제공 목적의 서비스입니다. 식단·가격·영업 시간은 현장 상황에 따라 변경될 수 있으므로, 방문 전 해당 식당에 직접 확인하시기 바랍니다.',
+    '메뉴 이미지를 단순히 모으는 데 그치지 않고, 적용 주차와 원문 출처를 구분하고 가격·위치·이용 방식을 비교할 수 있도록 편집합니다. 날짜 범위를 제공하는 출처는 오늘이 게시 기간에 포함되는 식단을 우선하며, 수집 방식과 한계는 정보 수집·검수 기준에서 공개합니다.',
+    `본 사이트는 식당 운영사나 학교·건물 관리 측과 공식적으로 제휴하지 않은 개인 정보 제공 목적의 서비스입니다. 가격·시간·출입 조건이 달라졌거나 사진 권리 문제가 있다면 ${siteMeta.contactEmail}으로 페이지 주소와 근거를 보내 주세요. 확인 후 수정 또는 삭제합니다.`,
   ],
 } as const
 
@@ -105,7 +112,7 @@ export const faqContent = {
     {
       question: '식단표는 언제 업데이트되나요?',
       answer:
-        '매일 오전 10시(한국 시간)에 최신 식단표를 반영합니다. 이번 주 식단표 섹션에서 최신 주차를 확인할 수 있습니다.',
+        '매일 오전 10시(한국 시간)에 자동 갱신을 시도합니다. 원문 게시 지연·접근 제한·사이트 장애가 있으면 반영이 늦어질 수 있으므로, 카드의 적용 주차와 원문 링크를 함께 확인하세요.',
     },
     {
       question: '센텀스카이비즈 식당가는 어디에 있나요?',
@@ -115,7 +122,7 @@ export const faqContent = {
     {
       question: '메뉴 정보는 어디서 가져오나요?',
       answer:
-        '각 식당의 공식 카카오채널·네이버 블로그·건물 게시판 등 공개된 출처에서 수집합니다. 매일 오전 10시에 자동으로 갱신하며, 오류나 변경 사항은 이메일로 알려 주시면 반영하겠습니다.',
+        '각 식당의 카카오채널·네이버 블로그·인스타그램·건물 게시판 등 공개된 출처를 사용합니다. 최신 글이 아니라 오늘이 적용 기간에 포함되는 자료를 우선하며, 세부 출처와 판정 방식은 식단표 수집·검수 기준 페이지에 공개합니다.',
     },
     {
       question: '잘못된 정보는 어떻게 알리나요?',
@@ -154,7 +161,7 @@ export const featuresContent = {
 export const privacyContent = {
   title: '개인정보처리방침',
   id: 'privacy',
-  updatedAt: '2026-09-15',
+  updatedAt: '2026-09-22',
   sections: [
     {
       title: '1. 개인정보의 처리 목적',
@@ -162,15 +169,15 @@ export const privacyContent = {
     },
     {
       title: '2. 수집하는 정보',
-      body: '커뮤니티 이용 시 닉네임(기본값 익명), 게시글·댓글 내용, 작성·수정 시각, 글 비밀번호의 암호화된 값이 저장됩니다. 도배 방지와 신고 중복 확인을 위해 접속 IP를 복원할 수 없는 해시값으로 변환해 일시적으로 처리합니다. 광고·분석 서비스 이용 과정에서 쿠키, 기기·브라우저 정보, 방문 일시와 페이지 조회 기록이 자동 생성될 수 있습니다.',
+      body: '커뮤니티 이용 시 닉네임(기본값 익명), 게시글·댓글 내용, 작성·수정 시각, 글 비밀번호의 암호화된 값이 저장됩니다. 도배 방지와 신고 중복 확인을 위해 접속 IP를 복원할 수 없는 해시값으로 변환해 일시적으로 처리합니다. 현재 사이트 소스에는 Google AdSense 광고 코드나 방문 분석 코드가 활성화되어 있지 않습니다.',
     },
     {
       title: '3. 쿠키(Cookie)의 사용',
-      body: '사이트는 서비스 품질 개선과 맞춤형 광고를 위해 쿠키를 사용할 수 있습니다. 커뮤니티는 작성자 닉네임을 브라우저에 저장하지 않습니다. 브라우저 설정에서 쿠키와 저장 정보를 삭제하거나 사용을 제한할 수 있습니다.',
+      body: '현재 커뮤니티는 작성자 닉네임을 브라우저에 저장하지 않으며, 글 작성 기능을 위해 별도의 쿠키를 설정하지 않습니다. 메인 화면의 즐겨찾기 식당은 이용자의 기기에 localStorage로만 저장되고 서버로 전송되지 않습니다. 관리자 화면은 로그인 상태 유지를 위해 해당 탭의 sessionStorage를 사용합니다. 브라우저 설정이나 사이트 데이터 삭제 기능으로 이를 지울 수 있습니다.',
     },
     {
       title: '4. 제3자 서비스',
-      body: '사이트는 Google AdSense 등 광고 서비스, 카카오맵 등 외부 링크를 사용할 수 있습니다. 해당 서비스 제공자는 자체 개인정보처리방침에 따라 정보를 처리하므로, Google 개인정보처리방침(https://policies.google.com/privacy) 등을 참고하시기 바랍니다. 외부 링크(지도 등) 클릭 시 해당 사이트의 정책이 적용됩니다.',
+      body: '웹 글꼴은 jsDelivr CDN에서 불러오므로 접속 IP와 브라우저 정보가 해당 제공자에게 전달될 수 있습니다. 카카오맵·네이버 블로그·카카오채널·인스타그램 등 외부 링크는 이용자가 클릭한 뒤 각 서비스의 정책이 적용됩니다. 향후 Google AdSense를 활성화하면 Google과 광고 파트너가 쿠키·기기 식별자 등을 처리할 수 있으며, 활성화 전에 이 방침과 필요한 동의 절차를 다시 고지합니다.',
     },
     {
       title: '5. 개인정보의 보유 및 파기',
@@ -178,7 +185,7 @@ export const privacyContent = {
     },
     {
       title: '6. 이용자의 권리',
-      body: '이용자는 언제든지 브라우저 설정을 통해 쿠키 사용을 제한하거나, Google 광고 설정(https://adssettings.google.com)에서 맞춤형 광고를 관리할 수 있습니다. 개인정보와 관련한 문의는 아래 연락처로 요청하실 수 있습니다.',
+      body: '이용자는 브라우저 설정에서 이 사이트의 localStorage·sessionStorage를 삭제할 수 있습니다. 게시글과 댓글은 설정한 비밀번호로 삭제할 수 있고, 직접 삭제가 어렵거나 개인정보 관련 문의가 있으면 아래 연락처로 요청할 수 있습니다. 광고 기능이 활성화되는 경우 Google 광고 설정 등 추가 선택 방법도 함께 안내합니다.',
     },
     {
       title: '7. 개인정보 보호책임자',
@@ -195,10 +202,14 @@ export const privacyPagePath = '/privacy.html'
 export const aboutPagePath = '/about.html'
 export const bexcoPagePath = '/bexco.html'
 export const communityPagePath = '/community.html'
+export const cafeteriaGuidePagePath = '/cafeteria-guide.html'
+export const firstVisitPagePath = '/first-visit.html'
+export const menuPolicyPagePath = '/menu-policy.html'
 
 export const mainNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
+  { label: '이용 가이드', href: cafeteriaGuidePagePath },
   { label: '센텀 커뮤니티', href: communityPagePath },
   { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
@@ -207,6 +218,7 @@ export const mainNavLinks = [
 export const footerNavLinks = [
   { label: '이번 주 식단', href: '#menus' },
   { label: '식당 정보', href: '#restaurants' },
+  { label: '이용 가이드', href: cafeteriaGuidePagePath },
   { label: '센텀 커뮤니티', href: communityPagePath },
   { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },
@@ -217,6 +229,7 @@ export const subPageNavLinks = [
   { label: '홈', href: '/' },
   { label: '이번 주 식단', href: '/#menus' },
   { label: '식당 정보', href: '/#restaurants' },
+  { label: '이용 가이드', href: cafeteriaGuidePagePath },
   { label: '센텀 커뮤니티', href: communityPagePath },
   { label: '벡스코 행사', href: bexcoPagePath },
   { label: '사이트 소개', href: aboutPagePath },

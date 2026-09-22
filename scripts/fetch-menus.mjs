@@ -12,6 +12,7 @@ import { spawn } from 'node:child_process'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { selectCurrentBvicPost, todayInKst, weekFromBvicPost } from './bvic-selection.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
@@ -223,30 +224,6 @@ function imageExtension(contentType) {
   return 'jpg'
 }
 
-function addDays(date, days) {
-  const result = new Date(date)
-  result.setUTCDate(result.getUTCDate() + days)
-  return result
-}
-
-function formatDate(date) {
-  return date.toISOString().slice(0, 10)
-}
-
-function weekFromBvicPublication(publishedAt) {
-  const published = new Date(`${publishedAt}T00:00:00Z`)
-  const daysUntilMonday = published.getUTCDay() === 1 ? 0 : (8 - published.getUTCDay()) % 7
-  const start = addDays(published, daysUntilMonday)
-  const end = addDays(start, 4)
-
-  return {
-    id: formatDate(start),
-    weekStart: formatDate(start),
-    weekEnd: formatDate(end),
-    title: `${start.getUTCMonth() + 1}월 ${start.getUTCDate()}일 ~ ${end.getUTCMonth() + 1}월 ${end.getUTCDate()}일`,
-  }
-}
-
 function cookieHeader(response) {
   const cookies = response.headers.getSetCookie?.() ?? [response.headers.get('set-cookie')].filter(Boolean)
   return cookies.map((cookie) => cookie.split(';', 1)[0]).join('; ')
@@ -303,10 +280,11 @@ async function fetchBvicLatestMenu() {
   })
   if (!listDataResponse.ok) throw new Error(`BVIC list request failed: HTTP ${listDataResponse.status}`)
   const listData = await listDataResponse.json()
-  const latestPost = listData.dtList?.[0] ?? listData.topLst?.[0]
-  const noticeId = String(latestPost?.ntc_id ?? '')
-  const publishedAt = latestPost?.ins_dt
-  if (!noticeId || !publishedAt) throw new Error('BVIC latest menu post was not found')
+  const candidates = [...(listData.dtList ?? []), ...(listData.topLst ?? [])]
+    .filter((post, index, posts) => posts.findIndex((item) => item.ntc_id === post.ntc_id) === index)
+  const currentPost = selectCurrentBvicPost(candidates)
+  const noticeId = String(currentPost?.ntc_id ?? '')
+  if (!noticeId) throw new Error('BVIC current menu post was not found')
 
   const form = new URLSearchParams({ ...baseForm, ntc_id: noticeId })
   const viewResponse = await fetch(BVIC_VIEW_URL, {
@@ -334,7 +312,7 @@ async function fetchBvicLatestMenu() {
   }
 
   return {
-    ...weekFromBvicPublication(publishedAt),
+    ...weekFromBvicPost(currentPost),
     pdf,
     sourceUrl: BVIC_BOARD_URL,
   }
@@ -349,8 +327,7 @@ async function renderBvicMenuImage(weekId, pdf) {
 
   try {
     await writeFile(pdfPath, pdf)
-    const converter = process.platform === 'win32' ? 'pdftoppm.cmd' : 'pdftoppm'
-    await runCommand(converter, ['-png', '-f', '1', '-singlefile', '-r', '150', pdfPath, outputPrefix])
+    await runCommand('pdftoppm', ['-png', '-f', '1', '-singlefile', '-r', '150', pdfPath, outputPrefix])
     await mkdir(targetDir, { recursive: true })
     await writeFile(targetPath, await readFile(`${outputPrefix}.png`))
     return `/data/weeks/assets/${weekId}/stx.png`
@@ -515,7 +492,7 @@ async function fetchAllMenus() {
   let bvicMenu
   try {
     bvicMenu = await fetchBvicLatestMenu()
-    console.log(`[stx] BVIC latest menu: ${bvicMenu.weekStart}`)
+    console.log(`[stx] BVIC current menu: ${bvicMenu.weekStart}`)
   } catch (error) {
     console.warn(`[stx] BVIC fetch failed: ${error.message}`)
   }
@@ -590,7 +567,7 @@ async function fetchAllMenus() {
     menuImages,
     menuSourceUrls,
     menuBoardHtml,
-    updatedAt: new Date().toISOString().slice(0, 10),
+    updatedAt: todayInKst(),
   }
 }
 

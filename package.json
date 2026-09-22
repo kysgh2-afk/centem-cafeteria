@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/generate-seo.mjs && tsc && vite build",
+    "test": "node --test scripts/*.test.mjs",
+    "validate": "npm run test && npm run build && node scripts/validate-build.mjs",
     "preview": "vite preview",
     "update-menus": "node scripts/fetch-menus.mjs",
     "update-bexco": "node scripts/fetch-bexco-events.mjs"

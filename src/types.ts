@@ -54,6 +54,14 @@ export interface DayMenu {
 }
 
 export interface WeekMenu {
+  menuMeta?: Partial<Record<CafeteriaId, {
+    fetchedAt?: string
+    lastAttemptAt?: string
+    fetchStatus: 'success' | 'failed'
+    periodStart?: string
+    periodEnd?: string
+    isFallback?: boolean
+  }>>
   weekStart: string
   weekEnd: string
   title: string

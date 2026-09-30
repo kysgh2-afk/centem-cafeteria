@@ -29,6 +29,12 @@ for (const page of expectedPages) {
 }
 
 const htmlFiles = readdirSync(dist).filter((name) => name.endsWith('.html'))
+for (const page of ['index.html', 'stx.html', 'partibox.html', 'schmaus.html', 'jeongdam.html']) {
+  const html = readFileSync(join(dist, page), 'utf8')
+  assert(!html.includes('<div id="app"></div>'), `${page}: empty initial app`)
+  assert(html.includes('<main') && html.includes('<h2'), `${page}: missing initial content`)
+  assert(page === 'index.html' ? (html.match(/data-menu-status/g) ?? []).length === 8 : html.includes('처음 방문할 때 확인할 순서'), `${page}: missing quality content`)
+}
 for (const htmlFile of htmlFiles) {
   const html = readFileSync(join(dist, htmlFile), 'utf8')
   const references = [...html.matchAll(/(?:href|src)=["']([^"']+)["']/g)].map((match) => match[1])

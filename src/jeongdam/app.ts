@@ -1,4 +1,5 @@
 import { jeongdamGuideContent } from '../content/jeongdamGuide'
+import { renderVisitNotes } from '../render/visitNotes'
 import { subPageNavLinks } from '../content/siteContent'
 import { renderFooter } from '../render/layout'
 import { bindGuideImageZoom, renderGuideImage, renderGuideLightbox } from '../render/guidePageShared'
@@ -102,14 +103,15 @@ export function renderJeongdamHeader(): string {
   `
 }
 
-export function createJeongdamApp(root: HTMLElement): void {
-  root.innerHTML = `
+export function renderJeongdamPage(): string {
+  return `
     <div class="min-h-screen jeongdam-guide">
       ${renderJeongdamHeader()}
       <main class="max-w-5xl mx-auto px-4 sm:px-6 py-9 sm:py-14 space-y-14 sm:space-y-20">
         ${renderSummary()}
         ${renderDirections()}
         ${renderDining()}
+        ${renderVisitNotes('jeongdam')}
         <section class="jeongdam-back-home" aria-label="정담식당 식단표로 이동">
           <p>오늘의 정담식당 메뉴가 궁금한가요?</p>
           <a href="/#menus">이번 주 식단표 확인하기 →</a>
@@ -120,5 +122,9 @@ export function createJeongdamApp(root: HTMLElement): void {
     </div>
   `
 
+}
+
+export function createJeongdamApp(root: HTMLElement): void {
+  root.innerHTML = renderJeongdamPage()
   bindGuideImageZoom()
 }

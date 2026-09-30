@@ -1,4 +1,5 @@
 import { schmausGuideContent } from '../content/schmausGuide'
+import { renderVisitNotes } from '../render/visitNotes'
 import { siteMeta, subPageNavLinks } from '../content/siteContent'
 import { bindGuideImageZoom, renderGuideImage, renderGuideLightbox } from '../render/guidePageShared'
 import { renderFooter } from '../render/layout'
@@ -144,8 +145,8 @@ function renderHeader(): string {
   `
 }
 
-export function createSchmausApp(root: HTMLElement): void {
-  root.innerHTML = `
+export function renderSchmausPage(): string {
+  return `
     <div class="min-h-screen">
       ${renderHeader()}
       <main class="schmaus-guide max-w-4xl mx-auto px-4 sm:px-6 py-10 sm:py-14 space-y-16">
@@ -155,11 +156,16 @@ export function createSchmausApp(root: HTMLElement): void {
         ${renderTickets()}
         ${renderServices()}
         ${renderInterior()}
+        ${renderVisitNotes('schmaus')}
       </main>
       ${renderFooter(subPageNavLinks)}
     </div>
     ${renderGuideLightbox()}
   `
 
+}
+
+export function createSchmausApp(root: HTMLElement): void {
+  root.innerHTML = renderSchmausPage()
   bindGuideImageZoom()
 }

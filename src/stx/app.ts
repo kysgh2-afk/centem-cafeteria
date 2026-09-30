@@ -1,4 +1,5 @@
 import { stxGuideContent } from '../content/stxGuide'
+import { renderVisitNotes } from '../render/visitNotes'
 import { siteMeta, subPageNavLinks } from '../content/siteContent'
 import { cafeteriaMapUrl } from '../services/menuService'
 import { renderFooter } from '../render/layout'
@@ -124,18 +125,23 @@ export function renderStxHeader(): string {
   `
 }
 
-export function createStxApp(root: HTMLElement): void {
-  root.innerHTML = `
+export function renderStxPage(): string {
+  return `
     <div class="min-h-screen">
       ${renderStxHeader()}
 
       <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
         ${renderStxGuide()}
+        ${renderVisitNotes('stx')}
       </main>
 
       ${renderFooter(subPageNavLinks)}
     </div>
   `
 
+}
+
+export function createStxApp(root: HTMLElement): void {
+  root.innerHTML = renderStxPage()
   bindGuideImageZoom()
 }

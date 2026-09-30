@@ -1,9 +1,10 @@
 import type { AppData } from '../types'
 import { formatPrice, cafeteriaMapUrl } from '../services/menuService'
 import { getGuidePage } from '../utils/guidePage'
+import { periodLabel, renderMenuStatus } from './menuStatus'
 
 export function renderWeekNav(data: AppData, selectedWeekId: string): string {
-  const { weeks, currentWeekId } = data.weekIndex
+  const { weeks } = data.weekIndex
   const currentIndex = weeks.findIndex((w) => w.id === selectedWeekId)
   const hasPrev = currentIndex < weeks.length - 1
   const hasNext = currentIndex > 0
@@ -25,8 +26,8 @@ export function renderWeekNav(data: AppData, selectedWeekId: string): string {
       <div class="text-center">
         <p class="text-lg font-bold text-slate-900">${data.week.title}</p>
         <p class="text-xs text-slate-400 mt-0.5">
-          ${selectedWeekId === currentWeekId ? '이번 주' : '지난 주'}
-          · ${data.week.updatedAt} 업데이트
+          ${periodLabel(data.week.weekStart, data.week.weekEnd)}
+          · 자료 묶음 갱신 ${data.week.updatedAt}
         </p>
       </div>
 
@@ -96,7 +97,7 @@ function renderMenuContent(
   sourceUrl?: string,
 ): string {
   if (imageUrl) {
-    const alt = `${name} ${weekTitle} 주간 식단표`
+    const alt = `${name} ${weekTitle} 식단표`
     const safeImageUrl = imageUrl.replace(/^http:/, 'https:')
     return `
       <figure class="p-4 bg-slate-50" data-menu-image-container>
@@ -124,7 +125,7 @@ function renderMenuContent(
           <p class="text-sm font-medium text-amber-900">식단표 이미지 주소가 만료됐어요.</p>
           ${sourceUrl ? `<a href="${sourceUrl}" target="_blank" rel="noopener noreferrer" class="mt-3 inline-flex rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white">공식 메뉴 확인하기 →</a>` : ''}
         </div>
-        <figcaption class="sr-only">${name} 이번 주 식단표</figcaption>
+        <figcaption class="sr-only">${alt}</figcaption>
       </figure>
     `
   }
@@ -178,7 +179,9 @@ export function renderMenuCards(data: AppData, filters: MenuFilters, favorites: 
           const imageUrl = images[c.id]
           const sourceUrl = sourceUrls[c.id]
           const menuBoardHtml = menuBoards[c.id]
-          const menuLink = c.menuLink ?? sourceUrl
+          const menuLink = sourceUrl ?? c.menuLink
+          const meta = data.week.menuMeta?.[c.id]
+          const imagePeriod = meta?.periodStart && meta?.periodEnd ? `${meta.periodStart} ~ ${meta.periodEnd}` : '적용 날짜 미확인'
 
           return `
             <article
@@ -196,7 +199,8 @@ export function renderMenuCards(data: AppData, filters: MenuFilters, favorites: 
                   ${c.building} ${c.floor} · 점심 ${formatPrice(c.prices.lunch)}${c.prices.dinner ? ` · 저녁 ${formatPrice(c.prices.dinner)}` : ''}
                 </p>
               </div>
-              ${renderMenuContent(c.name, data.week.title, imageUrl, menuBoardHtml, sourceUrl)}
+              ${renderMenuStatus(data.week, c.id, Boolean(imageUrl || menuBoardHtml))}
+              ${renderMenuContent(c.name, imagePeriod, imageUrl, menuBoardHtml, sourceUrl)}
               ${renderCardActions(menuLink, cafeteriaMapUrl(c), getGuidePage(c))}
             </article>
           `

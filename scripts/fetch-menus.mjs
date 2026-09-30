@@ -417,7 +417,7 @@ async function fetchNaverBlogMenu(id, config) {
   return {
     imageUrl,
     menuBoardHtml,
-    sourceUrl: config.sourceUrl ?? `https://blog.naver.com/${config.blogId}/${logNo}`,
+    sourceUrl: `https://blog.naver.com/${config.blogId}/${logNo}`,
   }
 }
 
@@ -485,10 +485,15 @@ async function fetchInstagramMenu(id, { username, fallbackShortcode }) {
   const postHtml = await fetchText(postUrl)
   const imageUrl = decodeHtml(postHtml.match(/<meta property="og:image" content="([^"]+)"/)?.[1] ?? '')
   if (!imageUrl) throw new Error('인스타그램 최신 게시물 이미지를 찾지 못했습니다.')
-  return { imageUrl, sourceUrl: postUrl }
+  return { imageUrl, sourceUrl: postUrl, isFallback: true }
 }
 
 async function fetchAllMenus() {
+  const attemptedAt = new Date().toISOString()
+  const menuMeta = Object.fromEntries(['stx', 'partibox', 'dawa', 'manna', 'dawa-qubi', 'schmaus', 'uncle-bapcha', 'jeongdam'].map(id => [id, { fetchStatus: 'failed', lastAttemptAt: attemptedAt }]))
+  const markCollected = (id, available, extra = {}) => {
+    if (available) menuMeta[id] = { fetchStatus: 'success', fetchedAt: attemptedAt, lastAttemptAt: attemptedAt, ...extra }
+  }
   let bvicMenu
   try {
     bvicMenu = await fetchBvicLatestMenu()
@@ -515,11 +520,13 @@ async function fetchAllMenus() {
 
   for (const id of PORTLOCKROY_IDS) {
     menuSourceUrls[id] = portlockroyWeek?.sourceUrl ?? week.sourceUrl
+    markCollected(id, menuImages[id], { isFallback: true })
   }
 
   if (bvicMenu) {
     menuImages.stx = await renderBvicMenuImage(week.id, bvicMenu.pdf)
     menuSourceUrls.stx = bvicMenu.sourceUrl
+    markCollected('stx', true, { periodStart: bvicMenu.weekStart, periodEnd: bvicMenu.weekEnd })
   }
 
   for (const [id, config] of Object.entries(NAVER_BLOG)) {
@@ -527,13 +534,14 @@ async function fetchAllMenus() {
       const result = await fetchNaverBlogMenu(id, config)
       if (result.imageUrl) menuImages[id] = result.imageUrl
       if (result.menuBoardHtml) menuBoardHtml[id] = result.menuBoardHtml
-      menuSourceUrls[id] = result.sourceUrl
+      if (result.imageUrl || result.menuBoardHtml) menuSourceUrls[id] = result.sourceUrl
+      markCollected(id, result.imageUrl || result.menuBoardHtml)
       console.log(
         `[${id}] ${result.menuBoardHtml ? '메뉴판 표 추출' : result.imageUrl ? '이미지 추출' : '출처만 저장'}`,
       )
     } catch (error) {
       console.warn(`[${id}] 수집 실패: ${error.message}`)
-      menuSourceUrls[id] = `https://blog.naver.com/${config.blogId}`
+      if (!menuImages[id]) delete menuSourceUrls[id]
     }
   }
 
@@ -541,11 +549,12 @@ async function fetchAllMenus() {
     try {
       const result = await fetchKakaoChannelMenu(id, profileId)
       if (result.imageUrl) menuImages[id] = result.imageUrl
-      menuSourceUrls[id] = result.sourceUrl
+      if (result.imageUrl) menuSourceUrls[id] = result.sourceUrl
+      markCollected(id, result.imageUrl)
       console.log(`[${id}] ${result.imageUrl ? '이미지 추출' : '이미지 없음'}`)
     } catch (error) {
       console.warn(`[${id}] 수집 실패: ${error.message}`)
-      menuSourceUrls[id] = `https://pf.kakao.com/${profileId}`
+      if (!menuImages[id]) delete menuSourceUrls[id]
     }
   }
 
@@ -554,10 +563,11 @@ async function fetchAllMenus() {
       const result = await fetchInstagramMenu(id, profile)
       menuImages[id] = result.imageUrl
       menuSourceUrls[id] = result.sourceUrl
+      markCollected(id, result.imageUrl, { isFallback: Boolean(result.isFallback) })
       console.log(`[${id}] 인스타그램 최신 이미지 추출`)
     } catch (error) {
       console.warn(`[${id}] 인스타그램 수집 실패: ${error.message}`)
-      menuSourceUrls[id] = `https://www.instagram.com/${profile.username}/`
+      delete menuSourceUrls[id]
     }
   }
 
@@ -567,6 +577,7 @@ async function fetchAllMenus() {
     menuImages,
     menuSourceUrls,
     menuBoardHtml,
+    menuMeta,
     updatedAt: todayInKst(),
   }
 }
@@ -624,6 +635,13 @@ async function updateWeekFile(weekInfo) {
   weekData.menuImages = { ...weekData.menuImages, ...weekInfo.menuImages }
   weekData.menuSourceUrls = { ...weekData.menuSourceUrls, ...weekInfo.menuSourceUrls }
   weekData.menuBoardHtml = { ...weekData.menuBoardHtml, ...weekInfo.menuBoardHtml }
+  weekData.menuMeta ??= {}
+  for (const [id, meta] of Object.entries(weekInfo.menuMeta)) {
+    // A failed attempt must not relabel preserved images as freshly fetched.
+    weekData.menuMeta[id] = meta.fetchStatus === 'failed'
+      ? { ...weekData.menuMeta[id], ...meta }
+      : meta
+  }
 
   delete weekData.ocrRaw
   delete weekData.parsedFromOcr
@@ -637,7 +655,13 @@ async function main() {
   await mkdir(DATA_DIR, { recursive: true })
 
   const weekInfo = await fetchAllMenus()
-  weekInfo.menuImages = await cacheMenuImages(weekInfo.id, weekInfo.menuImages)
+  const requestedImages = weekInfo.menuImages
+  weekInfo.menuImages = await cacheMenuImages(weekInfo.id, requestedImages)
+  for (const id of Object.keys(requestedImages)) {
+    if (!weekInfo.menuImages[id] && !weekInfo.menuBoardHtml[id]) {
+      weekInfo.menuMeta[id] = { fetchStatus: 'failed', lastAttemptAt: new Date().toISOString() }
+    }
+  }
   console.log(`최신 주간: ${weekInfo.title}`)
   console.log(`기준 출처: ${weekInfo.sourceUrl}`)
   console.log(`식단표 이미지 ${Object.keys(weekInfo.menuImages).length}개 추출`)

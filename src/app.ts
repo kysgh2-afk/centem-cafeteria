@@ -160,7 +160,7 @@ export function createApp(root: HTMLElement) {
   }
 
   async function init() {
-    render()
+    if (!root.querySelector('[data-prerendered]')) render()
 
     try {
       const data = await fetchAppData()

@@ -18,12 +18,13 @@ function readSiteUrl() {
 }
 
 const siteUrl = readSiteUrl()
-const today = new Intl.DateTimeFormat('en-CA', {
-  timeZone: 'Asia/Seoul',
-  year: 'numeric',
-  month: '2-digit',
-  day: '2-digit',
-}).format(new Date())
+// Build time is not the content revision date. Omit dates we cannot verify.
+const contentLastmods = Object.fromEntries(['menu-policy', 'partibox', 'stx', 'schmaus', 'jeongdam'].map(page => [`/${page}.html`, '2026-10-01']))
+try {
+  const index = JSON.parse(readFileSync(resolve(root, 'public/data/weeks/index.json'), 'utf8'))
+  const week = JSON.parse(readFileSync(resolve(root, `public/data/weeks/${index.currentWeekId}.json`), 'utf8'))
+  if (/^\d{4}-\d{2}-\d{2}$/.test(week.updatedAt)) contentLastmods['/'] = week.updatedAt
+} catch { /* Missing source dates do not justify invented lastmod values. */ }
 
 const pages = [
   { path: '/', priority: '1.0', changefreq: 'daily' },
@@ -45,7 +46,7 @@ const sitemapEntries = pages
     const loc = siteUrl ? `${siteUrl}${page.path === '/' ? '/' : page.path}` : page.path
     return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
+    ${contentLastmods[page.path] ? `<lastmod>${contentLastmods[page.path]}</lastmod>` : ''}
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`

@@ -1,4 +1,5 @@
 import { partiboxGuideContent } from '../content/partiboxGuide'
+import { renderVisitNotes } from '../render/visitNotes'
 import { siteMeta, subPageNavLinks } from '../content/siteContent'
 import { cafeteriaMapUrl } from '../services/menuService'
 import { renderFooter } from '../render/layout'
@@ -48,7 +49,6 @@ function renderGuideLightbox(): string {
       <figure class="flex max-h-full max-w-full flex-col items-center">
         <img
           data-guide-lightbox-image
-          src=""
           alt=""
           class="max-h-[85vh] max-w-full rounded-lg object-contain shadow-2xl"
         />
@@ -216,18 +216,23 @@ export function bindGuideImageZoom(): void {
   })
 }
 
-export function createPartiboxApp(root: HTMLElement): void {
-  root.innerHTML = `
+export function renderPartiboxPage(): string {
+  return `
     <div class="min-h-screen">
       ${renderPartiboxHeader()}
 
       <main class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
         ${renderPartiboxGuide()}
+        ${renderVisitNotes('partibox')}
       </main>
 
       ${renderFooter(subPageNavLinks)}
     </div>
   `
 
+}
+
+export function createPartiboxApp(root: HTMLElement): void {
+  root.innerHTML = renderPartiboxPage()
   bindGuideImageZoom()
 }

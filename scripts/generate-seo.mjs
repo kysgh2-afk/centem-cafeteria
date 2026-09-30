@@ -45,8 +45,7 @@ const sitemapEntries = pages
   .map((page) => {
     const loc = siteUrl ? `${siteUrl}${page.path === '/' ? '/' : page.path}` : page.path
     return `  <url>
-    <loc>${loc}</loc>
-    ${contentLastmods[page.path] ? `<lastmod>${contentLastmods[page.path]}</lastmod>` : ''}
+    <loc>${loc}</loc>${contentLastmods[page.path] ? `\n    <lastmod>${contentLastmods[page.path]}</lastmod>` : ''}
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>`

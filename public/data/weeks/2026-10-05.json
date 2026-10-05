@@ -1,0 +1,62 @@
+{
+  "weekStart": "2026-10-05",
+  "weekEnd": "2026-10-09",
+  "title": "10월 5일 ~ 10월 9일",
+  "menus": {},
+  "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+  "updatedAt": "2026-10-05",
+  "menuImages": {
+    "stx": "/data/weeks/assets/2026-10-05/stx.png",
+    "manna": "/data/weeks/assets/2026-10-05/manna.jpg",
+    "partibox": "/data/weeks/assets/2026-10-05/partibox.jpg",
+    "jeongdam": "/data/weeks/assets/2026-10-05/jeongdam.jpg"
+  },
+  "menuSourceUrls": {
+    "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+    "partibox": "http://pf.kakao.com/_DCpLK/114790647",
+    "dawa": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+    "manna": "https://blog.naver.com/jusik1606/224424106312",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/114771337"
+  },
+  "menuBoardHtml": {},
+  "menuMeta": {
+    "stx": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-05T06:48:07.905Z",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z",
+      "periodStart": "2026-10-05",
+      "periodEnd": "2026-10-09"
+    },
+    "partibox": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-05T06:48:07.905Z",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z"
+    },
+    "dawa": {
+      "fetchStatus": "failed",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z"
+    },
+    "manna": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-05T06:48:07.905Z",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z"
+    },
+    "dawa-qubi": {
+      "fetchStatus": "failed",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z"
+    },
+    "schmaus": {
+      "fetchStatus": "failed",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z"
+    },
+    "uncle-bapcha": {
+      "fetchStatus": "failed",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z"
+    },
+    "jeongdam": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-05T06:48:07.905Z",
+      "lastAttemptAt": "2026-10-05T06:48:07.905Z"
+    }
+  }
+}

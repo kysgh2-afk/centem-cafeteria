@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-06T07:27:15.094Z",
+  "updatedAt": "2026-10-07T07:05:38.950Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -89,7 +89,7 @@
       "startDate": "2026-10-14",
       "endDate": "2026-10-16",
       "place": "제1전시장 1,2홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15893",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15893",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEvcHVSVFJqUFAxY0ZMUU1GSA==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
@@ -111,6 +111,16 @@
       "place": "제2전시장 4(A-D)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15785",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvdXNWWHo3dUdwODVEZDhzNw==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16744",
+      "type": "전시회",
+      "title": "2026 대한민국 소상공인대회",
+      "startDate": "2026-10-23",
+      "endDate": "2026-10-24",
+      "place": "제2전시장 4홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16744",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzRYd2tlNTdHNG80SUVvUDA=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16278",

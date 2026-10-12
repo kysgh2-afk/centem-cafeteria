@@ -37,7 +37,13 @@ jobs:
         run: npm ci
 
       - name: Install PDF image converter
-        run: sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq poppler-utils
+        run: |
+          # Runner package lists can refer to versions already removed from mirrors.
+          # Refresh before installing both conversion and deployment dependencies.
+          sudo apt-get -o Acquire::Retries=3 update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=3 install -y -qq poppler-utils lftp
+          pdftoppm -v
+          lftp --version
 
       - name: Fetch latest weekly menus
         id: fetch_menus
@@ -109,8 +115,6 @@ jobs:
           REMOTE_DIR="${SFTP_DIR:-public_html}"
           REMOTE_DIR="${REMOTE_DIR#/}"
           REMOTE_DIR="${REMOTE_DIR%/}"
-
-          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq lftp
 
           echo "Connecting to ${SFTP_HOST}:${SFTP_PORT} as ${SFTP_USER} ..."
           echo "Remote folder: ${REMOTE_DIR}"

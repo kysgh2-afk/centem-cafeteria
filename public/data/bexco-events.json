@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-12T03:28:12.422Z",
+  "updatedAt": "2026-10-12T07:12:07.924Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -7,7 +7,7 @@
       "type": "이벤트·공연",
       "title": "2026 상상체험 키즈월드",
       "startDate": "2025-12-06",
-      "endDate": "2026-10-31",
+      "endDate": "2026-10-18",
       "place": "제2전시장 5(B-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI1LzExL0REbHpqb0pPREI5ckFRbW8=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
@@ -239,7 +239,7 @@
       "startDate": "2026-10-31",
       "endDate": "2026-11-01",
       "place": "제2전시장 5(D-E)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16600",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16600",
       "imageUrl": null
     }
   ]

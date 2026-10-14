@@ -16,7 +16,7 @@ import { selectCurrentBvicPost, todayInKst, weekFromBvicPost } from './bvic-sele
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
-const DATA_DIR = join(ROOT, 'public', 'data', 'weeks')
+const DATA_DIR = process.env.CENTUM_MENU_DATA_DIR ?? join(ROOT, 'public', 'data', 'weeks')
 const IMAGE_DIR = join(DATA_DIR, 'assets')
 
 const PORTLOCKROY_RSS = 'https://portlockroy.me/rss'
@@ -327,7 +327,11 @@ async function renderBvicMenuImage(weekId, pdf) {
 
   try {
     await writeFile(pdfPath, pdf)
-    await runCommand('pdftoppm', ['-png', '-f', '1', '-singlefile', '-r', '150', pdfPath, outputPrefix])
+    if (process.env.CENTUM_PDF_RENDERER === 'gs') {
+      await runCommand('gs', ['-dSAFER', '-dBATCH', '-dNOPAUSE', '-dFirstPage=1', '-dLastPage=1', '-sDEVICE=png16m', '-r150', `-sOutputFile=${outputPrefix}.png`, pdfPath])
+    } else {
+      await runCommand('pdftoppm', ['-png', '-f', '1', '-singlefile', '-r', '150', pdfPath, outputPrefix])
+    }
     await mkdir(targetDir, { recursive: true })
     await writeFile(targetPath, await readFile(`${outputPrefix}.png`))
     return `/data/weeks/assets/${weekId}/stx.png`

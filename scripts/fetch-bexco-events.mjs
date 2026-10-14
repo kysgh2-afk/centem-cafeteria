@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
-const DATA_PATH = join(ROOT, 'public', 'data', 'bexco-events.json')
+const DATA_PATH = process.env.CENTUM_BEXCO_DATA_PATH ?? join(ROOT, 'public', 'data', 'bexco-events.json')
 const BEXCO_ORIGIN = 'https://www.bexco.co.kr'
 const SOURCE_URL = `${BEXCO_ORIGIN}/kor/CMS/EventScheduleMgr/list.do?mCode=MN214`
 const USER_AGENT = 'Mozilla/5.0 (compatible; CentumCafeteriaBot/1.0)'

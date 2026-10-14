@@ -44,7 +44,8 @@ export function cafeteriaMapUrl(cafeteria: { mapUrl?: string; mapQuery: string }
 }
 
 async function fetchJson<T>(url: string): Promise<T> {
-  const response = await fetch(url, { cache: 'no-store' })
+  // Server cron updates data without a Cloudways control-panel cache purge.
+  const response = await fetch(`${url}?fresh=${Date.now()}`, { cache: 'no-store' })
   if (!response.ok) {
     throw new Error(`Failed to fetch ${url}: ${response.status}`)
   }

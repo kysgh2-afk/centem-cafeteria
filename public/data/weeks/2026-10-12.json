@@ -4,7 +4,7 @@
   "title": "10월 12일 ~ 10월 16일",
   "menus": {},
   "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-15",
   "menuImages": {
     "stx": "/data/weeks/assets/2026-10-12/stx.png",
     "manna": "/data/weeks/assets/2026-10-12/manna.jpg",
@@ -30,46 +30,46 @@
   "menuMeta": {
     "stx": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z",
+      "fetchedAt": "2026-10-14T16:01:01.393Z",
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z",
       "periodStart": "2026-10-12",
       "periodEnd": "2026-10-16"
     },
     "partibox": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z"
+      "fetchedAt": "2026-10-14T16:01:01.393Z",
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
     },
     "dawa": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z"
+      "fetchedAt": "2026-10-14T16:01:01.393Z",
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
     },
     "manna": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z"
+      "fetchedAt": "2026-10-14T16:01:01.393Z",
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
     },
     "dawa-qubi": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z"
+      "fetchedAt": "2026-10-14T16:01:01.393Z",
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
     },
     "schmaus": {
-      "fetchStatus": "success",
+      "fetchStatus": "failed",
       "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z"
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
     },
     "uncle-bapcha": {
-      "fetchStatus": "success",
+      "fetchStatus": "failed",
       "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z",
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z",
       "isFallback": true
     },
     "jeongdam": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T05:59:11.819Z"
+      "fetchedAt": "2026-10-14T16:01:01.393Z",
+      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
     }
   }
 }

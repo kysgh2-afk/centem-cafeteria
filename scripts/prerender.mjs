@@ -18,7 +18,7 @@ try {
     const path = resolve(root, 'dist', page)
     const html = await readFile(path, 'utf8')
     if (!html.includes('<div id="app"></div>')) throw new Error(`Prerender placeholder missing: ${page}`)
-    await writeFile(path, html.replace('<div id="app"></div>', `<div id="app">${body}</div>`))
+    await writeFile(path, html.replace('<div id="app"></div>', `<div id="app"><!--centum-app:start-->${body}<!--centum-app:end--></div>`))
   }
   console.log(`Pre-rendered ${pages.length} pages with public menu data and photo guides.`)
 } finally {

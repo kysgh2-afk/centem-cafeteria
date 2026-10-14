@@ -1,10 +1,8 @@
 name: Daily menu update
 
 on:
-  # 매일 오전 10:00 (한국 시간)
-  # GitHub cron은 UTC 기준 → KST 10:00 = UTC 01:00
-  schedule:
-    - cron: '0 1 * * *'
+  # Daily collection now runs on the Cloudways app at 01:00 UTC (10:00 KST).
+  # Keep manual deployments here, without GitHub's delayed schedule trigger.
   workflow_dispatch:
 
 permissions:

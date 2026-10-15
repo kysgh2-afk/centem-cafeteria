@@ -19,8 +19,8 @@
     "dawa": "https://blog.naver.com/dawafood-centum/221630046754",
     "manna": "https://blog.naver.com/jusik1606/224438221039",
     "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291",
-    "schmaus": "http://pf.kakao.com/_CiVis/114881371",
-    "jeongdam": "http://pf.kakao.com/_vKxgdn/114881440",
+    "schmaus": "http://pf.kakao.com/_CiVis/114893571",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/114893133",
     "uncle-bapcha": "https://www.instagram.com/jnjskybiz/p/Db7C18WPqAe/"
   },
   "menuBoardHtml": {
@@ -30,46 +30,46 @@
   "menuMeta": {
     "stx": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T16:01:01.393Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z",
+      "fetchedAt": "2026-10-15T05:45:23.656Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z",
       "periodStart": "2026-10-12",
       "periodEnd": "2026-10-16"
     },
     "partibox": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T16:01:01.393Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
+      "fetchedAt": "2026-10-15T05:45:23.656Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z"
     },
     "dawa": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T16:01:01.393Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
+      "fetchedAt": "2026-10-15T05:45:23.656Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z"
     },
     "manna": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T16:01:01.393Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
+      "fetchedAt": "2026-10-15T05:45:23.656Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z"
     },
     "dawa-qubi": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T16:01:01.393Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
+      "fetchedAt": "2026-10-15T05:45:23.656Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z"
     },
     "schmaus": {
-      "fetchStatus": "failed",
-      "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-15T05:45:23.656Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z"
     },
     "uncle-bapcha": {
       "fetchStatus": "failed",
       "fetchedAt": "2026-10-14T05:59:11.819Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z",
       "isFallback": true
     },
     "jeongdam": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-14T16:01:01.393Z",
-      "lastAttemptAt": "2026-10-14T16:01:01.393Z"
+      "fetchedAt": "2026-10-15T05:45:23.656Z",
+      "lastAttemptAt": "2026-10-15T05:45:23.656Z"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-15T05:45:56.645Z",
+  "updatedAt": "2026-10-16T05:43:01.965Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -59,7 +59,7 @@
       "startDate": "2026-10-17",
       "endDate": "2026-10-17",
       "place": "제2회의실 121-126호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16758",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16758",
       "imageUrl": null
     },
     {
@@ -139,7 +139,7 @@
       "startDate": "2026-10-26",
       "endDate": "2026-10-26",
       "place": "제1전시장 1홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16765",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16765",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1ZIWkpQWVpwSklwRDlEQmE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -149,7 +149,7 @@
       "startDate": "2026-10-27",
       "endDate": "2026-10-31",
       "place": "제1전시장 3A홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15786",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15786",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvV3c4S0J4QXEzakNmQU1weg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -198,9 +198,9 @@
       "title": "2026 부산펫쇼",
       "startDate": "2026-10-30",
       "endDate": "2026-11-01",
-      "place": "제2전시장 4홀",
+      "place": "제2전시장 4(A-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15789",
-      "imageUrl": null
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzdnNGo2TjRMV0pUNlcxU3Q=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "15790",

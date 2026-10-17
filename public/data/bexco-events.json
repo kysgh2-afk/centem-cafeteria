@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T05:43:01.965Z",
+  "updatedAt": "2026-10-17T05:28:11.071Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -11,16 +11,6 @@
       "place": "제2전시장 5(B-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15661",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI1LzExL0REbHpqb0pPREI5ckFRbW8=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "15893",
-      "type": "전시회",
-      "title": "2026 국제해양에너지플랜트산업전",
-      "startDate": "2026-10-14",
-      "endDate": "2026-10-16",
-      "place": "제1전시장 1,2홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15893",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEvcHVSVFJqUFAxY0ZMUU1GSA==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "15784",
@@ -69,7 +59,7 @@
       "startDate": "2026-10-17",
       "endDate": "2026-10-18",
       "place": "제2회의실 321-322호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16759",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16759",
       "imageUrl": null
     },
     {
@@ -79,7 +69,7 @@
       "startDate": "2026-10-17",
       "endDate": "2026-10-17",
       "place": "누리마루",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16762",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16762",
       "imageUrl": null
     },
     {
@@ -109,7 +99,7 @@
       "startDate": "2026-10-23",
       "endDate": "2026-10-25",
       "place": "제1전시장 2B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16372",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16372",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvTUtKTlZqbG4wazBCUTh1bw==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -119,7 +109,7 @@
       "startDate": "2026-10-25",
       "endDate": "2026-10-25",
       "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16707",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16707",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvWVZGWnMzTTFtbW5WTWVxOQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -129,7 +119,7 @@
       "startDate": "2026-10-25",
       "endDate": "2026-10-25",
       "place": "옥외전시장, 야외행사장",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16373",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16373",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzEwaHl1YVhDOXp1QWZkd2g=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -139,7 +129,7 @@
       "startDate": "2026-10-26",
       "endDate": "2026-10-26",
       "place": "제1전시장 1홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16765",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16765",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1ZIWkpQWVpwSklwRDlEQmE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -149,7 +139,7 @@
       "startDate": "2026-10-27",
       "endDate": "2026-10-31",
       "place": "제1전시장 3A홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15786",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15786",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvV3c4S0J4QXEzakNmQU1weg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -189,7 +179,7 @@
       "startDate": "2026-10-29",
       "endDate": "2026-10-31",
       "place": "제1전시장 3B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16599",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16599",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvTlFHdDBibU1pcjU4ek1kTA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -199,7 +189,7 @@
       "startDate": "2026-10-30",
       "endDate": "2026-11-01",
       "place": "제2전시장 4(A-E)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15789",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=15789",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzdnNGo2TjRMV0pUNlcxU3Q=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -209,7 +199,7 @@
       "startDate": "2026-10-30",
       "endDate": "2026-10-31",
       "place": "제2전시장 5(B-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15790",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=15790",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvOEJUbUoyWm1NeG81NXBDcw==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
@@ -219,7 +209,7 @@
       "startDate": "2026-10-31",
       "endDate": "2026-11-01",
       "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16708",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16708",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvZHhzRXNvcktJNFBYMFVWNQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -229,7 +219,7 @@
       "startDate": "2026-10-31",
       "endDate": "2026-11-01",
       "place": "제2전시장 5(D-E)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16600",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16600",
       "imageUrl": null
     }
   ]

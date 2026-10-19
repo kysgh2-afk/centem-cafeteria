@@ -17,6 +17,9 @@ export function selectCurrentBvicPost(posts, today = todayInKst()) {
   if (!isIsoDate(today)) throw new Error(`Invalid comparison date: ${today}`)
 
   return posts.find((post) => {
+    // The menu board also contains surveys and notices with active date ranges.
+    const title = String(post?.ntc_title ?? '').normalize('NFKC').replace(/\s+/g, '')
+    if (!title.includes('식단표') || /만족도|설문|조사/.test(title)) return false
     const start = String(post?.ntc_stt_dt ?? '')
     const end = String(post?.ntc_end_dt ?? '')
     return isIsoDate(start) && isIsoDate(end) && start <= today && today <= end

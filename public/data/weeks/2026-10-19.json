@@ -4,7 +4,7 @@
   "title": "10월 19일 ~ 10월 23일",
   "menus": {},
   "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-  "updatedAt": "2026-10-22",
+  "updatedAt": "2026-10-23",
   "menuImages": {
     "stx": "/data/weeks/assets/2026-10-19/stx.png",
     "manna": "/data/weeks/assets/2026-10-19/manna.jpg",
@@ -16,11 +16,11 @@
   "menuSourceUrls": {
     "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
     "partibox": "http://pf.kakao.com/_DCpLK/114916858",
-    "dawa": "https://blog.naver.com/dawafood-centum/221630046754",
+    "dawa": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
     "manna": "https://blog.naver.com/jusik1606/224445808991",
     "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291",
-    "jeongdam": "http://pf.kakao.com/_vKxgdn/114967278",
-    "schmaus": "http://pf.kakao.com/_CiVis/114967304",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/114980187",
+    "schmaus": "http://pf.kakao.com/_CiVis/114980520",
     "uncle-bapcha": "https://www.instagram.com/jnjskybiz/p/Db7C18WPqAe/"
   },
   "menuBoardHtml": {
@@ -30,46 +30,46 @@
   "menuMeta": {
     "stx": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z",
+      "fetchedAt": "2026-10-23T05:53:22.065Z",
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z",
       "periodStart": "2026-10-19",
       "periodEnd": "2026-10-23"
     },
     "partibox": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z"
+      "fetchedAt": "2026-10-23T05:53:22.065Z",
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z"
     },
     "dawa": {
-      "fetchStatus": "success",
+      "fetchStatus": "failed",
       "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z"
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z"
     },
     "manna": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z"
+      "fetchedAt": "2026-10-23T05:53:22.065Z",
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z"
     },
     "dawa-qubi": {
-      "fetchStatus": "success",
+      "fetchStatus": "failed",
       "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z"
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z"
     },
     "schmaus": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z"
+      "fetchedAt": "2026-10-23T05:53:22.065Z",
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z"
     },
     "uncle-bapcha": {
-      "fetchStatus": "success",
+      "fetchStatus": "failed",
       "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z",
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z",
       "isFallback": true
     },
     "jeongdam": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-10-22T05:56:14.344Z",
-      "lastAttemptAt": "2026-10-22T05:56:14.344Z"
+      "fetchedAt": "2026-10-23T05:53:22.065Z",
+      "lastAttemptAt": "2026-10-23T05:53:22.065Z"
     }
   }
 }

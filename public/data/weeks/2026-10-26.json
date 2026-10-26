@@ -1,0 +1,75 @@
+{
+  "weekStart": "2026-10-26",
+  "weekEnd": "2026-10-30",
+  "title": "10월 26일 ~ 10월 30일",
+  "menus": {},
+  "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+  "updatedAt": "2026-10-26",
+  "menuImages": {
+    "stx": "/data/weeks/assets/2026-10-26/stx.png",
+    "manna": "/data/weeks/assets/2026-10-26/manna.jpg",
+    "partibox": "/data/weeks/assets/2026-10-26/partibox.jpg",
+    "schmaus": "/data/weeks/assets/2026-10-26/schmaus.jpg",
+    "jeongdam": "/data/weeks/assets/2026-10-26/jeongdam.jpg",
+    "uncle-bapcha": "/data/weeks/assets/2026-10-26/uncle-bapcha.jpg"
+  },
+  "menuSourceUrls": {
+    "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
+    "partibox": "http://pf.kakao.com/_DCpLK/114991981",
+    "dawa": "https://blog.naver.com/dawafood-centum/221630046754",
+    "manna": "https://blog.naver.com/jusik1606/224453323962",
+    "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291",
+    "schmaus": "http://pf.kakao.com/_CiVis/115004384",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/115004427",
+    "uncle-bapcha": "https://www.instagram.com/jnjskybiz/p/Db7C18WPqAe/"
+  },
+  "menuBoardHtml": {
+    "dawa": "<table class=\"menu-board-table\"><tbody><tr><td>10월 26일 (월)</td><td>10월 27일(화)</td><td>10월 28일 (수)</td><td>10월 29일 (목)</td><td>10월 30일 (금)</td></tr><tr><td>백미밥</td><td>백미밥</td><td>백미밥</td><td>백미밥</td><td>백미밥</td></tr><tr><td>순두부찌개</td><td>시 락 국</td><td>어묵뭇국</td><td>팽이유부장국</td><td>계란떡국</td></tr><tr><td>청경채돈불고기</td><td>묵은지찜닭</td><td>등심돈까스</td><td>매콤떡돈육찜</td><td>파닭치킨</td></tr><tr><td>야채비빔만두</td><td>너비아니야채볶음</td><td>굴소스야끼우동</td><td>한식잡채</td><td>마파두부</td></tr><tr><td>줄줄이비엔나야채볶음</td><td>고추장어채조림</td><td>감자채볶음</td><td>계 란 찜</td><td>어묵우엉채조림</td></tr><tr><td>상추 / 쌈장</td><td>도토리묵무침</td><td>모듬콩조림</td><td>아삭고추무침</td><td>오징어무우젓갈</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>나물</td><td>나물</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>김치</td><td>김치</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td></tr></tbody></table>",
+    "dawa-qubi": "<table class=\"menu-board-table\"><tbody><tr><td>10월 26일 (월)</td><td>10월 27일 (화)</td><td>10월 28일 (수)</td><td>10월 29일 (목)</td><td>10월 30일 (금)</td></tr><tr><td>흑미밥 / 백미밥</td><td>흑미밥 / 백미밥</td><td>백미밥</td><td>흑미밥 / 백미밥</td><td>흑미밥 / 백미밥</td></tr><tr><td>소고기무우국</td><td>얼큰북엇국</td><td>미소된장국</td><td>소고기미역국</td><td>소고기계란떡국</td></tr><tr><td>마늘쫑돈불고기</td><td>묵은지찜닭</td><td>함박스테이크</td><td>매콤제육볶음</td><td>파닭치킨</td></tr><tr><td>비엔나야채볶음</td><td>고구마고로케</td><td>새우볶음밥</td><td>야채계란찜</td><td>감자강된장</td></tr><tr><td>무말랭이떡볶이</td><td>한식잡채</td><td>자장면</td><td>비빔냉면</td><td>열무비빔국수</td></tr><tr><td>건파래자반</td><td>감자채볶음</td><td>고추장어묵야채볶음</td><td>우엉채조림</td><td>꼬시래기무침</td></tr><tr><td>상추 / 쌈장</td><td>양념깻잎지</td><td>단무지무침</td><td>양배추 / 다시마쌈</td><td>고추지</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>나물</td><td>나물</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>김치</td><td>김치</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td></tr></tbody></table>"
+  },
+  "menuMeta": {
+    "stx": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z",
+      "periodStart": "2026-10-26",
+      "periodEnd": "2026-10-30"
+    },
+    "partibox": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z"
+    },
+    "dawa": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z"
+    },
+    "manna": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z"
+    },
+    "dawa-qubi": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z"
+    },
+    "schmaus": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z"
+    },
+    "uncle-bapcha": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z",
+      "isFallback": true
+    },
+    "jeongdam": {
+      "fetchStatus": "success",
+      "fetchedAt": "2026-10-26T05:56:40.048Z",
+      "lastAttemptAt": "2026-10-26T05:56:40.048Z"
+    }
+  }
+}

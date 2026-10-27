@@ -1,17 +1,7 @@
 {
-  "updatedAt": "2026-10-26T05:57:09.277Z",
+  "updatedAt": "2026-10-27T06:08:16.838Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
-    {
-      "id": "16765",
-      "type": "전시회",
-      "title": "2026 KB굿잡 부산 잡(JOB) 페스티벌",
-      "startDate": "2026-10-26",
-      "endDate": "2026-10-26",
-      "place": "제1전시장 1홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16765",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1ZIWkpQWVpwSklwRDlEQmE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
     {
       "id": "15786",
       "type": "전시회",
@@ -59,7 +49,7 @@
       "startDate": "2026-10-29",
       "endDate": "2026-10-31",
       "place": "제1전시장 3B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16599",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16599",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvTlFHdDBibU1pcjU4ek1kTA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -69,7 +59,7 @@
       "startDate": "2026-10-30",
       "endDate": "2026-11-01",
       "place": "제2전시장 4(A-E)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15789",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15789",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzdnNGo2TjRMV0pUNlcxU3Q=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -79,7 +69,7 @@
       "startDate": "2026-10-30",
       "endDate": "2026-10-31",
       "place": "제2전시장 5(B-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15790",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15790",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvOEJUbUoyWm1NeG81NXBDcw==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {

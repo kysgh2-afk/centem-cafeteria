@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-27T06:08:16.838Z",
+  "updatedAt": "2026-10-28T06:46:09.257Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -79,7 +79,7 @@
       "startDate": "2026-10-31",
       "endDate": "2026-11-01",
       "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16708",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16708",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvZHhzRXNvcktJNFBYMFVWNQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -89,7 +89,7 @@
       "startDate": "2026-10-31",
       "endDate": "2026-10-31",
       "place": "컨벤션홀 102-110호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16810",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16810",
       "imageUrl": null
     },
     {

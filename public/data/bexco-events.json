@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-29T06:55:18.900Z",
+  "updatedAt": "2026-10-30T06:58:03.965Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -21,16 +21,6 @@
       "place": "제1전시장 1홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15787",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvRzlXWTQyUnZyUnFEV0YzTQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16699",
-      "type": "이벤트·공연",
-      "title": "동아대학교 개교80주년 기념음악회",
-      "startDate": "2026-10-29",
-      "endDate": "2026-10-29",
-      "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16699",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvTEdJSlZkVEFIdFpvM1lIaA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "15788",
@@ -99,7 +89,7 @@
       "startDate": "2026-10-31",
       "endDate": "2026-10-31",
       "place": "제2회의장 321-324호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16826",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16826",
       "imageUrl": null
     },
     {

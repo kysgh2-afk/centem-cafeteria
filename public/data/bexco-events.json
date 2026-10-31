@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T06:58:03.965Z",
+  "updatedAt": "2026-10-31T06:52:07.693Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -11,16 +11,6 @@
       "place": "제1전시장 3A홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15786",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvV3c4S0J4QXEzakNmQU1weg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "15787",
-      "type": "전시회",
-      "title": "2026 우수급식외식산업전",
-      "startDate": "2026-10-28",
-      "endDate": "2026-10-30",
-      "place": "제1전시장 1홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15787",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvRzlXWTQyUnZyUnFEV0YzTQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "15788",
@@ -99,7 +89,7 @@
       "startDate": "2026-10-31",
       "endDate": "2026-11-01",
       "place": "제2전시장 5(D-E)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16600",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16600",
       "imageUrl": null
     }
   ]

@@ -1,37 +1,7 @@
 {
-  "updatedAt": "2026-10-31T06:52:07.693Z",
+  "updatedAt": "2026-11-01T07:18:29.956Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
-    {
-      "id": "15786",
-      "type": "전시회",
-      "title": "2026 대한민국건축문화제 & 부산건축기획전",
-      "startDate": "2026-10-27",
-      "endDate": "2026-10-31",
-      "place": "제1전시장 3A홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15786",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvV3c4S0J4QXEzakNmQU1weg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "15788",
-      "type": "전시회",
-      "title": "패패부산 2026 (부산국제신발섬유패션전시회)",
-      "startDate": "2026-10-29",
-      "endDate": "2026-10-31",
-      "place": "제1전시장 2홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15788",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvMnhPOENkN2Noc0ZVdGNDUw==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
-    },
-    {
-      "id": "16599",
-      "type": "이벤트·공연",
-      "title": "2026 부산패션위크",
-      "startDate": "2026-10-29",
-      "endDate": "2026-10-31",
-      "place": "제1전시장 3B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16599",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvTlFHdDBibU1pcjU4ek1kTA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
     {
       "id": "15789",
       "type": "전시회",
@@ -41,16 +11,6 @@
       "place": "제2전시장 4(A-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15789",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzdnNGo2TjRMV0pUNlcxU3Q=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "15790",
-      "type": "전시회",
-      "title": "제6회 부산평생학습주간",
-      "startDate": "2026-10-30",
-      "endDate": "2026-10-31",
-      "place": "제2전시장 5(B-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15790",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvOEJUbUoyWm1NeG81NXBDcw==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "16708",
@@ -63,26 +23,6 @@
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvZHhzRXNvcktJNFBYMFVWNQ==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
-      "id": "16810",
-      "type": "이벤트·공연",
-      "title": "제14회 부산광역시 주산암산대회",
-      "startDate": "2026-10-31",
-      "endDate": "2026-10-31",
-      "place": "컨벤션홀 102-110호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16810",
-      "imageUrl": null
-    },
-    {
-      "id": "16826",
-      "type": "이벤트·공연",
-      "title": "BNK저축은행 2026년 신입직원 채용 필기시험",
-      "startDate": "2026-10-31",
-      "endDate": "2026-10-31",
-      "place": "제2회의장 321-324호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16826",
-      "imageUrl": null
-    },
-    {
       "id": "16600",
       "type": "이벤트·공연",
       "title": "더샵 금정 위버시티 공동구매 입주박람회",
@@ -91,6 +31,316 @@
       "place": "제2전시장 5(D-E)홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16600",
       "imageUrl": null
+    },
+    {
+      "id": "16809",
+      "type": "이벤트·공연",
+      "title": "제19회 전국주산암산경기대회",
+      "startDate": "2026-11-01",
+      "endDate": "2026-11-01",
+      "place": "컨벤션홀 101-110호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16809",
+      "imageUrl": null
+    },
+    {
+      "id": "15791",
+      "type": "전시회",
+      "title": "2026 부산국제수산EXPO",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-06",
+      "place": "제1전시장 1~3홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15791",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvVTk5dUxneVVYMDNXSHNjUA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16849",
+      "type": "전시회",
+      "title": "제21회 부산수산정책포럼",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "place": "제1회의장 211-212호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16849",
+      "imageUrl": null
+    },
+    {
+      "id": "16851",
+      "type": "전시회",
+      "title": "수협중앙회 VIP실",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "place": "제1회의장 213호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16851",
+      "imageUrl": null
+    },
+    {
+      "id": "16854",
+      "type": "전시회",
+      "title": "BISFE VIP 개막행사",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "place": "제1회의장 214-216호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16854",
+      "imageUrl": null
+    },
+    {
+      "id": "16855",
+      "type": "전시회",
+      "title": "수협중앙회 만찬",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "place": "제1회의장 214-218호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16855",
+      "imageUrl": null
+    },
+    {
+      "id": "16862",
+      "type": "전시회",
+      "title": "광역수산행정협의회",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "place": "제1회의장 314호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16862",
+      "imageUrl": null
+    },
+    {
+      "id": "16867",
+      "type": "이벤트·공연",
+      "title": "2026 부산 세계 도시브랜드 포럼",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "place": "누리마루",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16867",
+      "imageUrl": null
+    },
+    {
+      "id": "16871",
+      "type": "이벤트·공연",
+      "title": "제10회 해양수산 인재 육성의 날 기념식",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-04",
+      "place": "오디토리움",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16871",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL0tqMXo3YzhWdXJ1eTRrWWY=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16376",
+      "type": "전시회",
+      "title": "2026 부산 사이버보안 콘퍼런스",
+      "startDate": "2026-11-04",
+      "endDate": "2026-11-05",
+      "place": "제2전시장 4F홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16376",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1ZEYUphaVdnWGVmd1IxcmE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16852",
+      "type": "전시회",
+      "title": "한국양식기술워크숍",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-05",
+      "place": "제1회의장 214-215호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16852",
+      "imageUrl": null
+    },
+    {
+      "id": "16857",
+      "type": "전시회",
+      "title": "KOFFST International Conference 2026",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-06",
+      "place": "제1회의장 216-218호, 311-313호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16857",
+      "imageUrl": null
+    },
+    {
+      "id": "16861",
+      "type": "전시회",
+      "title": "글로벌 네트워킹 리셉션",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-05",
+      "place": "제1회의장 314-317호",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16861",
+      "imageUrl": null
+    },
+    {
+      "id": "16375",
+      "type": "전시회",
+      "title": "2026 시민건강 박람회(가족행복 건강아이 프로젝트-헬시 베이비 페스티벌)",
+      "startDate": "2026-11-05",
+      "endDate": "2026-11-08",
+      "place": "제2전시장 5(B-E)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16375",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL0lDRzc5WGt3Zm9HV0FKMEY=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "15792",
+      "type": "전시회",
+      "title": "부산일러스트레이션페어V.7",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-08",
+      "place": "제2전시장 4(A-D)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=15792",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvdmdwVnVvY2xTVDRpWXFxTQ==&w=440&fileRename=thumImgMiddle&fileExt=PNG"
+    },
+    {
+      "id": "16834",
+      "type": "전시회",
+      "title": "KNN 벡스코 웨딩박람회",
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-08",
+      "place": "제2전시장 4F홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16834",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL015NDBJdFNsc25wM3hqQWs=&w=440&fileRename=thumImgMiddle&fileExt=PNG"
+    },
+    {
+      "id": "16709",
+      "type": "이벤트·공연",
+      "title": "[부산] 최유리 콘서트 2026 : 머무름",
+      "startDate": "2026-11-07",
+      "endDate": "2026-11-08",
+      "place": "오디토리움",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16709",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvZDRhWjlZdGk2ODFxWjQwaA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16836",
+      "type": "이벤트·공연",
+      "title": "제16회 사랑의 김치 나눔 한마당",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-10",
+      "place": "제2전시장 5(D-E)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16836",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzhMalRSWFVuaHlDdjJ5OWE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16601",
+      "type": "이벤트·공연",
+      "title": "2026년 제12회 부산시니어클럽 어르신일자리 증진대회",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-10",
+      "place": "제2전시장 4E홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16601",
+      "imageUrl": null
+    },
+    {
+      "id": "15793",
+      "type": "전시회",
+      "title": "KFA 프랜차이즈 창업박람회 부산",
+      "startDate": "2026-11-12",
+      "endDate": "2026-11-14",
+      "place": "제1전시장 3B홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15793",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL2NwNDBTYzNxTjRrbTFFTHc=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16478",
+      "type": "전시회",
+      "title": "2026 부산 고교학점제 박람회",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-14",
+      "place": "제2전시장 5D홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16478",
+      "imageUrl": null
+    },
+    {
+      "id": "16378",
+      "type": "전시회",
+      "title": "2026 부산국제의료관광컨벤션",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-14",
+      "place": "제1전시장 3A홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16378",
+      "imageUrl": null
+    },
+    {
+      "id": "16379",
+      "type": "전시회",
+      "title": "2026 부산수학축전",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-14",
+      "place": "제1전시장 2홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16379",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1BSMWdydWVtb0dKRDVocmc=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16710",
+      "type": "이벤트·공연",
+      "title": "2026 어썸스테이지 [ N.Flying x Hi-Fi Un!corn ]",
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-15",
+      "place": "오디토리움",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16710",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvWWJkdWExck05R1huZWk3Tg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16477",
+      "type": "이벤트·공연",
+      "title": "대연 디아이엘 입주박람회",
+      "startDate": "2026-11-14",
+      "endDate": "2026-11-15",
+      "place": "제2전시장 5(B-C)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16477",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL0s5TnNUSG43bzhZOE4xVUY=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "15794",
+      "type": "전시회",
+      "title": "국제게임전시회 지스타 2026",
+      "startDate": "2026-11-19",
+      "endDate": "2026-11-22",
+      "place": "벡스코 전관",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=15794",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL21UMm5NblR3TThZZ1JYUlQ=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16845",
+      "type": "이벤트·공연",
+      "title": "부산 직업·평생교육(B-LIFE) 박람회",
+      "startDate": "2026-11-24",
+      "endDate": "2026-11-25",
+      "place": "제2전시장 4B홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16845",
+      "imageUrl": null
+    },
+    {
+      "id": "16842",
+      "type": "전시회",
+      "title": "2026 부산식품박람회 & 2026 부산 유기농.친환경.귀농귀촌박람회",
+      "startDate": "2026-11-26",
+      "endDate": "2026-11-29",
+      "place": "제1전시장 1홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16842",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL2JXY0ZWNWtBaFdjdjlpTXc=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16603",
+      "type": "전시회",
+      "title": "2026부산가구쇼(AUT)",
+      "startDate": "2026-11-26",
+      "endDate": "2026-11-29",
+      "place": "제1전시장 2B, 3 홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16603",
+      "imageUrl": null
+    },
+    {
+      "id": "16381",
+      "type": "전시회",
+      "title": "2026 부산 차·공예박람회",
+      "startDate": "2026-11-26",
+      "endDate": "2026-11-29",
+      "place": "제1전시장 2A홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16381",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1Q2aVRQcVFEUGw0ZlprYUM=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+    },
+    {
+      "id": "16602",
+      "type": "이벤트·공연",
+      "title": "해링턴마레 입주박람회(11월)",
+      "startDate": "2026-11-27",
+      "endDate": "2026-11-29",
+      "place": "제2전시장 4(E-F)홀",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16602",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzJvZ2JjTmJnMlZWOUV4VHQ=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]
 }

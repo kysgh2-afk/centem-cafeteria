@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-02T07:32:27.130Z",
+  "updatedAt": "2026-11-03T07:47:01.414Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -11,56 +11,6 @@
       "place": "제1전시장 1~3홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15791",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvVTk5dUxneVVYMDNXSHNjUA==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16849",
-      "type": "전시회",
-      "title": "제21회 부산수산정책포럼",
-      "startDate": "2026-11-04",
-      "endDate": "2026-11-04",
-      "place": "제1회의장 211-212호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16849",
-      "imageUrl": null
-    },
-    {
-      "id": "16851",
-      "type": "전시회",
-      "title": "수협중앙회 VIP실",
-      "startDate": "2026-11-04",
-      "endDate": "2026-11-04",
-      "place": "제1회의장 213호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16851",
-      "imageUrl": null
-    },
-    {
-      "id": "16854",
-      "type": "전시회",
-      "title": "BISFE VIP 개막행사",
-      "startDate": "2026-11-04",
-      "endDate": "2026-11-04",
-      "place": "제1회의장 214-216호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16854",
-      "imageUrl": null
-    },
-    {
-      "id": "16855",
-      "type": "전시회",
-      "title": "수협중앙회 만찬",
-      "startDate": "2026-11-04",
-      "endDate": "2026-11-04",
-      "place": "제1회의장 214-218호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16855",
-      "imageUrl": null
-    },
-    {
-      "id": "16862",
-      "type": "전시회",
-      "title": "광역수산행정협의회",
-      "startDate": "2026-11-04",
-      "endDate": "2026-11-04",
-      "place": "제1회의장 314호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16862",
-      "imageUrl": null
     },
     {
       "id": "16867",
@@ -91,36 +41,6 @@
       "place": "제2전시장 4F홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16376",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1ZEYUphaVdnWGVmd1IxcmE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16852",
-      "type": "전시회",
-      "title": "한국양식기술워크숍",
-      "startDate": "2026-11-05",
-      "endDate": "2026-11-05",
-      "place": "제1회의장 214-215호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16852",
-      "imageUrl": null
-    },
-    {
-      "id": "16857",
-      "type": "전시회",
-      "title": "KOFFST International Conference 2026",
-      "startDate": "2026-11-05",
-      "endDate": "2026-11-06",
-      "place": "제1회의장 216-218호, 311-313호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16857",
-      "imageUrl": null
-    },
-    {
-      "id": "16861",
-      "type": "전시회",
-      "title": "글로벌 네트워킹 리셉션",
-      "startDate": "2026-11-05",
-      "endDate": "2026-11-05",
-      "place": "제1회의장 314-317호",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16861",
-      "imageUrl": null
     },
     {
       "id": "16375",
@@ -270,7 +190,7 @@
       "endDate": "2026-11-29",
       "place": "제1전시장 1홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16842",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL2JXY0ZWNWtBaFdjdjlpTXc=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzExL1o2VmpneFNESkxROGR2NW0=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
       "id": "16603",
@@ -299,7 +219,7 @@
       "startDate": "2026-11-27",
       "endDate": "2026-11-29",
       "place": "제2전시장 4(E-F)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=4&&event_seq=16602",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16602",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzJvZ2JjTmJnMlZWOUV4VHQ=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]

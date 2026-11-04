@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T07:47:01.414Z",
+  "updatedAt": "2026-11-04T07:25:22.792Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -29,7 +29,7 @@
       "startDate": "2026-11-04",
       "endDate": "2026-11-04",
       "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16871",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16871",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL0tqMXo3YzhWdXJ1eTRrWWY=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -39,7 +39,7 @@
       "startDate": "2026-11-04",
       "endDate": "2026-11-05",
       "place": "제2전시장 4F홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16376",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16376",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL1ZEYUphaVdnWGVmd1IxcmE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -89,7 +89,7 @@
       "startDate": "2026-11-10",
       "endDate": "2026-11-10",
       "place": "제2전시장 5(D-E)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16836",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16836",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwLzhMalRSWFVuaHlDdjJ5OWE=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -99,8 +99,18 @@
       "startDate": "2026-11-10",
       "endDate": "2026-11-10",
       "place": "제2전시장 4E홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16601",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16601",
       "imageUrl": null
+    },
+    {
+      "id": "16874",
+      "type": "이벤트·공연",
+      "title": "보고싶다, 부산 Special",
+      "startDate": "2026-11-10",
+      "endDate": "2026-11-10",
+      "place": "오디토리움",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16874",
+      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzExL2RiWXE3T05BT3Z2dG1waTU=&w=440&fileRename=thumImgMiddle&fileExt=PNG"
     },
     {
       "id": "15793",

@@ -4,7 +4,7 @@
   "title": "11월 2일 ~ 11월 6일",
   "menus": {},
   "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-  "updatedAt": "2026-11-03",
+  "updatedAt": "2026-11-04",
   "menuImages": {
     "stx": "/data/weeks/assets/2026-11-02/stx.png",
     "manna": "/data/weeks/assets/2026-11-02/manna.jpg",
@@ -19,57 +19,57 @@
     "dawa": "https://blog.naver.com/dawafood-centum/221630046754",
     "manna": "https://blog.naver.com/jusik1606/224461374551",
     "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291",
-    "schmaus": "http://pf.kakao.com/_CiVis/115107417",
-    "jeongdam": "http://pf.kakao.com/_vKxgdn/115107415",
+    "schmaus": "http://pf.kakao.com/_CiVis/115122058",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/115121803",
     "uncle-bapcha": "https://www.instagram.com/jnjskybiz/p/Db7C18WPqAe/"
   },
   "menuBoardHtml": {
     "dawa": "<table class=\"menu-board-table\"><tbody><tr><td>11월 2일 (월)</td><td>11월 3(화)</td><td>11월 4일 (수)</td><td>11월 5일 (목)</td><td>11월 6일 (금)</td></tr><tr><td>백미밥</td><td>백미밥</td><td>백미밥</td><td>백미밥</td><td>백미밥</td></tr><tr><td>소고기미역국</td><td>시 락 국</td><td>북 엇 국</td><td>소고기육개장</td><td>장 우 동</td></tr><tr><td>마늘쫑돈불고기</td><td>고구마떡닭갈비</td><td>그릴떡갈비</td><td>고추장돈불고기</td><td>고추간장치킨</td></tr><tr><td>궁중떡볶이</td><td>메밀비빔국수</td><td>미트소스스파게티</td><td>비빔당면</td><td>덮밥용강된장</td></tr><tr><td>바삭멸치볶음</td><td>크래미브로콜리</td><td>연근조림</td><td>편육 / 쌈장</td><td>호박어묵볶음</td></tr><tr><td>상추 / 쌈장</td><td>건파래자반</td><td>고들빼기무침</td><td>알마늘고추지</td><td>무말랭이무침</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>나물</td><td>나물</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>김치</td><td>김치</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td></tr></tbody></table>",
-    "dawa-qubi": "<table class=\"menu-board-table\"><tbody><tr><td>11월 2일 (월)</td><td>11월 3일 (화)</td><td>11월 4일 (수)</td><td>11월 5일 (목)</td><td>11월 6일 (금)</td></tr><tr><td>흑미밥 / 백미밥</td><td>흑미밥 / 백미밥</td><td>백미밥</td><td>흑미밥 / 백미밥</td><td>흑미밥 / 백미밥</td></tr><tr><td>참치김치찌개</td><td>시락국</td><td>팽이유부장국</td><td>꽃게된장국</td><td>잔치국수</td></tr><tr><td>팽이버섯돈불고기</td><td>닭볶음탕</td><td>치킨까스 / 칠리소스</td><td>김치두루치기</td><td>마늘간장치킨</td></tr><tr><td>편육냉채</td><td>후르츠탕수육</td><td>카레라이스</td><td>비 빔 밥</td><td>마파두부</td></tr><tr><td>비빔막국수</td><td>알리오올리오파스타</td><td>비빔쫄면</td><td>해물야끼우동</td><td>흑임자실곤약무침</td></tr><tr><td>바삭멸치볶음</td><td>새송이버섯볶음</td><td>연근조림</td><td>삼색나물</td><td>다시마채무침</td></tr><tr><td>상추 / 쌈장</td><td>고들빼기무침</td><td>오징어무우젓갈</td><td>맛김</td><td>마늘지</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>고추장</td><td>나물</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>김치</td><td>김치</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td></tr></tbody></table>"
+    "dawa-qubi": "<table class=\"menu-board-table\"><tbody><tr><td>11월 2일 (월)</td><td>11월 3일 (화)</td><td>11월 4일 (수)</td><td>11월 5일 (목)</td><td>11월 6일 (금)</td></tr><tr><td>흑미밥 / 백미밥</td><td>흑미밥 / 백미밥</td><td>백미밥</td><td>백미밥</td><td>흑미밥 / 백미밥</td></tr><tr><td>참치김치찌개</td><td>시락국</td><td>팽이유부장국</td><td>꽃게된장국</td><td>잔치국수</td></tr><tr><td>팽이버섯돈불고기</td><td>닭볶음탕</td><td>치킨까스 / 칠리소스</td><td>김치두루치기</td><td>마늘간장치킨</td></tr><tr><td>편육냉채</td><td>후르츠탕수육</td><td>카레라이스</td><td>비 빔 밥</td><td>마파두부</td></tr><tr><td>비빔막국수</td><td>알리오올리오파스타</td><td>비빔쫄면</td><td>해물야끼우동</td><td>흑임자실곤약무침</td></tr><tr><td>바삭멸치볶음</td><td>새송이버섯볶음</td><td>연근조림</td><td>삼색나물</td><td>다시마채무침</td></tr><tr><td>상추 / 쌈장</td><td>고들빼기무침</td><td>오징어무우젓갈</td><td>맛김</td><td>마늘지</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>고추장</td><td>나물</td></tr><tr><td>김치</td><td>김치</td><td>김치</td><td>김치</td><td>김치</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td></tr></tbody></table>"
   },
   "menuMeta": {
     "stx": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-03T07:46:33.381Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z",
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z",
       "periodStart": "2026-11-02",
       "periodEnd": "2026-11-06"
     },
     "partibox": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-03T07:46:33.381Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z"
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z"
     },
     "dawa": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-03T07:46:33.381Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z"
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z"
     },
     "manna": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-03T07:46:33.381Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z"
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z"
     },
     "dawa-qubi": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-03T07:46:33.381Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z"
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z"
     },
     "schmaus": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-03T07:46:33.381Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z"
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z"
     },
     "uncle-bapcha": {
-      "fetchStatus": "failed",
-      "fetchedAt": "2026-11-02T07:31:53.960Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z",
+      "fetchStatus": "success",
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z",
       "isFallback": true
     },
     "jeongdam": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-03T07:46:33.381Z",
-      "lastAttemptAt": "2026-11-03T07:46:33.381Z"
+      "fetchedAt": "2026-11-04T07:24:56.302Z",
+      "lastAttemptAt": "2026-11-04T07:24:56.302Z"
     }
   }
 }

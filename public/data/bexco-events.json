@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T07:50:19.317Z",
+  "updatedAt": "2026-11-10T08:14:19.150Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -144,9 +144,9 @@
     },
     {
       "id": "16845",
-      "type": "이벤트·공연",
-      "title": "부산 직업·평생교육(B-LIFE) 박람회",
-      "startDate": "2026-11-24",
+      "type": "전시회",
+      "title": "부산 직업·평생교육(B-LiFE) 박람회",
+      "startDate": "2026-11-25",
       "endDate": "2026-11-25",
       "place": "제2전시장 4B홀",
       "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=3&&event_seq=16845",

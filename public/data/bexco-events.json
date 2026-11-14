@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13T07:45:29.570Z",
+  "updatedAt": "2026-11-14T07:30:50.150Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
     {
@@ -79,7 +79,7 @@
       "startDate": "2026-11-15",
       "endDate": "2026-11-15",
       "place": "누리마루",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16893",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16893",
       "imageUrl": null
     },
     {

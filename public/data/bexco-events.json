@@ -1,37 +1,7 @@
 {
-  "updatedAt": "2026-11-15T07:43:52.000Z",
+  "updatedAt": "2026-11-16T07:50:43.353Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
-    {
-      "id": "16710",
-      "type": "이벤트·공연",
-      "title": "2026 어썸스테이지 [ N.Flying x Hi-Fi Un!corn ]",
-      "startDate": "2026-11-14",
-      "endDate": "2026-11-15",
-      "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16710",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzkvWWJkdWExck05R1huZWk3Tg==&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16477",
-      "type": "이벤트·공연",
-      "title": "대연 디아이엘 입주박람회",
-      "startDate": "2026-11-14",
-      "endDate": "2026-11-15",
-      "place": "제2전시장 5(B-C)홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16477",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL0s5TnNUSG43bzhZOE4xVUY=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
-    {
-      "id": "16893",
-      "type": "이벤트·공연",
-      "title": "캔들라이트 콘서트",
-      "startDate": "2026-11-15",
-      "endDate": "2026-11-15",
-      "place": "누리마루",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16893",
-      "imageUrl": null
-    },
     {
       "id": "15794",
       "type": "전시회",
@@ -49,7 +19,7 @@
       "startDate": "2026-11-25",
       "endDate": "2026-11-25",
       "place": "제2전시장 4B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16845",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16845",
       "imageUrl": null
     },
     {
@@ -59,7 +29,7 @@
       "startDate": "2026-11-26",
       "endDate": "2026-11-29",
       "place": "제1전시장 1홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16842",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16842",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzExL3Q3UzNmNnlNd01ZYU5mclM=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     },
     {
@@ -69,7 +39,7 @@
       "startDate": "2026-11-26",
       "endDate": "2026-11-29",
       "place": "제1전시장 2B, 3 홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16603",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16603",
       "imageUrl": null
     },
     {

@@ -1,17 +1,7 @@
 {
-  "updatedAt": "2026-11-22T07:55:01.217Z",
+  "updatedAt": "2026-11-23T08:50:58.999Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
-    {
-      "id": "15794",
-      "type": "전시회",
-      "title": "국제게임전시회 지스타 2026",
-      "startDate": "2026-11-19",
-      "endDate": "2026-11-22",
-      "place": "벡스코 전관",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=15794",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzEwL21UMm5NblR3TThZZ1JYUlQ=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
-    },
     {
       "id": "16845",
       "type": "전시회",

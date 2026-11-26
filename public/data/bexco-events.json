@@ -1,17 +1,7 @@
 {
-  "updatedAt": "2026-11-25T09:43:47.163Z",
+  "updatedAt": "2026-11-26T09:20:05.084Z",
   "sourceUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/list.do?mCode=MN214",
   "events": [
-    {
-      "id": "16845",
-      "type": "전시회",
-      "title": "2026 부산 직업·평생교육(B-LiFE) 박람회",
-      "startDate": "2026-11-25",
-      "endDate": "2026-11-25",
-      "place": "제2전시장 4B홀",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16845",
-      "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzExL3h4aDNWRUR6NWI5UllPaGM=&w=440&fileRename=thumImgMiddle&fileExt=PNG"
-    },
     {
       "id": "16842",
       "type": "전시회",
@@ -69,7 +59,7 @@
       "startDate": "2026-11-28",
       "endDate": "2026-11-29",
       "place": "오디토리움",
-      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&page=2&&event_seq=16926",
+      "detailUrl": "https://www.bexco.co.kr/kor/CMS/EventScheduleMgr/view.do?mCode=MN214&&event_seq=16926",
       "imageUrl": "https://www.bexco.co.kr/kor/ajx_json/UploadMgr/thumImg.do?fileName=L2F0dGFjaC9JTUFHRS9FdmVudFNjaGVkdWxlTWdyL3Bvc3RlclVwbG9hZC8yMDI2LzExL09nY05Fdzl3S3JiSHZvRnY=&w=440&fileRename=thumImgMiddle&fileExt=JPG"
     }
   ]

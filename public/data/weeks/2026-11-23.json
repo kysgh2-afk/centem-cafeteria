@@ -4,7 +4,7 @@
   "title": "11월 23일 ~ 11월 27일",
   "menus": {},
   "sourceUrl": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-  "updatedAt": "2026-11-26",
+  "updatedAt": "2026-11-27",
   "menuImages": {
     "stx": "/data/weeks/assets/2026-11-23/stx.png",
     "manna": "/data/weeks/assets/2026-11-23/manna.jpg",
@@ -14,12 +14,12 @@
   },
   "menuSourceUrls": {
     "stx": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
-    "partibox": "http://pf.kakao.com/_DCpLK/115317003",
-    "dawa": "https://blog.naver.com/dawafood-centum/221630046754",
+    "partibox": "http://pf.kakao.com/_DCpLK/115383877",
+    "dawa": "https://www.bvic.kr/bvic/bbs/BBSCMML.do?_menuNo=36&bbs_id=NT_BBS_0500",
     "manna": "https://blog.naver.com/jusik1606/224453325265",
     "dawa-qubi": "https://blog.naver.com/dawafood-qubi/221629132291",
-    "schmaus": "http://pf.kakao.com/_CiVis/115368271",
-    "jeongdam": "http://pf.kakao.com/_vKxgdn/115368548"
+    "schmaus": "http://pf.kakao.com/_CiVis/115382968",
+    "jeongdam": "http://pf.kakao.com/_vKxgdn/115383042"
   },
   "menuBoardHtml": {
     "dawa": "<table class=\"menu-board-table\"><tbody><tr><td>11월 23일 (월)</td><td>11월 24(화)</td><td>11월 25일 (수)</td><td>11월 26일 (목)</td><td>11월 27일 (금)</td></tr><tr><td>백미밥</td><td>백미밥</td><td>백미밥</td><td>백미밥</td><td>백미밥</td></tr><tr><td>순두부찌개</td><td>시 락 국</td><td>소고기육개장</td><td>어묵뭇국</td><td>파계란국</td></tr><tr><td>청경채돈불고기</td><td>묵은지찜닭</td><td>등심돈까스</td><td>매콤떡돈육찜</td><td>마늘간장치킨</td></tr><tr><td>야채비빔만두</td><td>데리고기산적</td><td>자 장 면</td><td>비빔쫄면</td><td>마파두부</td></tr><tr><td>줄줄이비엔나야채볶음</td><td>도라지무침</td><td>매콤콩나물찜</td><td>계 란 찜</td><td>파래실곤약무침</td></tr><tr><td>상추 / 쌈장</td><td>연두부 / 양념장</td><td>단무지무침</td><td>건파래김자반</td><td>오징어무우젓갈</td></tr><tr><td>나물</td><td>나물</td><td>나물</td><td>나물</td><td>나물</td></tr><tr><td>김장김치</td><td>김장김치</td><td>김장김치</td><td>김장김치</td><td>김치</td></tr><tr><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td><td>야채샐러드</td></tr><tr><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td><td>탄산음료</td></tr></tbody></table>",
@@ -28,44 +28,44 @@
   "menuMeta": {
     "stx": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-26T09:19:39.377Z",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z",
+      "fetchedAt": "2026-11-27T09:35:04.392Z",
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z",
       "periodStart": "2026-11-23",
       "periodEnd": "2026-11-27"
     },
     "partibox": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-26T09:19:39.377Z",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z"
+      "fetchedAt": "2026-11-27T09:35:04.392Z",
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z"
     },
     "dawa": {
-      "fetchStatus": "success",
+      "fetchStatus": "failed",
       "fetchedAt": "2026-11-26T09:19:39.377Z",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z"
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z"
     },
     "manna": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-26T09:19:39.377Z",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z"
+      "fetchedAt": "2026-11-27T09:35:04.392Z",
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z"
     },
     "dawa-qubi": {
-      "fetchStatus": "success",
+      "fetchStatus": "failed",
       "fetchedAt": "2026-11-26T09:19:39.377Z",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z"
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z"
     },
     "schmaus": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-26T09:19:39.377Z",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z"
+      "fetchedAt": "2026-11-27T09:35:04.392Z",
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z"
     },
     "uncle-bapcha": {
       "fetchStatus": "failed",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z"
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z"
     },
     "jeongdam": {
       "fetchStatus": "success",
-      "fetchedAt": "2026-11-26T09:19:39.377Z",
-      "lastAttemptAt": "2026-11-26T09:19:39.377Z"
+      "fetchedAt": "2026-11-27T09:35:04.392Z",
+      "lastAttemptAt": "2026-11-27T09:35:04.392Z"
     }
   }
 }
